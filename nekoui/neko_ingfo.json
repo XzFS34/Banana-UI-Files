@@ -1,6 +1,8 @@
 {
   "namespace": "loli",
 
+  /// A ANJG
+
   "button_panel": {
   "type": "panel",
   "layer": 5,
