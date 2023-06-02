@@ -904,9 +904,9 @@
       { "panel": { "type": "panel", "size": "$jarak_1"  }},
       { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "UI Version:", "$neko_c.about_b": "1.2.1_ZXA | STABLE"}},
       { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": {"$neko_c.about_a": "ZxynUI Build:","$neko_c.about_b": "15"}},
+      { "about_text@neko_c.about_text": {"$neko_c.about_a": "ZxynUI Build:","$neko_c.about_b": "16"}},
       { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": {"$neko_c.about_a": "Last Update:","$neko_c.about_b": "March, 22 2023"}},
+      { "about_text@neko_c.about_text": {"$neko_c.about_a": "Last Update:","$neko_c.about_b": "June, 2 2023"}},
       { "panel": { "type": "panel", "size": "$jarak_1"  }},
       { "about_text@neko_c.about_text": { "$neko_c.about_a": "Supported Minecraft Versions:","$neko_c.about_b": "1.19.70 / 1.19.71 / 1.19.81"}},
 
@@ -914,9 +914,7 @@
       { "panel": { "type": "panel", "size": "$jarak_2"  }},
       { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "@zxyn404 ( Zxyn )"}},
       { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Instagram:", "$neko_c.about_b": "@zxyn404"}},
-      { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Twitter: ", "$neko_c.about_b": "@zxyn404"}},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Twitter: ", "$neko_c.about_b": "ZxynStudios ( @zxyn404 )"}},
       { "panel": { "type": "panel", "size": "$jarak_2"  }},
       { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "Zxyn404#2753"}},
 
