@@ -1,0 +1,8 @@
+
+{
+  "namespace": "bg_animations", 
+  "core": {"type": "image","fill": true, "bilinear": true},
+  "nomoreanim@core": {"texture": "textures/nekoui/uwu/bg_main"},
+  "bg_play@core": { "texture": "textures/nekoui/uwu/bg_playscreen"},
+  "bg_settings@core": {"alpha": 0.4,"texture": "textures/nekoui/uwu/bg_settings"}
+}

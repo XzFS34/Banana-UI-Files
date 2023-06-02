@@ -1,0 +1,971 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "general_section",
+
+  "gamertag_controls": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%c" ],
+    "offset": [ 0, 1 ],
+    "$spatialPatternsPadding": [ "100%", 8 ],
+    "controls": [
+      {
+        "gamertag_label": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 12 ],
+          "controls": [
+            {
+              "panel_descriptor": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "offset": [ 0, 2 ],
+                "controls": [
+                  {
+                    "label_descriptor": {
+                      "type": "label",
+                      "color": "$main_header_text_color",
+                      "layer": 1,
+                      "text": "options.gamertag",
+                      "locked_alpha": 0.5
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "spacer": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "gamerpic": {
+                "type": "image",
+                "size": [ 12, 12 ],
+                "layer": 1,
+                "bindings": [
+                  {
+                    "binding_name": "#gamerpic_texture_path",
+                    "binding_name_override": "#texture"
+                  },
+                  {
+                    "binding_name": "#gamerpic_texture_location_type",
+                    "binding_name_override": "#texture_file_system"
+                  }
+                ]
+              }
+            },
+            {
+              "spacer_2": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "panel_gamertag": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "offset": [ 0, 2 ],
+                "controls": [
+                  {
+                    "gamertag_label": {
+                      "type": "label",
+                      "color": "$main_header_text_color",
+                      "layer": 1,
+                      "text": "#gamertag_label",
+                      "locked_alpha": 0.5,
+                      "bindings": [
+                        {
+                          "binding_name": "#gamertag_label"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingXboxAccountButtons": {
+          "ignored": "($device_must_be_removed_for_xbl_signin or $fire_tv or not $is_pregame or $disable_gamertag_controls)",
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+
+      {
+        "xboxlive_deep_link_buttons": {
+          "ignored": "($device_must_be_removed_for_xbl_signin or $fire_tv or not $is_pregame or $disable_gamertag_controls)",
+          "type": "panel",
+          "size": [ "100%", "62px + 8px" ],
+          "$manage_button_size|default": [ "50% - 1px", 30 ],
+          "variables": [
+            {
+              "requires": "$is_windows_10_mobile",
+              "$manage_button_size": [ "100%", 30 ]
+            }
+          ],
+          "controls": [
+            {
+              "change_gamertag_button@settings_common.action_button": {
+                "ignored": "($is_windows_10_mobile or $is_ios or $is_android)",
+                "size": [ "50% - 1px", 30 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$pressed_button_name": "change_gamertag_button",
+                "$button_text": "options.changeGamertag"
+              }
+            },
+            {
+              "change_gamertag_button_mobile@settings_common.link_button": {
+                "ignored": "(not ($is_windows_10_mobile or $is_ios or $is_android))",
+                "size": [ "50% - 1px", 30 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+
+                "$button_text": "options.changeGamertag",
+                "property_bag": {
+                  "#hyperlink": "https://social.xbox.com/changegamertag"
+                }
+              }
+            },
+            {
+              "manage_account_button@settings_common.action_button": {
+                "ignored": "($is_ios or $is_android)",
+                "size": "$manage_button_size",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$pressed_button_name": "manage_account_button",
+                "$button_text": "options.manageAccount"
+              }
+            },
+            {
+              "manage_account_button_mobile@settings_common.link_button": {
+                "ignored": "(not ($is_ios or $is_android))",
+                "size": "$manage_button_size",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+
+                "$button_text": "options.manageAccount",
+                "property_bag": {
+                  "#hyperlink": "https://account.xbox.com/Settings"
+                }
+              }
+            },
+
+            // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+            {
+              "paddingManageInvites": {
+                "ignored": "(not $is_holographic and not $fire_tv and not $thirdpartyconsole)",
+                "type": "panel",
+                "size": "$spatialPatternsPadding"
+              }
+            },
+
+            {
+              "manage_invites_popup_button@settings_common.action_button": {
+                "ignored": "(not $is_holographic and not $fire_tv and not $thirdpartyconsole)",
+                "$pressed_button_name": "button.manage_invites_popup",
+                "$button_text": "options.xboxLive.privacyControl",
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right"
+              }
+            },
+
+            // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+            {
+              "paddingXboxSettingsPrivacyControl": {
+                "ignored": "($is_holographic or $fire_tv or $education_edition or $thirdpartyconsole)",
+                "type": "panel",
+                "size": "$spatialPatternsPadding"
+              }
+            },
+
+            {
+              "link_button@settings_common.link_button": {
+                "ignored": "($is_holographic or $fire_tv or $education_edition or $thirdpartyconsole)",
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
+                "$button_text": "options.xboxLive.privacyControl",
+                "$focus_id": "manage_invites",
+                "$focus_override_right": "manage_invites",
+                "property_bag": {
+                  "#hyperlink": "https://account.xbox.com/Settings"
+                }
+              }
+            }
+          ]
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingSignOut": {
+          "ignored": "($build_platform_UWP or not $is_pregame or $requires_xbl_signin_to_play)",
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+
+      {
+        "realms_invites": {
+          "ignored": "(not $is_realms_enabled or not $is_pregame)",
+          "type": "panel",
+          "size": [ "100%", 32 ],
+          "controls": [
+            {
+              "check_realms_invites_button@settings_common.action_button": {
+                "$pressed_button_name": "realms_invites_button",
+                "$button_text": "options.realms.checkInvites",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [ 0, 2 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "sign_out": {
+          "type": "panel",
+          "size": [ "100%", 32 ],
+          "controls": [
+            {
+              "action_button@settings_common.action_button": {
+                "$pressed_button_name": "sign_out_button",
+                "$button_text": "xbox.signOutLong",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [ 0, 2 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "account_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$spatialPatternsPadding": [ "100%", 8 ],
+    "$paddingLineDivider": [ "100%", 16 ],
+    "$hide_login_button": "($win10_edition or not $is_xboxlive_enabled)",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "account_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "use_edu_remember_me@settings_common.option_toggle": {
+          "ignored": "$ignore_profile_sso_toggle",
+          "$option_label": "options.adEduRememberMe",
+          "$option_binding_name": "#ad_edu_remember_me",
+          "$toggle_name": "ad_edu_remember_me"
+        }
+      },
+      {
+        "paddingUseSSO": {
+          "ignored": "$ignore_profile_sso_toggle",
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+
+      {
+        "use_sso@settings_common.option_toggle": {
+          "ignored": "$ignore_profile_sso_toggle",
+          "$option_label": "options.adUseSingleSignOn",
+          "$option_binding_name": "#ad_use_single_sign_on",
+          "$toggle_name": "ad_use_single_sign_on"
+        }
+      },
+      {
+        "switch_accounts@general_section.switch_accounts_panel": {
+          "ignored": "$ignore_profile_switch_account_button"
+        }
+      },
+      {
+        "sign_out@general_section.sign_out_panel": {
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingNameControls": {
+          "ignored": "$education_edition",
+          "type": "panel",
+          "size": "$spatialPatternsPadding",
+          "bindings": [
+            {
+              "binding_name": "#can_change_name",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "name_controls@settings_common.option_custom_control": {
+          "ignored": "$education_edition",
+          "$option_label": "options.name",
+          "$control_name": "general_section.name_controls",
+          "bindings": [
+            {
+              "binding_name": "#can_change_name",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingSignInControls": {
+          "ignored": "$education_edition",
+          "type": "panel",
+          "size": "$spatialPatternsPadding",
+          "bindings": [
+            {
+              "binding_name": "#not_logged_in",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "signin_controls@settings_common.option_custom_control": {
+          "$control_name": "general_section.signin_controls",
+          "ignored": "$education_edition",
+          "bindings": [
+            {
+              "binding_name": "#not_logged_in",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingGamerTagControls": {
+          "type": "panel",
+          "size": "$spatialPatternsPadding",
+          "bindings": [
+            {
+              "binding_name": "#logged_in",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "gamertag_controls@settings_common.option_custom_control": {
+          "$show_option_label": false,
+          "$control_name": "general_section.gamertag_controls",
+          "bindings": [
+            {
+              "binding_name": "#logged_in",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingClearMSAToken": {
+          "ignored": "($education_edition or not $is_pregame or not ($thirdpartyconsole or $is_android or $is_ios))",
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+
+      {
+        "clear_msa_token": {
+          "ignored": "(not ($nx_os and $is_pregame))",
+          "visible": "($nx_os and $is_pregame)",
+          "type": "panel",
+          "size": [ "100%", 32 ],
+          "controls": [
+            {
+              "clear_msa_token_button@settings_common.action_button": {
+                "$pressed_button_name": "button.clear_msa_token_button",
+                "$button_text": "xbox.dev_wrongSandboxSigninFailed.button.clearXbl",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [ 0, 2 ],
+                "bindings": [
+                  {
+                    "binding_name": "#not_logged_in",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+
+      // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
+      {
+        "paddingUnlinkMSAAccount": {
+          "ignored": "((not $is_pregame) or (not $is_ps4))",
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+
+      {
+        "unlink_msa_account@settings_common.action_button": {
+          // (never show in game) AND (never show unless its PS4)
+          "ignored": "((not $is_pregame) or (not $is_ps4))",
+          "$pressed_button_name": "button.unlink_msa",
+          "$button_text": "options.unlink_msa.button",
+          "bindings": [
+            {
+              "binding_name": "#logged_in",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "paddingDeleteAccount": {
+          "ignored": "((not $is_pregame) or (not $is_ios))",
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+      {
+        "delete_account@settings_common.action_button": {
+          // (never show in game) AND (never show unless its iOS)
+          "ignored": "((not $is_pregame) or (not $is_ios))",
+          "$pressed_button_name": "button.delete_account",
+          "$button_text": "options.delete_account.button",
+          "bindings": [
+            {
+              "binding_name": "#logged_in",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "paddingInfoLabels": {
+          "type": "panel",
+          "size": "$spatialPatternsPadding"
+        }
+      },
+      {
+        "device_id_label": {
+          "type": "label",
+          "size": [ "100%", "default" ],
+          "color": "$body_text_color",
+          "offset": [ 2, 0 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "text": "#device_id",
+          "bindings": [
+            {
+              "binding_name": "#device_id"
+            }
+          ]
+        }
+      },
+      {
+        "MinecraftAccount_id_label": {
+          "type": "label",
+          "color": "$body_text_color",
+          "offset": [ 2, 0 ],
+          "size": [ "100%", "default" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "text": "#MinecraftAccount_id",
+          "bindings": [
+            {
+              "binding_name": "#MinecraftAccount_id"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "core_icon": {
+    "type": "image",
+    "size": [ 18, 18 ]
+  },
+
+  "general_icon@core_icon": {
+    "texture": "textures/neko/glyph_icon/general_glyph_color"
+  },
+
+  "account_icon@core_icon": {
+    "texture": "textures/neko/glyph_icon/profile_glyph_color"
+  },
+
+  "accesibility_icon@core_icon": {
+    "texture": "textures/neko/glyph_icon/accessibility_glyph_color"
+  },
+
+  // GENERAL button & section
+  "general_button@settings_common.section_toggle_base_2": {
+    "$toggle_view_binding_name": "general_button_toggle",
+    "$button_content": "general_section.general_icon",
+    "$button_content_size": [ 18, 18 ],
+    "$button_text": "options.general",
+    "$toggle_property_bag": {
+      "#panel_title": "options.generalTitle"
+    }
+  },
+
+    
+  "accessibility_button@settings_common.section_toggle_base_2": {
+    "$toggle_view_binding_name": "accessibility_button_toggle",
+    "$button_content": "general_section.accesibility_icon",
+    "$button_content_size": [ 18, 18 ],
+    "$button_text": "options.accessibility",
+    "$toggle_property_bag": {
+      "#panel_title": "options.accessibility.title"
+    }
+  },
+
+  "account_button@settings_common.section_toggle_base_2": {
+    "size": [ "100%", "45px" ],
+    "$toggle_view_binding_name": "account_button_toggle",
+    "$button_content": "general_section.account_icon",
+    "$button_content_size": [ 18, 18 ],
+    "$button_text": "options.account",
+    "$toggle_property_bag": {
+      "#panel_title": "options.accountTitle"
+    }
+  },
+
+  //Global Texture Pack button & section
+  "global_texture_pack_button@resource_packs.resource_packs_section_toggle_base": {
+    "$toggle_view_binding_name": "global_texture_pack_button_toggle",
+    "$cycling_icon_path": "#cycling_icon_path_global",
+    "$cycling_icon_zip": "#cycling_icon_zip_global",
+    "$cycling_icon_file_system": "#cycling_icon_file_system_global",
+    "$button_text": "menu.globalpacks",
+    "$toggle_property_bag": {
+      "#panel_title": "menu.globalpacks"
+    }
+  },
+
+  "global_texture_pack_section@resource_packs.selected_stack_panel": {
+    "$selected_pack_items": "#selected_pack_items_global",
+    "$available_pack_items": "#available_pack_items_global",
+    "$realms_pack_items": "#realms_pack_items_global",
+    "$unowned_pack_items": "#unowned_pack_items_global",
+    "$selected_grid_dimensions": "#selected_grid_dimensions_global",
+    "$available_grid_dimensions": "#available_grid_dimensions_global",
+    "$realms_grid_dimensions": "#realms_grid_dimensions_global",
+    "$unowned_grid_dimensions": "#unowned_grid_dimensions_global",
+    "$unowned_visible": "#unowned_visible_global",
+    "$button.selected_pack": "button.selected_pack_global",
+    "$button.deselected_pack": "button.deselected_pack_global",
+    "$button.available_pack": "button.available_pack_global",
+    "$button.realms_pack": "button.realms_pack_global",
+    "$button.unowned_pack": "button.unowned_pack_global",
+    "$button.move_left": "button.move_left_global",
+    "$button.sort_up": "button.sort_up_global",
+    "$button.sort_down": "button.sort_down_global",
+    "$button.expand_selected": "button.expand_selected_global",
+    "$button.expand_available": "button.expand_available_global",
+    "$button.expand_realms": "button.expand_realms_global",
+    "$button.expand_unowned": "button.expand_unowned_global",
+    "$button.store": "button.store_global",
+    "$button.read_toggle": "button.read_toggle_global",
+    "$button.report_errors": "button.report_errors_global",
+    "$bottom_description_text": "resourcePack.description.bottom.global",
+    "$selected_label_text": "resourcePack.selected.title.packs",
+    "$available_label_text": "resourcePack.available.title.packs",
+    "$realms_label_text": "resourcePack.realmsPlus.title.packs",
+    "$unowned_label_text": "resourcePack.suggestedContent.title",
+    "$platform_locked": "#platform_locked_global",
+    "$view_more_unowned_content_button_text": "resourcePack.suggestedContent.button.viewMore",
+    "$default_item_texture": "#default_item_texture_global",
+    "$default_item_file_system": "#default_item_file_system_global",
+    "$default_item_zip": "#default_item_zip_global",
+    "$default_item_title": "resourcePack.vanilla.name",
+    "$default_item_description": "resourcePack.vanilla.description",
+    "$no_packs_text": "resourcePack.available.none.text",
+    "$read_more_label": "read_more_label_global",
+    "$read_less_label": "read_less_label_global",
+    "$total_size_binding": "#total_size_binding_global",
+    "$in_game_error_text": "resourcePack.error.ingame.packs",
+    "$invalid_pack_items": "#invalid_pack_items_global",
+    "$invalid_grid_dimensions": "#invalid_grid_dimensions_global",
+    "$button.invalid_pack": "button.invalid_pack_global",
+    "$button.pack_warning": "button.pack_warning_global",
+    "$invalid_label_text": "resourcePack.invalid.title.packs",
+    "$view_in_store": "resourcePack.description.store",
+    "$errors_text": "resourcePack.errors",
+    "$warnings_text": "resourcePack.warnings",
+    "$expired_text": "resourcePack.realmsPlus.expired",
+    "$top_label_box": false,
+    "$show_checkbox": false,
+    "$button.resource_pack_options_exit": "button.resource_pack_options_exit_global",
+    "$button.pack_settings": "button.pack_settings_global",
+    "$button.add": "resourcePack.available.add",
+    "$button.remove": "resourcePack.selected.remove",
+    "$options_slider_name": "content_tier_slider_global",
+    "$display_suggested_content_offers": true,
+    "$suggested_content_offers_collection": "#suggested_offers_collection_global",
+    "$suggested_content_offers_loading_binding": "#suggested_offers_loading_global",
+    "$button.more_suggested_content_offers": "button.more_suggested_content_offers_global",
+    "$button.select_offer": "button.select_offer_global",
+    "$suggested_content_offers_label_text": "#suggested_offers_title_global",
+    "$no_available_packs_visibility_binding": "#no_available_packs_visibility_global",
+    "$no_realms_packs_visibility_binding": "#no_realms_packs_visibility_global",
+    "$no_unowned_packs_visibility_binding": "#no_unowned_packs_visibility_global",
+    "$view_more_unowned_content_button_visibility_binding": "#suggested_content_visible_global",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "global_texture_pack_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  //Storage management button & section
+  "storage_management_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "storage_management_button_toggle",
+    "enabled": "(not $trial)",
+    "visible": "($is_pregame and not $education_edition_china)",
+    "$button_text": "menu.storageManagement",
+    "$glyph_texture": "textures/neko/glyph_icon/storageIcon",
+    "$glyph_color_texture": "textures/neko/glyph_icon/storageIconColor",
+    "$glyph_uv": [ 0, 0 ],
+    "$glyph_size": [ 18, 18 ],
+    "$toggle_property_bag": {
+      "#panel_title": "menu.storageManagement"
+    }
+  },
+
+  // CREATOR button & section
+
+  "creator_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "creator_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/creator_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/creator_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.creator",
+    "$toggle_property_bag": {
+      "#panel_title": "options.creatorTitle"
+    }
+  },
+
+  // VIDEO button & section
+
+  "video_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "video_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/video_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/video_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.video",
+    "$toggle_property_bag": {
+      "#panel_title": "options.videoTitle"
+    }
+  },
+
+  "advanced_video_options_toggle@settings_common.option_toggle_control": {
+    "$toggle_name": "advanced_video_options",
+    "$toggle_state_binding_name": "#advanced_video_options"
+  },
+
+  "video_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$education_ios": "($education_edition and $is_ios)",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "video_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "title_text@neko_c.title_text": {
+          "$neko_c.title.text": "settings.header.video.text"
+        }
+      },
+      {
+        "ui_profile@neko_c.bg_r2": {
+          "color": [ 0.09, 0.13, 0.17 ],
+          "size": [ "100%", "90px" ],
+          "layer": 1,
+          "controls": [
+            {
+              "difficulty_type_uwu": {
+                "type": "stack_panel",
+                "orientation": "vertical",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  { "label_dengan_background@neko_c.label_dengan_background": { "$text_nya_apa": "neko.c.ui_profile.text"}},
+                  { "spacer_02" :  {"type": "panel", "size": [ 2 , 2 ] }},
+                  {
+                    "ui_profile_dropdown@anjim.ui_profile_dropdown": {}
+                  },
+                  { "spacer_03" :  {"type": "panel", "size": [ 2 , 2 ] }}
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "spacer_00" :  {"type": "panel", "size": [ 5 , 5] }},
+      {
+        "gui_scale_slider@settings_common.option_slider": {
+          "ignored": "($is_holographic)",
+          "$option_label": "#gui_scale_slider_label",
+          "$slider_name": "gui_scale",
+          "$slider_value_binding_name": "#gui_scale",
+          "$slider_tts_text_value": "#gui_scale_text_value",
+          "$option_enabled_binding_name": "#gui_scale_enabled",
+          "$slider_steps_binding_name": "#gui_scale_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#gui_scale_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "gui_accessibility_scaling_toggle@settings_common.option_toggle": {
+          "ignored": "(not $win10_edition)",
+          "$option_label": "options.gui.accessibility.scaling",
+          "$option_binding_name": "#gui_accessibility_scaling",
+          "$option_enabled_binding_name": "#gui_accessibility_scaling_enabled",
+          "$toggle_name": "gui_accessibility_scaling",
+          "layer": 1,
+          "controls": [
+            { "accessibility_scaling_option@general_section.accessibility_scaling_option": {} },
+            { "option_generic_core@settings_common.option_generic_core": {} }
+          ]
+        }
+      },
+      {
+        "upscaling_toggle@general_section.upscaling_toggle": {
+          "ignored": "$dev_new_video_settings"
+        }
+      },
+      {
+        "toggle_panel": {
+          "type": "panel",
+          "size": "$neko_size",
+          "variables": [
+            {
+              "requires": "$desktop_screen",
+              "$neko_size": [ "100%", 100  ]
+            },
+            {
+              "requires": "$pocket_screen",
+              "$neko_size": [ "100%", 150  ]
+            }
+          ],
+          "controls": [
+            {
+              "toggle_stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "toggle_1@neko_c.bg_r2": {
+                      "color": [ 0.09, 0.13, 0.17 ],
+                      "layer": 1,
+                      
+                      //   "type": "panel",
+                      "size": [ "100%", "100%" ],
+                      "controls": [
+                        {
+                          "toggle_1_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c" ],
+                            "orientation": "vertical",
+                            "controls": [
+                              {
+                                "fullscreen_toggle@settings_common.option_toggle": {
+                                  "$show_fullscreen_toggle|default": true,
+                                  "visible": "($show_fullscreen_toggle and not $is_holographic)",
+                                  "$option_label": "options.fullscreen",
+                                  "$option_binding_name": "#full_screen",
+                                  "$option_enabled_binding_name": "#full_screen_enabled",
+                                  "$toggle_name": "full_screen"
+                                }
+                              },
+                              {
+                                "option_toggle_screen_animations@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.screenAnimations",
+                                  "$option_binding_name": "#screen_animations",
+                                  "$option_enabled_binding_name": "#screen_animations_enabled",
+                                  "$toggle_name": "screen_animations",
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#screen_animations_visible",
+                                      "binding_name_override": "#visible"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "split_screen_dropdown@settings_common.option_dropdown": {
+                                  "ignored": "(not $can_splitscreen)",
+                                  "$option_label": "options.splitscreen",
+                                  "$dropdown_content": "general_section.split_screen_dropdown_content",
+                                  "$dropdown_area": "content_area",
+                                  "$dropdown_name": "split_screen_dropdown",
+                                  "$option_enabled_binding_name": "#split_screen_dropdown_enabled",
+                                  "$options_dropdown_toggle_label_binding": "#split_screen_dropdown_toggle_label",
+                                  "$dropdown_scroll_content_size": [ "100%", "145%" ]
+                                }
+                              },
+                              {
+                                "auto_save_icon_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.showautosaveicon",
+                                  "$option_binding_name": "#show_auto_save_icon",
+                                  "$option_enabled_binding_name": "#show_auto_save_icon_enabled",
+                                  "$toggle_name": "show_auto_save_icon"
+                                }
+                              },
+                              {
+                                "texel_anti_aliasing_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.texelAA",
+                                  "$option_binding_name": "#texel_aa",
+                                  "$option_enabled_binding_name": "#texel_aa_enabled",
+                                  "$toggle_name": "texel_aa"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "spacer_01" :  {"type": "panel", "size": [ 5 , 5] }},
+      {
+        "rendering_profile_option_slider@settings_common.option_slider": {
+          "ignored": true,
+          "$option_label": "#rendering_profile_slider_label",
+          "$slider_name": "rendering_profile",
+          "$slider_value_binding_name": "#rendering_profile",
+          "$slider_tts_text_value": "#rendering_profile_text_value",
+          "$option_enabled_binding_name": "#rendering_profile_slider_enabled",
+          "$slider_steps_binding_name": "#rendering_profile_steps",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "setup_safe_zone": {
+          "ignored": "(not $supports_user_configured_safezone or (not $is_pregame))",
+          "type": "panel",
+          "size": [ "100%", 32 ],
+          "controls": [
+            {
+              "action_button@settings_common.action_button": {
+                "$pressed_button_name": "setup_safe_zone_button",
+                "$button_text": "options.safeZone.title",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "reset_button@settings_common.action_button": {
+          "ignored": "(not $is_pregame)",
+          "$pressed_button_name": "button.reset_settings",
+          "$button_text": "options.resetSettings",
+          "property_bag": {
+            "reset_group": "video"
+          }
+        }
+      }
+    ]
+  },
+
+  "view_subscriptions_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "view_subscriptions_button_toggle",
+    "enabled": "(not $trial)",
+    "$glyph_texture": "textures/ui/subscription_glyph",
+    "$glyph_color_texture": "textures/ui/subscription_glyph_color",
+    "$glyph_size": [ 15, 13 ],
+    "$button_text": "options.viewSubscriptions",
+    "$toggle_property_bag": {
+      "#panel_title": "options.viewSubscriptions"
+    }
+  },
+
+  // Music and Sound button & section
+
+  "sound_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "sound_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/sound_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/sound_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.sounds",
+    "$toggle_property_bag": {
+      "#panel_title": "options.sounds.title"
+    }
+  },
+
+  // LANGUAGE button & section
+
+  "language_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "language_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/language_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/language_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.language",
+    "$toggle_property_bag": {
+      "#panel_title": "options.language"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "controls_section",
+
+  // Keyboard and Mouse button & section
+
+  "keyboard_and_mouse_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "keyboard_and_mouse_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/keyboard_and_mouse_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/keyboard_and_mouse_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.keyboardAndMouse",
+    "$toggle_property_bag": {
+      "#panel_title": "options.keyboardAndMouseSettings"
+    }
+  },
+
+  // Controller button & section
+
+  "controller_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "controller_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/controller_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/controller_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.controller",
+    "$toggle_property_bag": {
+      "#panel_title": "options.controllerSettings"
+    }
+  },
+
+  // Touch button & section
+
+  "touch_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "touch_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/touch_glyph",
+    "$glyph_color_texture": "textures/neko/glyph_icon/touch_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "options.touch",
+    "$toggle_property_bag": {
+      "#panel_title": "options.touchSettings"
+    }
+  }
+}

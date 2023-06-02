@@ -1,0 +1,14 @@
+/*File made by @Farhan.
+//(c) Jangan gunakan code ini tanpa izin!*/
+
+{
+  "namespace": "x_button",
+
+  "create_new_button_panel@common_buttons.new_ui_binding_button_label": {
+    "layer": 10,
+    "$anchor|default": "middle",
+    "font_type": "MinecraftTen",
+    "font_scale_factor": 1.4,
+    "offset": [ 0 , -1.1 ] //  X , Y
+  }
+}

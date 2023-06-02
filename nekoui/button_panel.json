@@ -1,0 +1,449 @@
+/*File made by @Farhan.
+//(c) Jangan gunakan code ini tanpa izin!*/
+
+{
+  "namespace": "x_button_panel",
+
+  "common_button_panel": {
+    "type": "panel",
+    "$glyph_offset|default": [ 0 , 0 ],
+    "$glyph_anchor_from|default": "center",
+    "$glyph_anchor_to|default": "center",
+    "$button_label_offset|default": [ 0 , -4 ],
+    "layer": 2,
+    "controls": [
+      {
+        "glyph": {
+          "type": "image",
+          "anchor_from": "$glyph_anchor_from",
+          "anchor_to": "$glyph_anchor_to",
+          "offset": "$glyph_offset",
+          "texture": "$glyph_texture",
+          "size": "$glyph_size",
+          "layer": 3,
+          "color": "$glyph_color",
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+      {
+        "title_button_text": {
+          "type": "label",
+          "font_type": "MinecraftTen",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "font_scale_factor": 0.75,
+          "size": [ "100%", "default" ],
+          "text_alignment": "center",
+          "max_size": [ "100% - 20px", "15px" ],
+          "offset": "$button_label_offset",
+          "text": "$button_text",
+          "layer": 3,
+          "color": "$text_color",
+          "alpha": "$content_alpha",
+
+          "$button_text_binding_type|default": "none",
+          "$button_text_grid_collection_name|default": "",
+          "$button_text_binding_condition|default": "none",
+
+          "bindings": [
+            {
+              "binding_type": "$button_text_binding_type",
+              "binding_condition": "$button_text_binding_condition",
+              "binding_collection_name": "$button_text_grid_collection_name",
+              "binding_name": "$button_text",
+              "binding_name_override": "$button_text"
+            }
+          ]
+        }
+      }
+    ]
+  },  
+
+  "main_screen_button": {
+    "type": "panel",
+    "$glyph_anchor_from": "left_middle",
+    "$glyph_anchor_to": "left_middle",
+    "$button_label_offset": [ 27 , -0.1 ],
+    "layer": 5,
+    "controls": [
+      {
+        "glyph": {
+          "type": "image",
+          "anchor_from": "$glyph_anchor_from",
+          "anchor_to": "$glyph_anchor_to",
+          "offset": "$glyph_offset",
+          "texture": "$glyph_texture",
+          "size": "$glyph_size",
+          "layer": 6,
+          "color": "$warna_icon",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$glyph_offset": [ 4 , 0 ],
+              "$warna_icon": "$warna_icon_default"
+            },
+            {
+              "requires": "$hover_state",
+              "$glyph_offset": [ 4 , 2 ],
+              "$warna_icon": "$warna_icon_saatdihover"
+            },
+            {
+              "requires": "$pressed_state",
+              "$glyph_offset": [ 4 , 2 ],
+              "$warna_icon": "$warna_icon_saatditekan"
+            },
+            {
+              "requires": "$locked_state",
+              "$glyph_offset": [ 4 , 0 ],
+              "$warna_icon": "$warna_icon_saatdikunci"
+            }
+          ],
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+      {
+        "tab_button_text": {
+          "type": "label",
+          "font_type": "MinecraftTen",
+          "anchor_from": "middle",
+          "anchor_to": "middle",
+          "font_scale_factor": 0.6,
+          "text_alignment": "center",
+          "size": [ "100% - 25px", "default" ],
+          "max_size": [ "100% - 45px", "15px" ],
+          "offset": [ 0 , -0.1 ],
+          "text": "$button_text",
+          "layer": 3,
+          "color": "$text_color",
+          "alpha": "$han_alpha",
+
+          "$button_text_binding_type|default": "none",
+          "$button_text_grid_collection_name|default": "",
+          "$button_text_binding_condition|default": "none",
+
+          "bindings": [
+            {
+              "binding_type": "$button_text_binding_type",
+              "binding_condition": "$button_text_binding_condition",
+              "binding_collection_name": "$button_text_grid_collection_name",
+              "binding_name": "$button_text",
+              "binding_name_override": "$button_text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "pause_screen_panel": {
+    "type": "panel",
+    "$glyph_anchor_from": "left_middle",
+    "$glyph_anchor_to": "left_middle",
+    "$glyph_offset": [ 4 , 0 ],
+    "$offset_label": [ 28 , -0.1 ],
+    "layer": 5,
+    "controls": [
+      {
+        "glyph": {
+          "type": "image",
+          "anchor_from": "$glyph_anchor_from",
+          "anchor_to": "$glyph_anchor_to",
+          "offset": "$glyph_offset",
+          "texture": "$glyph_texture",
+          "size": "$glyph_size",
+          "layer": 6,
+          "color": "$warna_icon",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$warna_icon": "$warna_icon_default"
+            },
+            {
+              "requires": "$hover_state",
+              "$warna_icon": "$warna_icon_saatdihover"
+            },
+            {
+              "requires": "$pressed_state",
+              "$warna_icon": "$warna_icon_saatdihover"
+            },
+            {
+              "requires": "$locked_state",
+              "$warna_icon": "$warna_icon_saatdihover"
+            }
+          ],
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+      {
+        "tab_button_text": {
+          "type": "label",
+          "font_type": "MinecraftTen",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "font_scale_factor": 0.6,
+          "text_alignment": "left",
+          "size": [ "100%", "default" ],
+          "max_size": [ "100% - 25px", "15px" ],
+          "offset": "$offset_label",
+          "text": "$button_text",
+          "layer": 3,
+          "color": "$text_color",
+          "alpha": "$han_alpha",
+
+          "$button_text_binding_type|default": "none",
+          "$button_text_grid_collection_name|default": "",
+          "$button_text_binding_condition|default": "none",
+
+          "bindings": [
+            {
+              "binding_type": "$button_text_binding_type",
+              "binding_condition": "$button_text_binding_condition",
+              "binding_collection_name": "$button_text_grid_collection_name",
+              "binding_name": "$button_text",
+              "binding_name_override": "$button_text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "main_screen_button_2": {
+    "type": "panel",
+    "$glyph_anchor_from": "left_middle",
+    "$glyph_anchor_to": "left_middle",
+    "$button_label_offset": [ 20 , -0.1 ],
+    "$button_label_offset_a": [ 20 , -0.1 ],
+    "layer": 5,
+    "controls": [
+      {
+        "new_offsers_icon": {
+          "type": "panel",
+          "$enable_store_new_offers|default": false, 
+          "visible": "$enable_store_new_offers",
+          "controls": [
+            {
+              "new_offers_icon@common_store.new_offer_icon": {
+      
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "layer": 11, // This is the lowest layer where the button border won't show through this icon while being pressed
+                "bindings": [
+                  {
+                    "binding_name": "#new_offers",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "glyph": {
+          "type": "image",
+          "anchor_from": "$glyph_anchor_from",
+          "anchor_to": "$glyph_anchor_to",
+          "offset": "$glyph_offset",
+          "texture": "$glyph_texture",
+          "size": "$glyph_size",
+          "layer": 6,
+          "color": "$warna_icon",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$glyph_offset": [ 1 , 0.5 ],
+              "$warna_icon": [ 1.0, 1.0 ,1.0 ]
+            },
+            {
+              "requires": "$hover_state",
+              "$glyph_offset": [ 1 , 0.5 ],
+              "$warna_icon": [ 0.10, 0.10, 0.10]
+            },
+            {
+              "requires": "$pressed_state",
+              "$glyph_offset": [ 1 , 0.5 ],
+              "$warna_icon": "black"
+            },
+            {
+              "requires": "$locked_state",
+              "$glyph_offset":[ 1 , 0.5 ],
+              "$warna_icon": [ 1.00, 0.18, 0.17 ]
+            }
+          ],
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+      {
+        "glyph_line": {
+          "type": "image",
+          "anchor_from": "$glyph_anchor_from",
+          "anchor_to": "$glyph_anchor_to",
+          "offset": "$glyph_offset",
+          "texture": "$glyph_line_texture",
+          "size": "$glyph_line_size",
+          "layer": 6,
+          "color": "$warna_icon",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$glyph_offset": [ 0.5 , 0.5 ],
+              "$warna_icon": [ 1.00, 0.95, 0.09 ]
+            },
+            {
+              "requires": "$hover_state",
+              "$glyph_offset": [ 0.5 , 0.5 ],
+              "$warna_icon": [ 1.00, 1.00, 0.38 ]
+            },
+            {
+              "requires": "$pressed_state",
+              "$glyph_offset": [ 0.5 , 0.5 ],
+              "$warna_icon": [ 0.92, 0.92, 0.00 ]
+            },
+            {
+              "requires": "$locked_state",
+              "$glyph_offset":[ 0.5 , 0.5 ],
+              "$warna_icon": [ 1.00, 0.18, 0.17 ]
+            }
+          ],
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+      {
+        "tab_button_text": {
+          "type": "label",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "font_type": "MinecraftTen",
+          "font_scale_factor": 0.65,
+          "shadow": false,
+          "text_alignment": "left",
+          "size": [ "100% - 25px", "default" ],
+          "max_size": [ "100% - 25px", "10px" ],
+          "offset": "$offset_label",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$offset_label": [ 21 , 0.5 ]
+            },
+            {
+              "requires": "$hover_state",
+              "$offset_label": [ 21 , 0.5 ]
+            },
+            {
+              "requires": "$pressed_state",
+              "$offset_label": [ 21 , 0.5 ]
+            },
+            {
+              "requires": "$locked_state",
+              "$offset_label": [ 21 , 0.5 ]
+            }
+          ],
+          "text": "$button_text",
+          "layer": 3,
+          "color": "$text_color",
+          "alpha": "$han_alpha",
+
+          "$button_text_binding_type|default": "none",
+          "$button_text_grid_collection_name|default": "",
+          "$button_text_binding_condition|default": "none",
+
+          "bindings": [
+            {
+              "binding_type": "$button_text_binding_type",
+              "binding_condition": "$button_text_binding_condition",
+              "binding_collection_name": "$button_text_grid_collection_name",
+              "binding_name": "$button_text",
+              "binding_name_override": "$button_text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "pause_button_panel": {
+    "type": "panel",
+    "$glyph_offset": [ 0 , 0 ],
+    "$glyph_anchor_from": "middle",
+    "$glyph_anchor_to": "middle",
+    "$button_label_offset": [ 0, -7 ],
+    "$button_label_anchor_from": "bottom_middle",
+    "$button_label_anchor_to": "bottom_middle",
+    "layer": 5,
+    "controls": [
+      {
+        "glyph": {
+          "type": "image",
+          "anchor_from": "$glyph_anchor_from",
+          "anchor_to": "$glyph_anchor_to",
+          "offset": "$glyph_offset",
+          "texture": "$glyph_texture",
+          "size": "$glyph_size",
+          "layer": 5,
+          "color": "$warna_glyph",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$warna_glyph": [ 1.0, 1.0, 1.0 ]
+            },
+            {
+              "requires": "$hover_state",
+              "$warna_glyph": [ 0.81, 0.98, 1.00 ]
+            }
+          ],
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+      {
+        "tab_button_text": {
+          "type": "label",
+          "font_type": "MinecraftTen",
+          "anchor_from": "$button_label_anchor_from",
+          "anchor_to": "$button_label_anchor_to",
+          "font_scale_factor": 0.7,
+          "text_alignment": "center",
+          "size": [ "100% - 25px", "default" ],
+          "max_size": [ "100% - 25px", "15px" ],
+          "offset": "$button_label_offset",
+          "text": "$button_text",
+          "layer": 5,
+          "color": "$text_color",
+          "alpha": "$content_alpha",
+
+          "$button_text_binding_type|default": "none",
+          "$button_text_grid_collection_name|default": "",
+          "$button_text_binding_condition|default": "none",
+
+          "bindings": [
+            {
+              "binding_type": "$button_text_binding_type",
+              "binding_condition": "$button_text_binding_condition",
+              "binding_collection_name": "$button_text_grid_collection_name",
+              "binding_name": "$button_text",
+              "binding_name_override": "$button_text"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

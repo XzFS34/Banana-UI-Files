@@ -1,0 +1,35 @@
+{
+  // Alphabetical order please :)
+  "ui_defs": [
+
+
+    // A CUSTOM
+
+    "textures/nekoui/mainui/zxyn_main_ui.json",
+
+    // C u $ T o M J s O ? 1.0
+
+    "textures/nekoui/neko_c.json",
+    "textures/nekoui/neko_bg.json",
+    "textures/nekoui/neko_ingfo.json",
+    "textures/nekoui/neko_anim.json",
+    "textures/nekoui/test_toggle.json",
+
+    // Pengaturan
+    "textures/nekoui/settings/neko_settings_common.json",
+    "textures/nekoui/settings/neko_settings_section.json",
+    "textures/nekoui/settings/neko_custom_radio_settings.json",
+
+    // Menu Utama
+    "textures/nekoui/mainui/neko_main_ui.json",
+    "textures/nekoui/mainui/neko_main_screen.json",
+
+    // Play_screen
+    "textures/nekoui/anim_bg.json",
+    "textures/nekoui/neko_play_screen.json",
+    "textures/nekoui/neko_template_tabs.json",
+    "textures/nekoui/button_panel.json",
+    "textures/nekoui/neko_button.json",
+    "textures/nekoui/button.json"
+  ]
+}

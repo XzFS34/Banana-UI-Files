@@ -1,0 +1,421 @@
+/*File made by @Farhan.
+//(c) Jangan gunakan code ini tanpa izin!*/
+
+{
+  "namespace": "anjim",
+  
+  "world_type": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+        {
+          "world_type": {
+            "type": "stack_panel",
+            "size": [ "100%", "100%" ],
+            "orientation": "horizontal",
+            "controls": [
+              {
+                "flat@world_section.commonx_panel": {
+                  "anchor_from": "center",
+                  "anchor_to": "center",
+                  "controls": [
+                    {
+                      "flat_world_type_toggle@commonx.radio_with_label": {
+                        "size": [ "100% - 1px", "100%" ],
+                      //  "$ukuran_icon_radio": [ "100% - 2px", "40px" ],
+                        "$icon_untuk_radio": "textures/neko/flat_world_icon",
+                        "$toggle_state_binding_name": "#world_type_radio_flat",
+                        "$radio_label_text": "generator.flat"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "infinite@world_section.commonx_panel": {
+                  "anchor_from": "center",
+                  "anchor_to": "center",
+                  "controls": [
+                    {
+                      "infinite_world_type_toggle@commonx.radio_with_label": {
+                        "size": [ "100% - 1px", "100%" ],
+                   //     "$ukuran_icon_radio": [ "100% - 2px", "40px" ],
+                        "$icon_untuk_radio": "textures/neko/infinite_world_icon",
+                        "$toggle_state_binding_name": "#world_type_radio_infinite",
+                        "$radio_label_text": "generator.infinite"
+                      }
+                    }
+                  ]
+                }
+              },
+               /*Uncomment when Large Biome and Amplified world types are implemented
+              {
+                "large_biomees_world_type_toggle@commonx.radio_with_label": {
+                  "size": [ "100%", "30px" ],
+                  "$toggle_state_binding_name": "#world_type_radio_large_biomees",
+                  "$radio_label_text": "generator.largeBiomes"
+                }
+              },
+              {
+                "amplified_world_type_toggle@commonx.radio_with_label": {
+                  "size": [ "100%", "30px" ],
+                  "$toggle_state_binding_name": "#world_type_radio_amplified",
+                  "$radio_label_text": "generator.amplified"
+                }
+              },*/
+              {
+                "old_world_type_toggle@commonx.radio_with_label": {
+                  "ignored": "( $is_publish )",
+                "size": [ "fill", "100%" ],
+                "$icon_untuk_radio": "textures/neko/old_world_icon",
+                "$toggle_state_binding_name": "#world_type_radio_old",
+                "$radio_label_text": "generator.old"
+             }
+          }
+        ]
+      }
+    }
+  ]
+},
+
+  "difficulty_type": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+      "Difficulty": {
+        "type": "stack_panel",
+        "size": [ "100%", "100%" ],
+        "orientation": "horizontal",
+        "controls": [
+          {
+            "peaceful_panel@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "peaceful@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/difficulty_peaceful",
+                    "$toggle_state_binding_name": "#world_difficulty_radio_peaceful",
+                    "$radio_label_text": "options.difficulty.peaceful"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "easy_panel@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "easy@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/difficulty_easy",
+                    "$toggle_state_binding_name": "#world_difficulty_radio_easy",
+                    "$radio_label_text": "options.difficulty.easy"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "normal_panel@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "normal@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/difficulty_normal",
+                    "$toggle_state_binding_name": "#world_difficulty_radio_normal",
+                    "$radio_label_text": "options.difficulty.normal"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "hard_panel@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "hard@commonx.radio_with_label": {
+                    "size": [ "100% -2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/difficulty_hard",
+                    "$toggle_state_binding_name": "#world_difficulty_radio_hard",
+                    "$radio_label_text": "options.difficulty.hard"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+},
+
+  "gamemode_type": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+      "gamemode": {
+        "type": "stack_panel",
+        "size": [ "100%", "100%" ],
+        "orientation": "horizontal",
+        "controls": [
+          {
+            "survival@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "world_survival_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/test_icon",
+                    "$toggle_state_binding_name": "#world_game_mode_radio_survival",
+                    "$radio_label_text": "createWorldScreen.gameMode.survival"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "creative@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "world_creative_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/creative_icon",
+                    "$toggle_state_binding_name": "#world_game_mode_radio_creative",
+                    "$radio_label_text": "createWorldScreen.gameMode.creative"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "adventure@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "world_adventure_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "ignored": "($is_world_create or $trial)",
+                    "$icon_untuk_radio": "textures/neko/adventure_icon",
+                    "$toggle_state_binding_name": "#world_game_mode_radio_adventure",
+                    "$radio_label_text": "createWorldScreen.gameMode.adventure"
+                  }
+                }
+              ]
+            }
+          },
+          { 
+            "spectator@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "player_spectator_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "ignored": "$is_pregame",
+                    "$icon_untuk_radio": "textures/neko/spectator_icon",
+                    "$toggle_state_binding_name": "#player_game_mode_radio_spectator",
+                    "$radio_label_text": "createWorldScreen.gameMode.spectator"
+                  }
+                }
+              ]
+            }
+          } 
+          /*
+          {  # Disable karena fitur ini masih belum ada
+            "hardcore@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "hardcore@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "ignored": "($is_world_create or $trial)",
+                    "$icon_untuk_radio": "textures/neko/adventure_icon",
+                    "$toggle_state_binding_name": "#",
+                    "$radio_label_text": "createWorldScreen.gameMode.hardcore"
+                  }
+                }
+              ]
+            }
+          } */   
+        ]
+      }
+    }
+  ]
+},
+
+  "personal_gamemode_type": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+      "gamemode_2": {
+        "ignored": "$is_pregame",
+        "type": "stack_panel",
+        "size": [ "100%", "100%" ],
+        "orientation": "horizontal",
+        "controls": [
+          {
+            "survival@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "player_survival_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/test_icon",
+                    "$toggle_state_binding_name": "#player_game_mode_radio_survival",
+                    "$radio_label_text": "createWorldScreen.gameMode.survival"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "creative@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "player_creative_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/creative_icon",
+                    "$toggle_state_binding_name": "#player_game_mode_radio_creative",
+                    "$radio_label_text": "createWorldScreen.gameMode.creative"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "adventure@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "player_adventure_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/adventure_icon",
+                    "$toggle_state_binding_name": "#player_game_mode_radio_adventure",
+                    "$radio_label_text": "createWorldScreen.gameMode.adventure"
+                  }
+                } 
+              ]
+            }
+          },
+          {
+            "serverDefault@world_section.commonx_panel": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "controls": [
+                {
+                  "player_default_mode_toggle@commonx.radio_with_label": {
+                    "size": [ "100% - 2px", "100%" ],
+                    "$icon_untuk_radio": "textures/neko/test_icon_default",
+                    "$toggle_state_binding_name": "#player_game_mode_radio_default",
+                    "$radio_label_text": "createWorldScreen.gameMode.serverDefault"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+},
+
+"new_control_scheme": {
+  "type": "stack_panel",
+  "size": [ "100%", "100%" ],
+  "orientation": "horizontal",
+  "controls": [
+    {
+      "classic@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/touch",
+        "$toggle_state_binding_name": "#interactionmodel_radio_touch",
+        "$radio_label_text": "options.interactionmodel.touch"
+      }
+    },
+    {
+      "crosshair@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/crosshair",
+        "$toggle_state_binding_name": "#interactionmodel_radio_crosshair",
+        "$radio_label_text": "options.interactionmodel.crosshair"
+      }
+    }
+  ]
+},
+
+  "ui_profile_dropdown": {
+  "type": "stack_panel",
+  "size": [ "100%", "100%" ],
+  "orientation": "horizontal",
+  "controls": [
+    {
+      "ui_classic@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/classicui",
+        "$toggle_state_binding_name": "#ui_profile_radio_classic",
+        "$radio_label_text": "options.uiprofile.classic"
+      }
+    },
+    {
+      "ui_pocket@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/pocketui",
+        "$toggle_state_binding_name": "#ui_profile_radio_pocket",
+        "$radio_label_text": "options.uiprofile.pocket"
+      }
+    }
+  ]
+},
+
+  "perspective": {
+  "type": "stack_panel",
+  "size": [ "100%", "100%" ],
+  "orientation": "horizontal",
+  "controls": [
+    {
+      "@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/fpp_image",
+        "$toggle_state_binding_name": "#thirdperson_radio_first",
+        "$radio_label_text": "options.thirdperson.firstperson"
+      }
+    },
+    {
+      "@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/tpp_image",
+        "$toggle_state_binding_name": "#thirdperson_radio_third_back",
+        "$radio_label_text": "options.thirdperson.thirdpersonback"
+      }
+    },
+    {
+      "@commonx.radio_with_label": {
+        "size": [ "fill" , "100%" ],
+        "$icon_untuk_radio": "textures/neko/tpf_image",
+        "$toggle_state_binding_name": "#thirdperson_radio_third_front",
+        "$radio_label_text": "options.thirdperson.thirdpersonfront"
+      }
+    }
+  ]
+}
+}

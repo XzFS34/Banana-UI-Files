@@ -1,0 +1,297 @@
+{
+  "namespace": "zxyn",
+
+  "pause_content_button@common_buttons.light_content_button": {
+    "size": [ 23, "100%" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$pressed_alpha": 0.65,
+    "$default_state_border_visible": false,
+    "$hover_state_border_visible": true,
+    "$pressed_state_border_visible": true,
+    "$locked_state_border_visible": false,
+    "$default_button_texture": "",
+    "$hover_button_texture": "",
+    "$pressed_button_texture": "",
+    "$locked_button_texture": ""
+  },
+
+  "pause_main_button@common_buttons.light_text_button": {
+    "size": [ 130, "100% - 2px" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$border_visible": false,
+    "$default_button_texture|default": "textures/neko/borderless/default",
+    "$hover_button_texture|default": "textures/neko/borderless/hover",
+    "$pressed_button_texture|default": "textures/neko/borderless/pressed",
+    "$locked_button_texture|default": "textures/neko/borderless/pressed_no_hover",
+
+    "$default_text_color|default": [ 0.0, 0.0, 0.0 ],
+    "$hover_text_color|default": [ 0.15, 0.15, 0.15 ],
+    "$pressed_text_color|default": [ 1.00, 1.00, 1.00 ],
+    "$locked_text_color|default": [ 1.00, 0.19, 0.29 ]
+  },
+
+  "pause_button_more_button@common_buttons.neko_button_uwu": {
+    "$button_type_panel": "play_ui.custom_button_template",
+    "$default_button_texture": "textures/neko/borderless/default",
+    "$hover_button_texture": "textures/neko/borderless/hover",
+    "$pressed_button_texture": "textures/neko/borderless/pressed",
+    "$locked_button_texture": "textures/neko/borderless/pressed_no_hover",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$border_visible": true,
+    "size": [ "100% - 3px" , "100% - 3px" ],
+    "$glyph_size": [ 30, 30 ],
+  
+  // Warna Teks
+
+    "$default_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$hover_text_color|default": [ 0.81, 0.98, 1.00 ],
+    "$pressed_text_color|default": [ 0.00, 0.82, 0.92 ],
+    "$locked_text_color|default": [ 1.00, 0.19, 0.29 ]
+  }, 
+
+  "fxbutton5@common_buttons.light_content_button": {
+    "$default_button_texture|default": "textures/neko/borderless/core/button_borderless_dark",
+    "$hover_button_texture|default": "textures/neko/borderless/core/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/core/button_borderless_lightpressed",
+    "$locked_button_texture|default": "textures/neko/borderless/core/button_borderless_lightpressednohover",
+    "size": [ 25, "100%"  ],
+    "$locked_state_border_visible": false
+  },
+
+  "ss_fxbutton5@common_buttons.hyperlink_content_button": {
+    "$default_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_dark",
+    "$hover_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_lightpressed",
+    "$locked_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_lightpressednohover",
+    "size": [ 25, "100%"  ],
+    "$locked_state_border_visible": false
+  },
+
+  "core_icon_uwu": {
+    "type": "image",
+    "size": [ 15, 15 ],
+    "color": [ 1.0, 1.0, 1.0 ]  // HITAM
+  },
+
+  "xbox_icon@core_icon_uwu": {
+    "texture": "textures/neko/main_icon/xboxsign"
+  },
+  
+  "settings_icon@core_icon_uwu": {
+    "color": "white",
+    "texture": "textures/neko/main_icon/settings_icon"
+  },
+
+  "feedback@core_icon_uwu": {
+    "texture": "textures/neko/main_icon/feedback_a"
+  },
+
+  "invite_icon@core_icon_uwu": {
+    "texture": "textures/neko/main_icon/invite_pause"
+  },
+
+  "exit_icon@core_icon_uwu": {
+    "texture": "textures/neko/main_icon/exit_icon"
+  },
+
+  "quit_button@zxyn.fxbutton5": {
+    "$button_content": "zxyn.exit_icon",
+    "$pressed_button_name": "button.menu_exit"
+  },
+
+  "settings_button@zxyn.fxbutton5": {
+    "$button_content": "zxyn.settings_icon",
+    "$pressed_button_name": "button.menu_settings"
+  },
+
+  "invite_button@zxyn.fxbutton5": {
+    "$button_content": "zxyn.invite_icon",
+    "$pressed_button_name": "button.menu_invite_notification"
+  },
+
+  "feedback_button@zxyn.fxbutton5": {
+    "$button_content": "zxyn.feedback",
+    "$pressed_button_name": "button.feedback_button_pressed"
+  },
+
+  "login_xbox@zxyn.fxbutton5": {
+    "$button_content": "zxyn.xbox_icon",
+    "$pressed_button_name": "button.signin"
+  },
+
+  "fxbutton4@common_buttons.light_text_button": {
+    "$default_button_texture|default": "",
+    "$hover_button_texture|default": "textures/neko/borderless/core/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/core/button_borderless_lightpressed",
+    "$locked_button_texture|default": "",
+    "$glyph_size": [ 15, 15 ],
+    "$glyph_line_size": [ 16, 16 ],
+    "$glyph_line_texture": "textures/neko/button_icon/line",
+    "size": [ "100%", "100%" ],
+    "$button_type_panel": "x_button_panel.main_screen_button_2",
+    "$border_visible": false,
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$default_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$hover_text_color|default": [ 0.54, 0.80, 1.00  ],
+    "$pressed_text_color|default": [0.15, 0.15, 0.15 ],
+    "$locked_text_color|default": [ 1.00, 0.11, 0.11 ]
+  },
+  
+  "store_button_2@zxyn.fxbutton4": {
+    "$enable_store_new_offers": true,
+    "enabled": "(not $store_disabled and not ($is_ios and $pre_release)))",
+    "$glyph_texture": "textures/neko/button_icon/store_icon",
+    "$pressed_button_name": "button.menu_store",
+    "$button_text": "menu.store",
+    "bindings": [
+      {
+        "binding_name": "(not #marketplace_disabled )",
+        "binding_name_override": "#enabled"
+      },
+      {
+        "binding_name": "#feedback_visible",
+        "binding_name_override": "#enabled" 
+      }
+    ]
+  },
+
+  "settings_button_2@zxyn.fxbutton4": {
+    "$glyph_texture": "textures/neko/button_icon/settings",
+    "$pressed_button_name": "button.menu_settings",
+    "$button_text": "menu.settings"
+  },
+
+  "profile_button@zxyn.fxbutton4": {
+    "$glyph_texture": "textures/neko/button_icon/dressing_room",
+    "$pressed_button_name": "button.menu_skins",
+    "$button_text": "profileScreen.header"
+  },
+
+  "achievements_button_2@zxyn.fxbutton4": {
+    "$glyph_texture": "textures/neko/button_icon/achievement_icon",
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_text": "Achievements",
+    "bindings": [
+      {
+        "binding_name": "#feedback_visible",
+        "binding_name_override": "#enabled" 
+      }
+    ]
+  },
+
+  "alpha_0": {
+    "anim_type": "alpha",
+    "duration": 0.7,
+    "from": 0.9,
+    "to": 0,
+    "next": "@zxyn.nunggu"
+  },
+
+  "alpha_1": {
+    "anim_type": "alpha",
+    "duration": 0.2,
+    "from": 0,
+    "to": 0.9,
+    "next": "@zxyn.alpha_0"
+  },
+
+  "nunggu": {
+    "anim_type": "wait",
+    "duration": 1,
+    "next": "@zxyn.alpha_1"
+  },
+
+  "han_uwu": {
+    "type": "panel",
+    "layer": 5,
+    "controls": [
+      {
+        "glyph": {
+          "type": "image",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": "$glyph_offset",
+          "texture": "textures/neko/button_icon/start",
+          "size": [ 15, 15 ],
+          "layer": 15,
+          "color": "$warna_icon",
+          "variables": [
+            {
+              "requires": "$default_state",
+              "$glyph_offset": [ 1 , 0.5 ],
+              "$warna_icon":  [ 0.09, 0.09, 0.09 ]
+            },
+            {
+              "requires": "$hover_state",
+              "$glyph_offset": [ 1 , 0.5 ],
+              "$warna_icon": [ 0.15, 0.15, 0.15 ]
+            },
+            {
+              "requires": "$pressed_state",
+              "$glyph_offset": [ 1 , 0.5 ],
+              "$warna_icon": [ 0.15, 0.15, 0.15  ]
+            },
+            {
+              "requires": "$locked_state",
+              "$glyph_offset":[ 1 , 0.5 ],
+              "$warna_icon": "white"
+            }
+          ],
+          "alpha": "$content_alpha",
+
+          "$glyph_bindings|default": [],
+          "bindings": "$glyph_bindings"
+        }
+      },
+  /*   {
+        "bg_animation@neko_c.bg_3": {
+          "alpha": "@zxyn.alpha_1",
+          "color": [ 1.0, 1.0, 1.0 ],
+          "layer": 10,
+          "size": [ "100% + 4px", 20 ] //  default : "100% + 4px", 28
+        }
+      },  */
+      {
+        "title": {
+          "layer": 11,
+          "type": "label",
+          "font_type": "MinecraftTen",
+          "font_scale_factor": 1.4,
+          "alpha": "$content_alpha",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "color": "$text_color",
+          "text_alignment": "center",
+          "offset": [ 0 , -1.1 ],
+          "text": "$button_text"
+        }
+      }
+    ]
+  },
+
+  "start_button@common_buttons.light_text_button": {
+    "size": [ "100%", "100%" ],
+    "$button_type_panel": "zxyn.han_uwu",
+    "$quantum_a": "textures/neko/main_icon/start_icon",
+    "$default_text_color|default": [ 0.15, 0.15, 0.15 ],
+    "$hover_text_color|default":  [ 0.15, 0.15, 0.15 ],
+    "$pressed_text_color|default":  [ 0.07, 0.09, 0.09 ],
+    "$locked_text_color|default": [ 0.0, 0.0, 0.0 ],
+    "$border_visible": true,
+
+    "$light_border_default_color": [ 1.0, 1.0, 1.0 ],
+    "$light_border_hover_color": [ 1.0, 1.0, 1.0 ],
+    "$light_border_pressed_color": [ 1.0, 1.0, 1.0  ],
+    "$light_border_locked_color": [ 0.05, 0.05, 0.05 ],
+    "$pressed_button_name": "$play_button_target",
+    "$default_button_texture|default": "textures/neko/uwu_banget",
+    "$hover_button_texture|default": "textures/neko/uwu_banget",
+    "$pressed_button_texture|default": "textures/neko/uwu_banget",
+    "$locked_button_texture|default": "textures/neko/uwu_banget",
+    "$button_text": "menu.play"
+  }
+}

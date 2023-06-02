@@ -1,0 +1,107 @@
+{
+  "namespace": "common_store",
+
+  "store_header_with_coins": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "$store_header_size|default": [ "100%", 25 ],
+    "$is_inventory_screen|default": false,
+    "$ignore_home_button|default": false,
+    "$ignore_inventory_button|default": false,
+    "$ignore_search|default": false,
+    "controls": [
+      {
+        "top_bar@neko_c.neko_header": {
+          "size": "$store_header_size",
+          "focus_container": true,
+          "use_last_focus": false,
+          "focus_wrap_enabled": false,
+          "focus_nagivation_mode_up": "stop",
+          "controls": [
+            { "screen_header_title_panel@neko_c.screen_header_title_panel": { "$screen_header_title_binding_type": "global"} },
+            {
+              "title_stack_panel": {
+                "type": "stack_panel",
+                "size": [ "100%", 25 ],
+                "orientation": "horizontal",
+                "controls": [
+                  {
+                    "padding1": {
+                      "type": "panel",
+                      "size": [ 2, "100%" ]
+                    }
+                  },
+                  {
+                    "a": { "type": "panel", "size": [ 25, "100%" ], "controls": [ { "common_back_button@neko_c.common_back_button": {}}]}
+                  },
+                  {
+                    "b@play_ui.panel_content_button": { "ignored": "($is_on_3p_server or $ignore_search)", "controls": [ { "market_search_button@neko_c.market_search_button": {}}]}
+                  },
+                  {
+                    "padding3": {
+                      "type": "panel",
+                      "size": [ "fill", "100%" ]
+                    }
+                  },
+                  {
+                    "status_and_coins@common_store.status_with_coins": {
+                      "ignored": "$store_disabled",
+                      "$top_status_and_coins_visible_binding_type|default": "none",
+                      "$top_status_and_coins_visible_binding|default": "",
+                      "bindings": [
+                        {
+                          "binding_type": "$top_status_and_coins_visible_binding_type",
+                          "binding_name": "$top_status_and_coins_visible_binding",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding5": {
+                      "type": "panel",
+                      "size": [ 2, "100%" ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "child_control@$child_control": {
+          "size": [ "100%", "fill" ],
+          "layer": 2
+        }
+      }
+    ]
+    },
+
+  "tag": {
+    "type": "image",
+    "$tag_texture|default": "textures/ui/newOffersIcon",
+    "$tag_text|default": "",
+    "texture": "$tag_texture",
+    "size": [ "100%c + 4px", 15 ],
+    "controls": [
+      {
+        "new_offer_label": {
+          "type": "label",
+          "size": [ "default", 10 ],
+          "offset": [ 0, -2.5 ],
+          "text": "$tag_text",
+          "font_type": "MinecraftTen",
+          "font_scale_factor": 0.75,
+          "color": "black",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 1,
+          "tts_name": "accessibility.store.tag",
+          "tts_control_type_order_priority": 1002, // To be read after the button control type
+          "tts_value_order_priority": 1001
+        }
+      }
+    ]
+  }
+}

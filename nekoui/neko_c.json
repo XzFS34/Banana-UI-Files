@@ -1,0 +1,357 @@
+/*File made by @Farhan.
+//(c) Jangan gunakan code ini tanpa izin!*/
+
+
+{
+  "namespace": "neko_c",
+
+
+  "ikon_exit": {
+    "type": "image",
+    "size": [ 14, 14 ],
+    "texture": "textures/neko/main_icon/back_icon",
+    "color": "$warna",
+    "variables": [
+      {
+        "requires": "$default_state",
+        "$warna": [ 0.0, 0.0, 0.0 ]
+      },
+      {
+        "requires": "$hover_state",
+        "$warna": [ 0.0, 0.0, 0.0 ]
+      },
+      {
+        "requires": "$pressed_state",
+        "$warna": [ 0.0, 0.0, 0.0 ]
+      }
+    ]
+  },
+
+  "common_back_button@common_buttons.light_content_button": {
+    "$default_button_texture|default": "",
+    "$hover_button_texture|default": "textures/neko/borderless/core/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/core/button_borderless_lightpressed",
+    "size": [ "100% - 3px", "100% - 3px" ],
+    "$default_state_border_visible": false,
+    "$hover_state_border_visible": false,
+    "$pressed_state_border_visible": false,
+    "$locked_state_border_visible": false,
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$button_content": "neko_c.ikon_exit",
+    "$pressed_button_name": "button.menu_exit"
+  },
+
+  "market_search_button@neko_c.common_back_button": {
+
+    // focus vars
+    "$focus_id": "skin_pack_category_button",
+    "$focus_override_up": "feature_key_art_id",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "ignored": "($is_on_3p_server or $ignore_search)",
+    // button
+    "$button_content": "store_layout.store_layout_ribbon_search_button_content",
+    "$image_texture_path": "textures/ui/spyglass_flat",
+    "$is_search_screen|default": false,
+    "variables": [
+      {
+        "requires": "($is_search_screen or $is_on_3p_server)",
+        "$pressed_button_name": ""
+      },
+      {
+        "requires": "(not $is_search_screen and not $is_on_3p_server)",
+        "$pressed_button_name": "button.search"
+      },
+      {
+        "requires": "($is_search_screen and not $is_on_3p_server)",
+        "$pressed_button_name": "button.close_result_panel"
+      }
+    ]
+  } ,
+
+  "title_text": {
+    "type": "panel",
+    "size": [ "100%", 50 ],
+    "controls": [
+      {
+        "core_label": {
+        "type": "label",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "font_type": "MinecraftTen",
+        "font_scale_factor": 3,
+        "text": "$neko_c.title.text"
+        }
+      }
+    ]
+  },
+
+
+  "ez": {
+    "type": "panel",
+    "size": [ 30 , "100%" ]
+  },
+
+  "back_label": {
+    "type": "label",
+    "layer": 100,
+    "font_type": "MinecraftTen"
+  },
+
+  "panel_tombol_kembali": {
+    "type": "panel",
+    "size": "$ukuran_panel",
+    "$ukuran_panel|default": [ "55%", "100%" ],
+    "$femboy|default": "Kembali Keknya",
+    "$ukuran|default": [ "100%", "default" ],
+    "$warna_fem|default": [ 0.0, 0.0, 0.0 ],
+    "controls": [
+      {
+        "idklah": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "ez@neko_c.ez": { "controls": [ { "back_button@x_button.back_button": {}}]}
+            },
+            {
+              "panel_label": {
+                "type": "panel",
+                "controls": [
+                  {
+                    "back_label@neko_c.back_label": {
+                      "anchor_from": "middle_left",
+                      "anchor_to": "middle_left",
+                      "color": "$warna_fem",
+                      "size": "$ukuran",
+                      "text": "$femboy",
+                      "text_alignment": "left"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ] 
+  },
+
+  "screen_header_title_panel": {
+    "type": "panel",
+    "layer": 1000,
+    "size": [ "100%", 25 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$screen_header_title_visible|default": true,
+    "controls": [
+      {
+        "store_header_title": {
+          "type": "label",
+          "font_scale_factor": 1,
+          "font_type": "MinecraftTen",
+          "color": [ 0.09, 0.13, 0.17 ],
+          "size": [ "100%", 25 ],
+          "offset": [ 0, 5.7 ],
+          "ignored": "(not $screen_header_title_visible)",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "text_alignment": "center",
+          "$screen_header_title|default": "#screen_header_title",
+          "$screen_header_title_binding_type|default": "none",
+          "text": "$screen_header_title",
+          "bindings": [
+            {
+              "binding_type": "$screen_header_title_binding_type",
+              "binding_name": "$screen_header_title",
+              "binding_name_override": "$screen_header_title"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  //bg 
+
+  // Untuk Alpha
+  // >1,0 Semakin Jelas
+  // <1.0 Semakin tidak jelas :V
+
+  "label_dengan_background@neko_c.bg_r2": {
+    "color": [ 1.00, 1.00, 0.00 ],
+    "layer": 4,
+    "size": [ "100%" , 20 ],
+    "alpha": 1,
+    "controls": [
+      {
+        "label": {
+          "type": "label",
+          "text": "$text_nya_apa",
+          "layer": 4,
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "shadow": false,
+          "font_type": "$gaya_font",
+          "$gaya_font|default": "MinecraftTen",
+          "color": [ 0.0, 0.0, 0.0 ],
+          "text_alignment": "center",
+          "size": [ "100% - 5px", "default" ]
+        }
+      }
+    ]
+  },
+
+  "store_top_bar_filler": {
+    "type": "image",
+    "texture": "textures/ui/StoreTopBarFiller",
+    "size": [ "100%", 27 ]
+  },  
+
+  "store_top_bar": {
+    "type": "image",
+    "texture": "textures/ui/StoreTopBar",
+    "size": [ "100%", 27 ]
+  },
+
+  "bg_r": {
+    "type":  "image",
+    "layer": 999,
+    "alpha": 0.75,
+    "texture": "textures/neko/bg/bg_round",
+    "size": [ "100%" , "100%" ]
+  },
+
+  "bg_r2": {
+    "type":  "image",
+    "alpha": 1,
+    "texture": "textures/neko/bg/bg_white_r",
+    "size": [ "100%" , "100%" ]
+  },
+
+  "bg_2": {
+    "type":  "image",
+    "layer": 999,
+    "alpha": 0.75,
+    "texture": "textures/neko/bg/bg",
+    "size": [ "100%" , "100%" ]
+  },
+
+  "bg_3": {
+    "type":  "image",
+    "layer": 999,
+    "alpha": 0.75,
+    "texture": "textures/neko/bg/bg_white",
+    "size": [ "100%" , "100%" ]
+  },
+
+  "neko_header": {
+    "type":  "image",
+    "texture": "textures/neko/bg/bg_header",
+    "size": [ "100%" , "100%" ]
+  },
+
+  ///////////////////////////////////////
+  //
+  // S E T T I N G S
+  //
+  ///////////////////////////////////////
+
+  "about_text@neko_c.bg_r2": {
+    "layer": 10,
+    "color": "$warna",
+    "$warna|default": [ 0.07, 0.09, 0.09 ],
+    "size": [ "100%", "100%c + 5px" ],
+    "controls": [
+      {
+        "stack": {
+          "size": [ "100% - 4px", "100%c + 5px" ],
+          "anchor_from": "middle_right",
+          "anchor_to": "middle_right",
+          "type": "stack_panel",
+          "controls": [
+            {
+              "core_label": {
+              "type": "label",
+              "layer": 11,
+              "color": [ 0.79, 0.90, 1.00 ],
+              "size": [ "100% - 5px" , "default" ],
+              "text_alignment": "left",
+              "font_type": "bahnschrift_semi_bold",
+              "font_scale_factor": 0.5,
+      
+              "text": "$neko_c.about_a"
+              }
+            },
+            {
+              "jarak": {"type": "panel", "size": [ 1.5, 1.5 ]}
+            },
+            {
+              "core_label": {
+              "type": "label",
+              "layer": 11,
+              "color": "white",
+              "size": [ "100% - 5px" , "default" ],
+              "text_alignment": "left",
+
+              "font_type": "$gaya_font",
+              "$gaya_font|default": "bahnschrift_bold",
+
+              "font_scale_factor": "$ukuran_font",
+              "$ukuran_font|default": 0.9,
+
+              "text": "$neko_c.about_b"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "about_label": {
+    "font_type": "MinecraftTen",
+    "type": "label",
+    "font_scale_factor": 1.4,
+    "layer": 10,
+    "color": [ 0.50, 0.82, 1.00 ],
+    "size": [ "100%", "default" ],
+    "max_size": [ "90%", 30 ],
+    "text_alignment": "left",
+    "shadow": false,
+    "offset": [ 5, 0 ]
+  },
+
+  "about_label_title": {
+    "font_type": "bahnschrift_semi_bold",
+    "type": "label",
+    "color": [ 0.50, 0.82, 1.00 ],
+    "layer": 10,
+    "size": [ "100%", "default" ],
+    "max_size": [ "100% - 30px", "100% - 50px" ],
+    "text_alignment": "left",
+    "shadow": false,
+    "offset": [ 5, 0 ]
+  },
+
+  "fxn_label": {
+    "type": "label",
+    "size": [ "100%", "default" ],
+    "text_alignment": "left",
+    "shadow": true
+  },
+
+  "fxn_label_2": {
+    "type": "label",
+    "size": [ "100%", "default" ],
+    "text_alignment": "left",
+    "font_type": "smooth",
+    "font_scale_factor": 1.15,
+    "shadow": true
+  },
+
+  "potato_item": { "layer": 11, "anchor_from": "center", "anchor_to": "center" ,"type": "image", "texture": "textures/neko/logo", "size": [ 200 , 80 ]}
+}

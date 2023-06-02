@@ -1,0 +1,45 @@
+// (c) Mojang. All rights reserved
+// (c) Microsoft. All rights reserved.
+// Custom code created By Farhan ( ZXYN ) (c)NekoUI
+// jangan nyolong ya :D, dan kamu tidak di izinkan untuk menggunakan code UI tanpa izin !
+
+{
+  "namespace": "furnace",
+
+  "quick_loot_furnace@crafting.han_button": {
+    "$default_button_texture|default": "textures/neko/borderless/core/button_borderless_lighthover",
+		"$button_content": "crafting.quick_craft_icon",
+		"property_bag": {
+			"#collection_name": "furnace_output_items", 
+			"#collection_index": 0
+		},
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_select",
+				"to_button_id": "button.container_auto_place",
+				"mapping_type": "pressed"
+			}
+		]
+	},
+
+  "furnace_panel/root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": { "tombol_extra@crafting.tombol_extra": { "$enable_quick_loot": false,"$enable_quick_crafting": false,"$enable_quick_loot_furnace": true,"$enable_quick_loot_anvil": false }}
+      }
+    ]
+  },
+
+  "furnace_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": { "armor_and_heart_render@crafting.armor_and_heart_render": {}}
+      }
+    ]
+  }
+}
+

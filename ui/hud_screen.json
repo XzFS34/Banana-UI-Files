@@ -1,0 +1,423 @@
+{
+  "namespace": "hud",
+
+  // Button Images //
+
+  "buang_1_item": {
+    "type": "image",
+    "size": [ 18, 18 ],
+    "texture": "textures/ui-x/icon-new/drop_1x"
+  },
+
+  "buang_stack_item": {
+    "type": "image",
+    "size": [ 18, 18 ],
+    "texture": "textures/ui-x/icon-new/drop_64x"
+  },
+
+  "des_item": {
+    "type": "image",
+    "size": [ 18, 18 ],
+    "texture": "textures/ui-x/icon-new/des_item"
+  },
+
+  //---------------------------------------------------------------------------
+  // Hud Screen
+  //--------------------------------------------------------------------------
+
+  "exp_progress_bar_and_hotbar": {
+    "type": "panel",
+    "size": [ "100%c", 31 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": "$xp_control_offset",
+    "controls": [
+      {
+        "resizing_xp_bar_with_hotbar": {
+          "type": "panel",
+          "size": [ "100%c", 5 ],
+          "controls": [
+            {
+              "empty_progress_bar@empty_progress_bar": {
+                "size": [ "100%c", 5 ],
+                "layer": 1,
+                "controls": [
+                  {
+                    "full_progress_bar@full_progress_bar": {
+                      "size": [ "100%c + 10px", 5 ],
+                      "layer": 2,
+                      "controls": [
+                        {
+                          "progress_bar_nub@progress_bar_nub": {
+                            "size": [ "100%c - 10px", 5 ],
+                            "max_size": [ 190, 5 ],
+                            "layer": 3,
+                            "controls": [
+                              {
+                                "hotbar@hotbar_chooser": {
+                                  "offset": [ 4, 16 ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "progress_text_label@progress_text_label": {
+                "offset": [ 0, -3 ],
+                "layer": 7
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#show_survival_ui",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      // For when we hide the XP bar in Creative Move we still want to display the HUD
+      {
+        "hotbar@hotbar_chooser": {
+          "offset": [ 4, 16 ],
+          "bindings": [
+            {
+              "binding_name": "#is_creative_mode",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "item_text_factory": {
+          "size": [ 100, 10 ],
+          "type": "factory",
+          "control_ids": {
+            "item_text": "@hud.item_name_text",
+            "jukebox_text": "@hud.jukebox_popup_text"
+          }
+        }
+      }
+    ]
+  },
+
+  "full_progress_bar": {
+    "type": "image",
+    "texture": "textures/gui/experience/full",
+    "clip_direction": "left",
+    "clip_pixelperfect": false,
+    "bindings": [
+      {
+        "binding_name": "#exp_progress",
+        "binding_name_override": "#clip_ratio",
+        "binding_type": "global"
+      }
+    ]
+  },
+
+  "empty_progress_bar": {
+    "type": "image",
+    "texture": "textures/gui/experience/empty"
+  },
+
+  /// A
+
+  "render_a": {"type": "custom","size": [ 17 , 17 ],"renderer": "inventory_item_renderer","property_bag": {"#item_id_aux": 22740992}},
+  "render_b@render_a": {"property_bag": {"#item_id_aux": 22609920}},
+  "render_c@render_a": { "visible": false, "property_bag": {"#item_id_aux": 42598400}},
+
+  /// B
+
+  "progress_text_label": { "type": "label","shadow": true,"text": "#level_number","color": "$experience_text_color","anchor_from": "top_middle","anchor_to": "bottom_middle","bindings": [{"binding_name": "#level_number","binding_type": "global"},{"binding_type": "view","source_property_name": "( #level_number > 0 )","target_property_name": "#visible"}]},
+  "label_persen": {"type": "label","localize": false,"font_scale_factor": 0.75, "text_alignment": "center","anchor_from": "center","anchor_to": "center","text": "$a_batu",
+  "bindings": [ {"binding_name": "#exp_progress","binding_type": "global"},{"binding_type": "view","source_property_name": "((( #exp_progress > $minimal_xp ) and ( #exp_progress < $maksimal_xp )) or ( #exp_progress = $minimal_xp ))","target_property_name": "#visible"}]},
+
+  "test_panel_2": {
+    "type": "panel","offset": [ 3, -3  ],"size": [ "100%c" , "100%c" ],"anchor_from": "bottom_left","anchor_to": "bottom_left","controls": [{"test_stack_panel": {"type": "stack_panel","size": [ "100%c + 3px" , "100%c" ],"orientation": "vertical","controls": [{"level_label": {"type": "stack_panel","size": [ "100%c" , 10 ],"orientation": "horizontal","controls": [{ "yae@hud.label_persen": {"$a_batu": "Level: ","$minimal_xp": 0,"$maksimal_xp": 1}},
+  { "progress_text_label": {"type": "label","text_alignment": "center","text": "#level_number","font_scale_factor": 0.75,"color": [ 0.70, 0.89, 1.00 ],"anchor_from": "top_middle","anchor_to": "bottom_middle","bindings": [{"binding_name": "#level_number","binding_type": "global"}, {"binding_type": "view","source_property_name": "( #level_number > 0 )","target_property_name": "#visible"}]}}]}},
+  { "xp_progress": {"type": "stack_panel","size": [ "100%c" , 10 ],"orientation": "horizontal","controls": [
+  {"yae@hud.label_persen": {"$a_batu": "Progress: ","$minimal_xp": 0,"$maksimal_xp": 1}},
+
+  // 100 - 80
+  {"yae2@hud.label_persen": {"$a_batu": "100%","$minimal_xp": 0,"$maksimal_xp": 0.1}},
+  {"yae3@hud.label_persen": {"$a_batu": "99%","$minimal_xp": 0.11,"$maksimal_xp": 0.12}},
+  {"yae4@hud.label_persen": {"$a_batu": "98%","$minimal_xp": 0.12,"$maksimal_xp": 0.13}},
+  {"yae5@hud.label_persen": {"$a_batu": "97%","$minimal_xp": 0.13,"$maksimal_xp": 0.14}},
+  {"yae6@hud.label_persen": {"$a_batu": "96%","$minimal_xp": 0.14,"$maksimal_xp": 0.15}},
+  {"yae7@hud.label_persen": {"$a_batu": "95%","$minimal_xp": 0.15,"$maksimal_xp": 0.16}},
+  {"yae8@hud.label_persen": {"$a_batu": "94%","$minimal_xp": 0.16,"$maksimal_xp": 0.17}},
+  {"yae9@hud.label_persen": {"$a_batu": "93%","$minimal_xp": 0.17,"$maksimal_xp": 0.18}},
+  {"yae10@hud.label_persen": {"$a_batu": "92%","$minimal_xp": 0.18,"$maksimal_xp": 0.19}},
+  {"yae11@hud.label_persen": {"$a_batu": "91%","$minimal_xp": 0.19,"$maksimal_xp": 0.20}},
+  {"yae12@hud.label_persen": {"$a_batu": "90%","$minimal_xp": 0.20,"$maksimal_xp": 0.21}},
+  {"yae13@hud.label_persen": {"$a_batu": "89%","$minimal_xp": 0.21,"$maksimal_xp": 0.22}},
+  {"yae14@hud.label_persen": {"$a_batu": "88%","$minimal_xp": 0.22,"$maksimal_xp": 0.23}},
+  {"yae15@hud.label_persen": {"$a_batu": "87%","$minimal_xp": 0.23,"$maksimal_xp": 0.24}},
+  {"yae16@hud.label_persen": {"$a_batu": "86%","$minimal_xp": 0.24,"$maksimal_xp": 0.25}},
+  {"yae17@hud.label_persen": {"$a_batu": "85%","$minimal_xp": 0.25,"$maksimal_xp": 0.26}},
+  {"yae18@hud.label_persen": {"$a_batu": "84%","$minimal_xp": 0.26,"$maksimal_xp": 0.27}},
+  {"yae19@hud.label_persen": {"$a_batu": "83%","$minimal_xp": 0.27,"$maksimal_xp": 0.28}},
+  {"yae20@hud.label_persen": {"$a_batu": "82%","$minimal_xp": 0.28,"$maksimal_xp": 0.29}},
+  {"yae21@hud.label_persen": {"$a_batu": "81%","$minimal_xp": 0.29,"$maksimal_xp": 0.30}},
+  {"yae22@hud.label_persen": {"$a_batu": "80%","$minimal_xp": 0.30,"$maksimal_xp": 0.31}},
+
+  // 80 - 60
+  {"venti1@hud.label_persen": {"$a_batu": "79%","$minimal_xp": 0.31,"$maksimal_xp": 0.32}},
+  {"venti2@hud.label_persen": {"$a_batu": "78%","$minimal_xp": 0.32,"$maksimal_xp": 0.33}},
+  {"venti3@hud.label_persen": {"$a_batu": "77%","$minimal_xp": 0.33,"$maksimal_xp": 0.34}},
+  {"venti4@hud.label_persen": {"$a_batu": "76%","$minimal_xp": 0.34,"$maksimal_xp": 0.35}},
+  {"venti5@hud.label_persen": {"$a_batu": "75%","$minimal_xp": 0.35,"$maksimal_xp": 0.36}},
+  {"venti6@hud.label_persen": {"$a_batu": "74%","$minimal_xp": 0.36,"$maksimal_xp": 0.37}},
+  {"venti7@hud.label_persen": {"$a_batu": "73%","$minimal_xp": 0.37,"$maksimal_xp": 0.38}},
+  {"venti8@hud.label_persen": {"$a_batu": "72%","$minimal_xp": 0.38,"$maksimal_xp": 0.39}},
+  {"venti9@hud.label_persen": {"$a_batu": "71%","$minimal_xp": 0.39,"$maksimal_xp": 0.40}},
+  {"venti10@hud.label_persen": {"$a_batu": "70%","$minimal_xp": 0.40,"$maksimal_xp": 0.41}},
+  {"venti11@hud.label_persen": {"$a_batu": "69%","$minimal_xp": 0.41,"$maksimal_xp": 0.42}},
+  {"venti12@hud.label_persen": {"$a_batu": "68%","$minimal_xp": 0.42,"$maksimal_xp": 0.43}},
+  {"venti13@hud.label_persen": {"$a_batu": "67%","$minimal_xp": 0.43,"$maksimal_xp": 0.44}},
+  {"venti14@hud.label_persen": {"$a_batu": "66%","$minimal_xp": 0.44,"$maksimal_xp": 0.45}},
+  {"venti15@hud.label_persen": {"$a_batu": "65%","$minimal_xp": 0.45,"$maksimal_xp": 0.46}},
+  {"venti16@hud.label_persen": {"$a_batu": "64%","$minimal_xp": 0.46,"$maksimal_xp": 0.47}},
+  {"venti17@hud.label_persen": {"$a_batu": "63%","$minimal_xp": 0.47,"$maksimal_xp": 0.48}},
+  {"venti18@hud.label_persen": {"$a_batu": "62%","$minimal_xp": 0.48,"$maksimal_xp": 0.49}},
+  {"venti19@hud.label_persen": {"$a_batu": "61%","$minimal_xp": 0.49,"$maksimal_xp": 0.50}},
+  {"venti20@hud.label_persen": {"$a_batu": "60%","$minimal_xp": 0.50,"$maksimal_xp": 0.51}},
+
+  // 60 - 40
+  {"hutao1@hud.label_persen": {"$a_batu": "59%","$minimal_xp": 0.51,"$maksimal_xp": 0.52}},
+  {"hutao2@hud.label_persen": {"$a_batu": "58%","$minimal_xp": 0.52,"$maksimal_xp": 0.53}},
+  {"hutao3@hud.label_persen": {"$a_batu": "57%","$minimal_xp": 0.53,"$maksimal_xp": 0.54}},
+  {"hutao4@hud.label_persen": {"$a_batu": "56%","$minimal_xp": 0.54,"$maksimal_xp": 0.55}},
+  {"hutao5@hud.label_persen": {"$a_batu": "55%","$minimal_xp": 0.55,"$maksimal_xp": 0.56}},
+  {"hutao6@hud.label_persen": {"$a_batu": "54%","$minimal_xp": 0.56,"$maksimal_xp": 0.57}},
+  {"hutao7@hud.label_persen": {"$a_batu": "53%","$minimal_xp": 0.57,"$maksimal_xp": 0.58}},
+  {"hutao8@hud.label_persen": {"$a_batu": "52%","$minimal_xp": 0.58,"$maksimal_xp": 0.59}},
+  {"hutao9@hud.label_persen": {"$a_batu": "51%","$minimal_xp": 0.59,"$maksimal_xp": 0.60}},
+  {"hutao10@hud.label_persen": {"$a_batu": "50%","$minimal_xp": 0.60,"$maksimal_xp": 0.61}},
+  {"hutao11@hud.label_persen": {"$a_batu": "49%","$minimal_xp": 0.61,"$maksimal_xp": 0.62}},
+  {"hutao12@hud.label_persen": {"$a_batu": "48%","$minimal_xp": 0.62,"$maksimal_xp": 0.63}},
+  {"hutao13@hud.label_persen": {"$a_batu": "47%","$minimal_xp": 0.63,"$maksimal_xp": 0.64}},
+  {"hutao14@hud.label_persen": {"$a_batu": "46%","$minimal_xp": 0.64,"$maksimal_xp": 0.65}},
+  {"hutao15@hud.label_persen": {"$a_batu": "45%","$minimal_xp": 0.65,"$maksimal_xp": 0.66}},
+  {"hutao16@hud.label_persen": {"$a_batu": "44%","$minimal_xp": 0.66,"$maksimal_xp": 0.67}},
+  {"hutao17@hud.label_persen": {"$a_batu": "42%","$minimal_xp": 0.67,"$maksimal_xp": 0.68}},
+  {"hutao18@hud.label_persen": {"$a_batu": "41%","$minimal_xp": 0.68,"$maksimal_xp": 0.69}},
+  {"hutao19@hud.label_persen": {"$a_batu": "40%","$minimal_xp": 0.69,"$maksimal_xp": 0.70}},
+
+  // 40 - 20
+  {"zhongli1@hud.label_persen": {"$a_batu": "40%","$minimal_xp": 0.70,"$maksimal_xp": 0.71}},
+  {"zhongli2@hud.label_persen": {"$a_batu": "39%","$minimal_xp": 0.71,"$maksimal_xp": 0.72}},
+  {"zhongli3@hud.label_persen": {"$a_batu": "38%","$minimal_xp": 0.72,"$maksimal_xp": 0.73}},
+  {"zhongli4@hud.label_persen": {"$a_batu": "37%","$minimal_xp": 0.73,"$maksimal_xp": 0.74}},
+  {"zhongli5@hud.label_persen": {"$a_batu": "36%","$minimal_xp": 0.74,"$maksimal_xp": 0.75}},
+  {"zhongli6@hud.label_persen": {"$a_batu": "35%","$minimal_xp": 0.75,"$maksimal_xp": 0.76}},
+  {"zhongli7@hud.label_persen": {"$a_batu": "34%","$minimal_xp": 0.76,"$maksimal_xp": 0.77}},
+  {"zhongli8@hud.label_persen": {"$a_batu": "33%","$minimal_xp": 0.77,"$maksimal_xp": 0.78}},
+  {"zhongli9@hud.label_persen": {"$a_batu": "32%","$minimal_xp": 0.78,"$maksimal_xp": 0.79}},
+  {"zhongli10@hud.label_persen": {"$a_batu": "31%","$minimal_xp": 0.79,"$maksimal_xp": 0.80}},
+  {"zhongli11@hud.label_persen": {"$a_batu": "30%","$minimal_xp": 0.80,"$maksimal_xp": 0.81}},
+  {"zhongli12@hud.label_persen": {"$a_batu": "29%","$minimal_xp": 0.81,"$maksimal_xp": 0.82}},
+  {"zhongli13@hud.label_persen": {"$a_batu": "28%","$minimal_xp": 0.82,"$maksimal_xp": 0.83}},
+  {"zhongli14@hud.label_persen": {"$a_batu": "27%","$minimal_xp": 0.83,"$maksimal_xp": 0.84}},
+  {"zhongli15@hud.label_persen": {"$a_batu": "26%","$minimal_xp": 0.84,"$maksimal_xp": 0.85}},
+  {"zhongli16@hud.label_persen": {"$a_batu": "25%","$minimal_xp": 0.85,"$maksimal_xp": 0.86}},
+  {"zhongli17@hud.label_persen": {"$a_batu": "24%","$minimal_xp": 0.86,"$maksimal_xp": 0.87}},
+  {"zhongli18@hud.label_persen": {"$a_batu": "23%","$minimal_xp": 0.87,"$maksimal_xp": 0.88}},
+  {"zhongli19@hud.label_persen": {"$a_batu": "22%","$minimal_xp": 0.88,"$maksimal_xp": 0.89}},
+  {"zhongli20@hud.label_persen": {"$a_batu": "21%","$minimal_xp": 0.89,"$maksimal_xp": 0.90}},
+  {"zhongli21@hud.label_persen": {"$a_batu": "20%","$minimal_xp": 0.90,"$maksimal_xp": 0.91}},
+
+  // 20 - 0
+  {"apalaginjir1@hud.label_persen": {"$a_batu": "19%","$minimal_xp": 0.91,"$maksimal_xp": 0.92}},
+  {"apalaginjir2@hud.label_persen": {"$a_batu": "18%","$minimal_xp": 0.92,"$maksimal_xp": 0.93}},
+  {"apalaginjir3@hud.label_persen": {"$a_batu": "17%","$minimal_xp": 0.93,"$maksimal_xp": 0.94}},
+  {"apalaginjir4@hud.label_persen": {"$a_batu": "16%","$minimal_xp": 0.94,"$maksimal_xp": 0.95}},
+  {"apalaginjir5@hud.label_persen": {"$a_batu": "15%","$minimal_xp": 0.95,"$maksimal_xp": 0.952}},
+  {"apalaginjir6@hud.label_persen": {"$a_batu": "14%","$minimal_xp": 0.952,"$maksimal_xp": 0.954}},
+  {"apalaginjir7@hud.label_persen": {"$a_batu": "13%","$minimal_xp": 0.954,"$maksimal_xp": 0.956}},
+  {"apalaginjir8@hud.label_persen": {"$a_batu": "12%","$minimal_xp": 0.956,"$maksimal_xp": 0.958}},
+  {"apalaginjir9@hud.label_persen": {"$a_batu": "11%","$minimal_xp": 0.958,"$maksimal_xp": 0.960}},
+  {"apalaginjir10@hud.label_persen": {"$a_batu": "10%","$minimal_xp": 0.960,"$maksimal_xp": 0.962}},
+  {"apalaginjir11@hud.label_persen": {"$a_batu": "9%","$minimal_xp": 0.962,"$maksimal_xp": 0.964}},
+  {"apalaginjir12@hud.label_persen": {"$a_batu": "8%","$minimal_xp": 0.964,"$maksimal_xp": 0.968}},
+  {"apalaginjir13@hud.label_persen": {"$a_batu": "7%","$minimal_xp": 0.968,"$maksimal_xp": 0.970}},
+  {"apalaginjir14@hud.label_persen": {"$a_batu": "6%","$minimal_xp": 0.970,"$maksimal_xp": 0.972}},
+  {"apalaginjir15@hud.label_persen": {"$a_batu": "5%","$minimal_xp": 0.972,"$maksimal_xp": 0.974}},
+  {"apalaginjir16@hud.label_persen": {"$a_batu": "4%","$minimal_xp": 0.974,"$maksimal_xp": 0.976}},
+  {"apalaginjir17@hud.label_persen": {"$a_batu": "3%","$minimal_xp": 0.976,"$maksimal_xp": 0.978}},
+  {"apalaginjir18@hud.label_persen": {"$a_batu": "2%","$minimal_xp": 0.978,"$maksimal_xp": 0.980}},
+  {"apalaginjir19@hud.label_persen": {"$a_batu": "1%","$minimal_xp": 0.980,"$maksimal_xp": 0.999}},
+  {"apalaginjir20@hud.label_persen": {"$a_batu": "0%","$minimal_xp": 0.999,"$maksimal_xp": 1.0}}]}}]}}]},
+
+  "render_jam_dan_kompass": { "type": "panel","size": [ "100%c" , 20 ],"offset": [ "-15%" , -2 ],"anchor_from": "bottom_right","anchor_to": "bottom_right","bindings": [{"binding_type": "view","source_control_name": "render_jam","source_property_name": "( not #toggle_state )","target_property_name": "#visible"}],"controls": [
+  {"render_jam_dan_kompass": {"type": "stack_panel","size": [ "100%c" , 20 ],"orientation": "horizontal","anchor_from": "bottom_right","anchor_to": "bottom_right","controls": [
+  {"jam@hud.render_a": {}}, {"kompass@hud.render_b": {}}, {"render_rkompas@hud.render_c": {}}]}}]},
+
+  "core_icon": { "type": "image", "size": [ 15, 15 ], "color": "$custom_color", "variables": [ { "requires": "$default_state", "$custom_color": [ 1.00, 1.00, 1.00 ]}, { "requires": "$hover_state", "$custom_color": [ 0.70, 0.89, 1.00 ]}, { "requires": "$pressed_state", "$custom_color": [ 0.0, 0.0, 0.0 ]}]},
+  
+  "left@core_icon": {"texture": "textures/neko/main_icon/hotbar_helper_left"},
+  "right@core_icon": { "texture": "textures/neko/main_icon/hotbar_helper_right"},
+  "core_button@common_buttons.light_content_button": { "$focus_id|default": "","$focus_override_down|default": "","$focus_override_up|default": "","$focus_override_left|default": "","$focus_override_right|default": "","focus_identifier": "$focus_id","focus_change_down": "$focus_override_down","focus_change_up": "$focus_override_up","focus_change_left": "$focus_override_left","focus_change_right": "$focus_override_right","focus_enabled": true, "button_mappings": [{"from_button_id": "button.menu_select","to_button_id": "$pressed_button_name","mapping_type": "pressed"}], "bindings": [{ "binding_type": "view","source_control_name": "render_hotbar_helper","source_property_name": "( not #toggle_state )","target_property_name": "#visible"}],"size": [ 20, 20 ]},
+
+  "hotbar_panel": {"modifications": [ 
+  { "array_name": "controls","operation": "insert_back","value": {"right_button@hud.core_button": { "ignored": "", "$pressed_button_name": "button.hotbar_inventory_right", "$button_content": "hud.left" }}},
+  { "array_name": "controls","operation": "insert_front","value": {"right_button@hud.core_button": { "ignored": "", "$pressed_button_name": "button.hotbar_inventory_left", "$button_content": "hud.right" }}}]},
+
+
+  //Terimaksih yang sudah mendownload NekoUI :D
+
+  "kordinat_player@neko_c.bg_r": {
+    "size": [ "100%c + 5px", "100%c" ],
+    "offset": [ 0, 20 ],
+    "alpha": 0.6,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "player_position_text": {
+          "type": "label",
+          "text": "#text",
+          "font_type": "smooth",
+          "bindings": [
+            {
+              "binding_name": "#player_position_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            },
+            {
+              "binding_name": "#player_position_text",
+              "binding_name_override": "#text",
+              "binding_condition": "always_when_visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "hud_screen@common.base_screen": {
+    "always_accepts_input": true,
+    "button_mappings": [
+      {
+        "from_button_id": "button.scoreboard",
+        "to_button_id": "button.scoreboard",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.inventory_left",
+        "to_button_id": "button.hotbar_inventory_left",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.inventory_right",
+        "to_button_id": "button.hotbar_inventory_right",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.hide_gui",
+        "to_button_id": "button.hide_gui_all",
+        "mapping_type": "double_pressed"
+      },
+      {
+        "from_button_id": "button.hide_tooltips",
+        "to_button_id": "button.hide_tooltips_hud",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.hide_paperdoll",
+        "to_button_id": "button.hide_paperdoll_hud",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot1",
+        "to_button_id": "button.slot_1",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot2",
+        "to_button_id": "button.slot_2",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot3",
+        "to_button_id": "button.slot_3",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot4",
+        "to_button_id": "button.slot_4",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot5",
+        "to_button_id": "button.slot_5",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot6",
+        "to_button_id": "button.slot_6",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot7",
+        "to_button_id": "button.slot_7",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot8",
+        "to_button_id": "button.slot_8",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot9",
+        "to_button_id": "button.slot_9",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.slot0",
+        "to_button_id": "button.slot_0",
+        "mapping_type": "global"
+      }
+    ]
+  },
+
+  "test_panel_2@hud.test_panel_2": {},
+  "render_jam_dan_kompass@hud.render_jam_dan_kompass": {},
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [{ "test_panel_2@hud.test_panel_2": {}}] 
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [{ "kordinat_player@hud.kordinat_player": {}}] 
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [{ "render_jam_dan_kompass@hud.render_jam_dan_kompass": {}}] 
+      },
+      {
+        "array_name": "controls",
+        "operation": "remove",
+        "where": [{ "player_position@hud.player_position": {}}] 
+      },
+      {
+        "array_name": "controls",
+        "operation": "remove",
+        "where": [{"emote_expediate_helpers@hud.emote_expediate_helpers": {}}] 
+      }
+    ]
+  }
+}

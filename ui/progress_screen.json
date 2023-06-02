@@ -1,0 +1,582 @@
+{
+  "namespace": "progress",
+
+"label_persen": {"anchor_from": "bottom_middle", "anchor_to": "bottom_middle", "offset": [ 0, -30 ], "localize": false,"font_type": "smooth", "font_size": "large","type": "label","text": "$neko",
+"bindings": [{"binding_name": "#loading_bar_percentage"},{"binding_type": "view","source_property_name": "((( #loading_bar_percentage > $persentase_min ) and ( #loading_bar_percentage < $persentase_maks )) or ( #loading_bar_percentage = $persentase_min ))","target_property_name": "#visible"}]},
+ 
+
+ "persen_panel": {
+  
+  "type": "panel",
+  "controls": [
+            // 100 - 80
+ {"yae2@progress.label_persen": {"$neko": "100% YEAY!","$persentase_min": 0,"$persentase_maks": 0.1}},
+ {"yae3@progress.label_persen": {"$neko": "99%","$persentase_min": 0.11,"$persentase_maks": 0.12}},
+ {"yae4@progress.label_persen": {"$neko": "98%","$persentase_min": 0.12,"$persentase_maks": 0.13}},
+ {"yae5@progress.label_persen": {"$neko": "97%","$persentase_min": 0.13,"$persentase_maks": 0.14}},
+ {"yae6@progress.label_persen": {"$neko": "96%","$persentase_min": 0.14,"$persentase_maks": 0.15}},
+ {"yae7@progress.label_persen": {"$neko": "95%","$persentase_min": 0.15,"$persentase_maks": 0.16}},
+ {"yae8@progress.label_persen": {"$neko": "94%","$persentase_min": 0.16,"$persentase_maks": 0.17}},
+ {"yae9@progress.label_persen": {"$neko": "93%","$persentase_min": 0.17,"$persentase_maks": 0.18}},
+ {"yae10@progress.label_persen": {"$neko": "92%","$persentase_min": 0.18,"$persentase_maks": 0.19}},
+ {"yae11@progress.label_persen": {"$neko": "91%","$persentase_min": 0.19,"$persentase_maks": 0.20}},
+ {"yae12@progress.label_persen": {"$neko": "90%","$persentase_min": 0.20,"$persentase_maks": 0.21}},
+ {"yae13@progress.label_persen": {"$neko": "89%","$persentase_min": 0.21,"$persentase_maks": 0.22}},
+ {"yae14@progress.label_persen": {"$neko": "88%","$persentase_min": 0.22,"$persentase_maks": 0.23}},
+ {"yae15@progress.label_persen": {"$neko": "87%","$persentase_min": 0.23,"$persentase_maks": 0.24}},
+ {"yae16@progress.label_persen": {"$neko": "86%","$persentase_min": 0.24,"$persentase_maks": 0.25}},
+ {"yae17@progress.label_persen": {"$neko": "85%","$persentase_min": 0.25,"$persentase_maks": 0.26}},
+ {"yae18@progress.label_persen": {"$neko": "84%","$persentase_min": 0.26,"$persentase_maks": 0.27}},
+ {"yae19@progress.label_persen": {"$neko": "83%","$persentase_min": 0.27,"$persentase_maks": 0.28}},
+ {"yae20@progress.label_persen": {"$neko": "82%","$persentase_min": 0.28,"$persentase_maks": 0.29}},
+ {"yae21@progress.label_persen": {"$neko": "81%","$persentase_min": 0.29,"$persentase_maks": 0.30}},
+ {"yae22@progress.label_persen": {"$neko": "80%","$persentase_min": 0.30,"$persentase_maks": 0.31}},
+
+ // 80 - 60
+ {"venti1@progress.label_persen": {"$neko": "79%","$persentase_min": 0.31,"$persentase_maks": 0.32}},
+ {"venti2@progress.label_persen": {"$neko": "78%","$persentase_min": 0.32,"$persentase_maks": 0.33}},
+ {"venti3@progress.label_persen": {"$neko": "77%","$persentase_min": 0.33,"$persentase_maks": 0.34}},
+ {"venti4@progress.label_persen": {"$neko": "76%","$persentase_min": 0.34,"$persentase_maks": 0.35}},
+ {"venti5@progress.label_persen": {"$neko": "75%","$persentase_min": 0.35,"$persentase_maks": 0.36}},
+ {"venti6@progress.label_persen": {"$neko": "74%","$persentase_min": 0.36,"$persentase_maks": 0.37}},
+ {"venti7@progress.label_persen": {"$neko": "73%","$persentase_min": 0.37,"$persentase_maks": 0.38}},
+ {"venti8@progress.label_persen": {"$neko": "72%","$persentase_min": 0.38,"$persentase_maks": 0.39}},
+ {"venti9@progress.label_persen": {"$neko": "71%","$persentase_min": 0.39,"$persentase_maks": 0.40}},
+ {"venti10@progress.label_persen": {"$neko": "70%","$persentase_min": 0.40,"$persentase_maks": 0.41}},
+ {"venti11@progress.label_persen": {"$neko": "69%","$persentase_min": 0.41,"$persentase_maks": 0.42}},
+ {"venti12@progress.label_persen": {"$neko": "68%","$persentase_min": 0.42,"$persentase_maks": 0.43}},
+ {"venti13@progress.label_persen": {"$neko": "67%","$persentase_min": 0.43,"$persentase_maks": 0.44}},
+ {"venti14@progress.label_persen": {"$neko": "66%","$persentase_min": 0.44,"$persentase_maks": 0.45}},
+ {"venti15@progress.label_persen": {"$neko": "65%","$persentase_min": 0.45,"$persentase_maks": 0.46}},
+ {"venti16@progress.label_persen": {"$neko": "64%","$persentase_min": 0.46,"$persentase_maks": 0.47}},
+ {"venti17@progress.label_persen": {"$neko": "63%","$persentase_min": 0.47,"$persentase_maks": 0.48}},
+ {"venti18@progress.label_persen": {"$neko": "62%","$persentase_min": 0.48,"$persentase_maks": 0.49}},
+ {"venti19@progress.label_persen": {"$neko": "61%","$persentase_min": 0.49,"$persentase_maks": 0.50}},
+ {"venti20@progress.label_persen": {"$neko": "60%","$persentase_min": 0.50,"$persentase_maks": 0.51}},
+
+ // 60 - 40
+ {"hutao1@progress.label_persen": {"$neko": "59%","$persentase_min": 0.51,"$persentase_maks": 0.52}},
+ {"hutao2@progress.label_persen": {"$neko": "58%","$persentase_min": 0.52,"$persentase_maks": 0.53}},
+ {"hutao3@progress.label_persen": {"$neko": "57%","$persentase_min": 0.53,"$persentase_maks": 0.54}},
+ {"hutao4@progress.label_persen": {"$neko": "56%","$persentase_min": 0.54,"$persentase_maks": 0.55}},
+ {"hutao5@progress.label_persen": {"$neko": "55%","$persentase_min": 0.55,"$persentase_maks": 0.56}},
+ {"hutao6@progress.label_persen": {"$neko": "54%","$persentase_min": 0.56,"$persentase_maks": 0.57}},
+ {"hutao7@progress.label_persen": {"$neko": "53%","$persentase_min": 0.57,"$persentase_maks": 0.58}},
+ {"hutao8@progress.label_persen": {"$neko": "52%","$persentase_min": 0.58,"$persentase_maks": 0.59}},
+ {"hutao9@progress.label_persen": {"$neko": "51%","$persentase_min": 0.59,"$persentase_maks": 0.60}},
+ {"hutao10@progress.label_persen": {"$neko": "50%","$persentase_min": 0.60,"$persentase_maks": 0.61}},
+ {"hutao11@progress.label_persen": {"$neko": "49%","$persentase_min": 0.61,"$persentase_maks": 0.62}},
+ {"hutao12@progress.label_persen": {"$neko": "48%","$persentase_min": 0.62,"$persentase_maks": 0.63}},
+ {"hutao13@progress.label_persen": {"$neko": "47%","$persentase_min": 0.63,"$persentase_maks": 0.64}},
+ {"hutao14@progress.label_persen": {"$neko": "46%","$persentase_min": 0.64,"$persentase_maks": 0.65}},
+ {"hutao15@progress.label_persen": {"$neko": "45%","$persentase_min": 0.65,"$persentase_maks": 0.66}},
+ {"hutao16@progress.label_persen": {"$neko": "44%","$persentase_min": 0.66,"$persentase_maks": 0.67}},
+ {"hutao17@progress.label_persen": {"$neko": "42%","$persentase_min": 0.67,"$persentase_maks": 0.68}},
+ {"hutao18@progress.label_persen": {"$neko": "41%","$persentase_min": 0.68,"$persentase_maks": 0.69}},
+ {"hutao19@progress.label_persen": {"$neko": "40%","$persentase_min": 0.69,"$persentase_maks": 0.70}},
+
+ // 40 - 20
+ {"zhongli1@progress.label_persen": {"$neko": "40%","$persentase_min": 0.70,"$persentase_maks": 0.71}},
+ {"zhongli2@progress.label_persen": {"$neko": "39%","$persentase_min": 0.71,"$persentase_maks": 0.72}},
+ {"zhongli3@progress.label_persen": {"$neko": "38%","$persentase_min": 0.72,"$persentase_maks": 0.73}},
+ {"zhongli4@progress.label_persen": {"$neko": "37%","$persentase_min": 0.73,"$persentase_maks": 0.74}},
+ {"zhongli5@progress.label_persen": {"$neko": "36%","$persentase_min": 0.74,"$persentase_maks": 0.75}},
+ {"zhongli6@progress.label_persen": {"$neko": "35%","$persentase_min": 0.75,"$persentase_maks": 0.76}},
+ {"zhongli7@progress.label_persen": {"$neko": "34%","$persentase_min": 0.76,"$persentase_maks": 0.77}},
+ {"zhongli8@progress.label_persen": {"$neko": "33%","$persentase_min": 0.77,"$persentase_maks": 0.78}},
+ {"zhongli9@progress.label_persen": {"$neko": "32%","$persentase_min": 0.78,"$persentase_maks": 0.79}},
+ {"zhongli10@progress.label_persen": {"$neko": "31%","$persentase_min": 0.79,"$persentase_maks": 0.80}},
+ {"zhongli11@progress.label_persen": {"$neko": "30%","$persentase_min": 0.80,"$persentase_maks": 0.81}},
+ {"zhongli12@progress.label_persen": {"$neko": "29%","$persentase_min": 0.81,"$persentase_maks": 0.82}},
+ {"zhongli13@progress.label_persen": {"$neko": "28%","$persentase_min": 0.82,"$persentase_maks": 0.83}},
+ {"zhongli14@progress.label_persen": {"$neko": "27%","$persentase_min": 0.83,"$persentase_maks": 0.84}},
+ {"zhongli15@progress.label_persen": {"$neko": "26%","$persentase_min": 0.84,"$persentase_maks": 0.85}},
+ {"zhongli16@progress.label_persen": {"$neko": "25%","$persentase_min": 0.85,"$persentase_maks": 0.86}},
+ {"zhongli17@progress.label_persen": {"$neko": "24%","$persentase_min": 0.86,"$persentase_maks": 0.87}},
+ {"zhongli18@progress.label_persen": {"$neko": "23%","$persentase_min": 0.87,"$persentase_maks": 0.88}},
+ {"zhongli19@progress.label_persen": {"$neko": "22%","$persentase_min": 0.88,"$persentase_maks": 0.89}},
+ {"zhongli20@progress.label_persen": {"$neko": "21%","$persentase_min": 0.89,"$persentase_maks": 0.90}},
+ {"zhongli21@progress.label_persen": {"$neko": "20%","$persentase_min": 0.90,"$persentase_maks": 0.91}},
+
+ // 20 - 0
+ {"apalaginjir1@progress.label_persen": {"$neko": "19%","$persentase_min": 0.91,"$persentase_maks": 0.92}},
+ {"apalaginjir2@progress.label_persen": {"$neko": "18%","$persentase_min": 0.92,"$persentase_maks": 0.93}},
+ {"apalaginjir3@progress.label_persen": {"$neko": "17%","$persentase_min": 0.93,"$persentase_maks": 0.94}},
+ {"apalaginjir4@progress.label_persen": {"$neko": "16%","$persentase_min": 0.94,"$persentase_maks": 0.95}},
+ {"apalaginjir5@progress.label_persen": {"$neko": "15%","$persentase_min": 0.95,"$persentase_maks": 0.952}},
+ {"apalaginjir6@progress.label_persen": {"$neko": "14%","$persentase_min": 0.952,"$persentase_maks": 0.954}},
+ {"apalaginjir7@progress.label_persen": {"$neko": "13%","$persentase_min": 0.954,"$persentase_maks": 0.956}},
+ {"apalaginjir8@progress.label_persen": {"$neko": "12%","$persentase_min": 0.956,"$persentase_maks": 0.958}},
+ {"apalaginjir9@progress.label_persen": {"$neko": "11%","$persentase_min": 0.958,"$persentase_maks": 0.960}},
+ {"apalaginjir10@progress.label_persen": {"$neko": "10%","$persentase_min": 0.960,"$persentase_maks": 0.962}},
+ {"apalaginjir11@progress.label_persen": {"$neko": "9%","$persentase_min": 0.962,"$persentase_maks": 0.964}},
+ {"apalaginjir12@progress.label_persen": {"$neko": "8%","$persentase_min": 0.964,"$persentase_maks": 0.968}},
+ {"apalaginjir13@progress.label_persen": {"$neko": "7%","$persentase_min": 0.968,"$persentase_maks": 0.970}},
+ {"apalaginjir14@progress.label_persen": {"$neko": "6%","$persentase_min": 0.970,"$persentase_maks": 0.972}},
+ {"apalaginjir15@progress.label_persen": {"$neko": "5%","$persentase_min": 0.972,"$persentase_maks": 0.974}},
+ {"apalaginjir16@progress.label_persen": {"$neko": "4%","$persentase_min": 0.974,"$persentase_maks": 0.976}},
+ {"apalaginjir17@progress.label_persen": {"$neko": "3%","$persentase_min": 0.976,"$persentase_maks": 0.978}},
+ {"apalaginjir18@progress.label_persen": {"$neko": "2%","$persentase_min": 0.978,"$persentase_maks": 0.980}},
+ {"apalaginjir19@progress.label_persen": {"$neko": "1%","$persentase_min": 0.980,"$persentase_maks": 0.999}},
+ {"apalaginjir20@progress.label_persen": {"$neko": "0%","$persentase_min": 0.999,"$persentase_maks": 1.0}}
+  ]
+ },
+
+  "modal_progress_screen@progress_screen": {
+    "$screen_content": "progress.modal_screen_content"
+  },
+  
+  "progress_title_text": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ 200, "100%c" ],
+    "controls": [
+      {
+        "progress_title": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "loading_spin@progress.loading_spin": {
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [ "100%" , 15 ]
+              }
+            },
+            { "spacer": { "type": "panel", "size": [ 15, 15 ]}},
+            {
+              "panel_label": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  {
+                    "progress_title_text@progress.progress_screen_text": {
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "text": "#title_text",
+                      "bindings": [
+                        {
+                          "binding_name": "#title_text"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            { "spacer_2": { "type": "panel", "size": [ 7, 7 ]}},
+            {
+              "panel_label_2": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  {
+                    "progress_bar_text@progress.progress_screen_text": {
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "text": "#progress_text",
+                      "bindings": [
+                        { "binding_name": "#progress_text" }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+
+  "custom_label_progress": {
+    "type": "label",
+    "font_type": "smooth",
+    "font_scale_factor": 0.9,
+    "color": "$loading_text_color",
+    "anchor_to": "center",
+    "anchor_from": "center",
+    "layer": 2,
+    "shadow": false
+  },
+
+  "judul_baru": {
+    "type": "panel",
+    "size": [ 200 , "100%c" ],
+    "anchor_to": "center",
+    "anchor_from": "center",
+    "controls": [
+      {
+        "judul_stack": {
+          "type": "stack_panel",
+          "size": [ 200, "100%c" ],
+          "anchor_to": "center",
+          "anchor_from": "center",
+          "orientation": "vertical",
+          "controls": [
+            {
+              "loading_spin@progress.loading_spin": {"size": [ "100%" , 20 ]}
+            },
+            {
+              "spacer": { "type": "panel", "size": [ 15, 15 ]}
+            },
+            {
+              "label_panel": { "type": "panel", "size": [ "100%", "100%c" ], "controls": [{"judul@progress.custom_label_progress": {"anchor_from": "center", "anchor_to": "center", "size": [ "default", "default" ],"text": "#title_text","bindings": [{"binding_name": "#title_text"}]}}]}
+            },
+            {
+              "spacer_2": { "type": "panel", "size": [ 3, 3 ]}
+            },
+            {
+              "label_panel_2": { "type": "panel", "size": [ "100%", "100%c" ], "controls": [{"deskripsi@progress.custom_label_progress": {"anchor_from": "center", "anchor_to": "center", "size": [ "default", "default" ],"text": "#progress_text","bindings": [{"binding_name": "#progress_text"}]}}]}
+            }
+
+          ]
+        }
+      }
+    ]
+  },
+
+  "fancy_progress_loading_bars": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [ "100%", 2 ],
+    "layer": 5,
+    "controls": [
+      {
+        "full_progress_bar_icon@achievement.full_progress_bar_icon_base": {
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#loading_bar_percentage",
+              "binding_name_override": "#clip_ratio"
+            }
+          ]
+        }
+      },
+      {
+        "empty_progress_bar_icon@achievement.empty_progress_bar_icon": {
+          "layer": 1
+        }
+      },
+      {
+        "progress_bar_nub@progress.progress_bar_nub": {
+          "size": [ "100% - 10px", 5 ],
+          "layer": 4
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#loading_bar_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "uwu_button@common_buttons.light_text_button": {
+    "$default_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$hover_text_color|default": [ 0.07, 0.09, 0.13 ],
+    "$pressed_text_color|default": [ 0.09, 0.13, 0.17 ],
+    "$locked_text_color|default": [ 1.00, 0.11, 0.11 ],
+    "$default_button_texture|default": "",
+    "$hover_button_texture|default": "textures/neko/borderless/core/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/core/button_borderless_lightpressed",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [ "100%", "100%" ],
+    "offset": [ 0, -13 ]
+  },
+
+  "tombol_batal_cuk@uwu_button": {
+    "$default_text_color|default": [ 1.00, 0.24, 0.26 ],
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.cancel",
+    "bindings": [
+      {
+        "binding_name": "#cancel_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "retry_button@uwu_button": {
+    "$pressed_button_name": "button.menu_retry",
+    "$button_text": "gui.retry",
+    "bindings": [
+      {
+        "binding_name": "#retry_and_abort_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "abort_button@uwu_button": {
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.cancel",
+    "bindings": [
+      {
+        "binding_name": "#retry_and_abort_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "button_panel": {
+    "type": "panel",
+    "size": [ 90, 20 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "layer": 2,
+    "controls": [
+      {
+        "tombol_batal_cuk@progress.tombol_batal_cuk": {
+        }
+      }
+    ]
+  },
+
+  "modal_button_panel@progress.button_panel": {
+    "controls": [
+      {
+        "tombol_batal_cuk@progress.tombol_batal_cuk": {}
+      }
+    ]
+  },
+  
+  "modal_button_panel_with_retry@progress.modal_button_panel": {
+    "controls": [
+      {
+        "abort_button@progress.abort_button": {}
+      },
+      {
+        "tombol_batal_cuk@progress.tombol_batal_cuk": {}
+      },
+      {
+        "retry_button@progress.retry_button": {}
+      }
+    ]
+  },
+
+  "modal_progress_panel_no_cancel": {
+    "type": "panel",
+   "alpha": 0.85,
+    "size": [ "100%" , "100%" ],
+    "controls": [
+      {
+        "common_panel@common.common_panel": {
+          "$dialog_background": "dialog_background_hollow_4",
+          "$fill_alpha": "$background_fill_alpha",
+          "$show_close_button": false
+        }
+      },
+      {
+        "content": {
+          "type": "panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          // magic offset to make the scroll clipping perfect
+          "size": [ "100%-12px", "100%-12px" ],
+          "offset": [ 0, 6 ],
+          "controls": [
+            {
+              "progress_title_text@progress.progress_title_text": {}
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "modal_progress_panel_with_cancel": {
+    "type": "panel",
+    "alpha": 0.85,
+    "size": [ "100%" , "100%" ],
+    "controls": [
+      {
+        "content": {
+          "type": "panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          // magic offset to make the scroll clipping perfect
+          "size": [ "100%-12px", "100%-60px" ],
+          "offset": [ 0, 0 ],
+          "controls": [
+            {
+              "progress_title_text@progress.progress_title_text": {}
+            }
+          ]
+        }
+      },
+      {
+        "modal_button_panel@progress.modal_button_panel": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "world_modal_progress_panel_2": {
+  "type": "panel",
+  "size": [ "100%" , "100%" ],
+  "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$button_state_default_base": "common.button_state_default",
+        "$button_state_hover_base": "common.button_state_hover",
+        "$button_state_pressed_base": "common.button_state_pressed"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$button_state_default_base": "common-classic.button_state_default",
+        "$button_state_hover_base": "common-classic.button_state_hover",
+        "$button_state_pressed_base": "common-classic.button_state_pressed"
+      }
+    ],
+    "controls": [
+      {
+        "base_content": {
+          "type": "panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          // magic offset to make the scroll clipping perfect
+          "size": [ "100%", "100%" ],
+
+          "controls": [
+            {
+              "progress_title_text@progress.judul_baru": {
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            },
+            {
+              "fancy_progress_loading_bars@progress.fancy_progress_loading_bars": {}
+            }
+          ]
+        }
+      },
+      {
+        "inside_content_2": {
+          "type": "stack_panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [ 70, "30px" ],
+          "controls": [
+            {
+              "vertical_padding": {
+                "type": "panel",
+                "size": [ 0, 5 ]
+              }
+            },
+            {
+              "top_right@progress.top_right": {
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "size": [ "100%", "100%" ]
+              }
+            },
+            {
+              "vertical_padding_2": {
+                "type": "panel",
+                "size": [ 0, 14 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "modal_button_panel@$modal_button_panel_type": {
+        }
+      }
+    ]
+  },
+
+  "world_convert_modal_progress_screen_content": {
+    "type": "panel",
+
+    "layer": 3,
+
+    "controls": [
+      { "persen_panel@progress.persen_panel": {}},
+      {
+        "world_modal_progress_panel_2@progress.world_modal_progress_panel_2": {
+          "$modal_button_panel_type": "progress.modal_button_panel"
+        }
+      },
+      { "popup_dialog_factory@progress.popup_dialog_factory": {} }
+    ]
+  },
+
+  "world_save_modal_progress_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "world_modal_progress_panel_2@progress.world_modal_progress_panel_2": {
+          "$modal_button_panel_type": "progress.modal_button_panel_with_retry"
+        }
+      },
+      { "popup_dialog_factory@progress.popup_dialog_factory": {} }
+    ]
+  },
+
+  "auto_save_animation": {
+    "anim_type": "flip_book",
+    "initial_uv": [ 0, 0 ],
+    "frame_count": 9,
+    "frame_step": 18,
+    "fps": 5,
+    "reversible": true,
+    "easing": "linear"
+  },
+
+  "auto_save": {
+    "type": "image",
+    "layer": 33,
+    "texture": "textures/ui/auto_save",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ 0, 20 ],
+    "size": [ 18, 30 ],
+    "uv_size": [ 18, 30 ],
+    "uv": "@auto_save_animation",
+    "disable_anim_fast_forward": true,
+    "bindings": [
+      {
+        "binding_name": "#auto_save_animation_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+  
+  "loading_spin_animation": {
+    "anim_type": "flip_book",
+    "initial_uv": [ 0, 0 ],
+    "frame_count": 10,
+    "frame_step": 20,
+    "fps": 10,
+    "reversible": false,
+    "easing": "linear"
+  },
+
+  "loading_spin": {
+    "type": "image",
+    "layer": 31,
+    "color": "white",
+    "texture": "textures/ui/loading_spin",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ 0, 0 ],
+    "size": [ 7, 7 ],
+    "uv_size": [ 7, 7 ],
+    "uv": "@loading_spin_animation",
+    "disable_anim_fast_forward": true,
+    "bindings": [
+      {
+        "binding_name": "#loading_spin_animation_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  }
+}

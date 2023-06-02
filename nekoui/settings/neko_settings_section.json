@@ -1,0 +1,942 @@
+/*File made by @Farhan.
+//(c) Jangan gunakan code ini tanpa izin!*/
+{
+  "namespace": "custom_settings_section",
+
+
+  "link_button_panel": {
+    "type": "panel",
+    "size": [ "100%" , 35 ]
+  },
+
+  "neko_a@common_buttons.new_ui_binding_button_label": {
+    "$anchor|default": "middle",
+    "font_type": "MinecraftTen",
+    "font_scale_factor": 0.8,
+    "offset": [ 0 , -1.1 ] //  X , Y
+  },
+
+  "link_button@common_buttons.hyperlink_button": {
+    "$button_text|default": "unset $button_text",
+    "size": [ "100% - 15px", "100% - 5px" ],
+    "$default_text_color|default": [ 0.0, 0.0, 0.0 ],
+    "$hover_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$pressed_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$locked_text_color|default": [ 0.0, 0.0, 0.0 ],
+    "$button_type_panel": "custom_settings_section.neko_a",
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+  "fxn_label_1": {
+    "type": "label",
+    "text_alignment": "left",
+    "size": [ "100%", "default" ],
+    "shadow": true,
+    "color": [ 1.0, 1.0, 1.0 ],
+    "offset": [ 15, 0 ]
+  },
+  
+  "fxn_label_2": {
+    "type": "label",
+    "font_type": "MinecraftTen",
+    "font_size": "extra_large",
+    "text_alignment": "left",
+    "size": [ "100%", "default" ],
+    "shadow": false,
+    "color": [ 1.0, 1.0, 1.0 ],
+    "offset": [ 15, 0 ]
+  },
+
+  "more_settings_button@test_toggle.venti": {
+    "$default_border_visible": false,
+    "$hover_border_visible": false,
+    "$toggle_view_binding_name": "more_settings",
+    "$glyph_texture": "textures/neko/glyph_icon/more_settings_colors",
+    "$glyph_color_texture": "textures/neko/glyph_icon/more_settings_colors",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "toggle.advanced_settings.text",
+    "$toggle_property_bag": {
+      "#panel_title": ""
+    }
+  },
+
+  "more@neko_c.bg_r2": {
+    "size": [ "100% - 3px", "100%c" ],
+    "color": [ 0.09, 0.13, 0.17 ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "more_settings",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "more_section": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "selector_group_label_2@settings_common.selector_group_label": {
+                "$warna": [ 0.0 , 0.0 , 0.0] ,
+                "$yuki": "yuki.advanced_settings.text"
+              }
+            },
+            {
+              "creator_button@general_section.creator_button": {
+                "ignored": "( not $is_pregame )",
+                "$toggle_group_forced_index": "$creator_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "view_subscriptions_button@general_section.view_subscriptions_button": {
+                "$toggle_group_forced_index": "$view_subscriptions_forced_index",
+                "$tts_section_header": "$general_section_header",
+                "bindings": [
+                  {
+                    "binding_name": "#should_show_subscription_tab",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "sound_button@general_section.sound_button": {
+                "$toggle_group_forced_index": "$sound_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "storage_management_button@general_section.storage_management_button": {
+                "ignored": "$ignore_storage_section",
+                "$toggle_group_forced_index": "$storage_management_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "language_button@general_section.language_button": {
+                "ignored": "(not $is_pregame)",
+                "$toggle_group_forced_index": "$language_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+             //// ETC
+            {
+              "debug_button@general_section.debug_button": {
+                "ignored": "$is_publish",
+                "$toggle_group_forced_index": "$debug_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "ui_debug_button@general_section.ui_debug_button": {
+                "ignored": "$is_publish",
+                "$toggle_group_forced_index": "$ui_debug_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "flighting_debug_button@general_section.flighting_debug_button": {
+                "ignored": "$is_publish",
+                "$toggle_group_forced_index": "$flighting_debug_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "automation_button@general_section.automation_button": {
+                "ignored": "($is_publish or $test_infrastructure_disabled)",
+                "$toggle_group_forced_index": "$automation_forced_index",
+                "$tts_section_header": "$general_section_header"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "graphic_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "graphic_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/settings_grafis",
+    "$glyph_color_texture": "textures/neko/glyph_icon/settings_grafis",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "toggle.graphics.text",
+    "$toggle_property_bag": {
+      "#panel_title": "Graphics"
+    }
+  },
+
+  "graphic_section": {
+    "type": "stack_panel",
+    "$spatialPatternsPadding": [ "100%", 5 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%c" ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "graphic_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "title_text@neko_c.title_text": {
+          "$neko_c.title.text": "settings.header.graphics.text"
+        }
+      },
+      { //BRIGHTNESS
+      "brightness_slider@settings_common.option_slider": {
+        "ignored": "($is_holographic)",
+        "$option_label": "#gamma_slider_label",
+        "$slider_name": "gamma",
+        "$slider_value_binding_name": "#gamma",
+        "$slider_tts_text_value": "#gamma_text_value",
+        "$option_enabled_binding_name": "#gamma_enabled",
+        "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+        "$label_bindings": [
+          {
+            "binding_name": "$option_label"
+          }
+        ]
+      }
+    },
+    { //FPS
+      "max_framerate_slider@settings_common.option_slider": {
+        "$option_label": "#max_framerate_slider_label",
+        "$slider_name": "max_framerate",
+        "$slider_value_binding_name": "#max_framerate",
+        "$slider_tts_text_value": "#max_framerate_text_value",
+        "$option_enabled_binding_name": "#max_framerate_enabled",
+        "$slider_steps_binding_name": "#max_framerate_steps",
+        "$label_bindings": [
+          {
+            "binding_name": "$option_label"
+          }
+        ]
+      }
+    },
+    {
+      "msaa_slider@settings_common.option_slider": {
+        "ignored": "($is_holographic or $is_win10_arm)",
+        "$option_label": "#msaa_slider_label",
+        "$slider_name": "msaa",
+        "$slider_value_binding_name": "#msaa",
+        "$slider_tts_text_value": "#msaa_text_value",
+        "$option_enabled_binding_name": "#msaa_enabled",
+        "$slider_steps_binding_name": "#msaa_steps",
+        "$label_bindings": [
+          {
+            "binding_name": "$option_label"
+          }
+        ]
+      }
+    },
+    {
+      "render_distance_slider@settings_common.option_slider": {
+        "ignored": "($is_holographic)",
+        "$option_label": "#render_distance_slider_label",
+        "$slider_name": "render_distance",
+        "$slider_value_binding_name": "#render_distance",
+        "$slider_tts_text_value": "#render_distance_text_value",
+        "$option_enabled_binding_name": "#render_distance_enabled",
+        "$slider_steps_binding_name": "#render_distance_steps",
+        "$label_bindings": [
+          {
+            "binding_name": "$option_label"
+          }
+        ],
+        "bindings": [
+          {
+            "binding_name": "#show_render_distance",
+            "binding_name_override": "#visible"
+          }
+        ]
+      }
+    },
+    {
+      "render_distance_warning_text": {
+        "type": "panel",
+        "layer": -1,
+        "size": [ "100%", "100%cm + 16px" ],
+        "controls": [
+          {
+            "render_distance_popup@common.static_tooltip_popup_with_image_and_text": {
+              "size": [ "100% - 4px", "100%cm + 8px" ],
+              "anchor_from": "top_middle",
+              "anchor_to": "top_middle",
+              "$tooltip_panel_offset": [ 0, 6 ],
+              "$tooltip_popup_image": "textures/ui/WarningGlyph",
+              "$tooltip_button_binding_type": "global",
+              "$tooltip_button_collection_name": "",
+              "$tooltip_popup_visible_binding": "#render_distance_warning_visible",
+              "$tooltip_text_binding_name": "#render_distance_performance_tooltip_text",
+              "$tooltip_chevron_anchor": "top_right",
+              "$tooltip_popup_chevron_offset": [ "-30%x", "-10px" ],
+              "$tooltip_popup_chevron_texture": "textures/ui/tooltip_inverted_chevron"
+            }
+          }
+        ],
+        "bindings": [
+          {
+            "binding_name": "#render_distance_warning_visible",
+            "binding_name_override": "#visible"
+          }
+        ]
+      }
+    },
+    {
+      "spacer": {
+        "type": "panel",
+        "size": [ 5, 5 ]
+      }
+    },
+      {
+        "toggle_panel": {
+          "type": "panel",
+          "size": "$neko_size",
+          "variables": [
+            {
+              "requires": "$desktop_screen",
+              "$neko_size": [ "100%", 90  ]
+            },
+            {
+              "requires": "$pocket_screen",
+              "$neko_size": [ "100%", 150  ]
+            }
+          ],
+          "controls": [
+            {
+              "toggle_stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "toggle_1@neko_c.bg_r2": {
+                      "color": [ 0.09, 0.13, 0.17 ],
+                      "layer": 1,
+                      
+                      //   "type": "panel",
+                      "size": [ "50%", "100%" ],
+                      "controls": [
+                        {
+                          "toggle_1_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c" ],
+                            "orientation": "vertical",
+                            "controls": [
+                              {
+                                "fancy_leaves_toggle@settings_common.option_toggle": {
+                                  "ignored": "($pocket_edition or $education_ios or $is_holographic)",
+                                  "$option_label": "options.transparentleaves",
+                                  "$option_binding_name": "#transparent_leaves",
+                                  "$option_enabled_binding_name": "#transparent_leaves_enabled",
+                                  "$toggle_name": "transparent_leaves"
+                                }
+                              },
+                              {
+                                "fancy_bubbles_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.bubbleparticles",
+                                  "$option_binding_name": "#bubble_particles",
+                                  "$option_enabled_binding_name": "#bubble_particles_enabled",
+                                  "$toggle_name": "bubble_particles"
+                                }
+                              },
+                              {
+                                "render_clouds_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.renderclouds",
+                                  "$option_binding_name": "#render_clouds",
+                                  "$option_enabled_binding_name": "#render_clouds_enabled",
+                                  "$toggle_name": "render_clouds"
+                                }
+                              },
+                              {
+                                "fancy_clouds_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.fancyskies",
+                                  "$option_binding_name": "#fancy_skies",
+                                  "$option_enabled_binding_name": "#fancy_skies_enabled",
+                                  "$toggle_name": "fancy_skies"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "spacer": {
+                      "type": "panel",
+                      "size": [ 5, 5 ]
+                    }
+                  },
+                  {
+                    "toggle_2@neko_c.bg_r2": {
+                      "color": [ 0.09, 0.13, 0.17 ],
+                      "layer": 1,
+                      //   "type": "panel",
+                      
+                      "size": [ "fill", "100%" ],
+                      "controls": [
+                        {
+                          "toggle_2_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c" ],
+                            "orientation": "vertical",
+                            "controls": [
+                              {
+                                "smooth_lighting_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.smooth_lighting",
+                                  "$option_binding_name": "#smooth_lighting",
+                                  "$option_enabled_binding_name": "#smooth_lighting_enabled",
+                                  "$toggle_name": "smooth_lighting"
+                                }
+                              },
+                              {
+                                "graphics_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.graphics",
+                                  "$option_binding_name": "#graphics_toggle",
+                                  "$option_enabled_binding_name": "#graphics_toggle_enabled",
+                                  "$toggle_name": "graphics_toggle"
+                                }
+                              },
+                              {
+                                "rendering_profile_option_slider@settings_common.option_slider": {
+                                  "ignored": true,
+                                  "$option_label": "#rendering_profile_slider_label",
+                                  "$slider_name": "rendering_profile",
+                                  "$slider_value_binding_name": "#rendering_profile",
+                                  "$slider_tts_text_value": "#rendering_profile_text_value",
+                                  "$option_enabled_binding_name": "#rendering_profile_slider_enabled",
+                                  "$slider_steps_binding_name": "#rendering_profile_steps",
+                                  "$label_bindings": [
+                                    {
+                                      "binding_name": "$option_label"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "upscaling_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic and $win10_edition)",
+                                  "$option_label": "options.upscaling",
+                                  "$option_binding_name": "#graphics_upscaling",
+                                  "$option_enabled_binding_name": "#graphics_upscaling_enabled",
+                                  "$toggle_name": "graphics_upscaling",
+                                  "controls": [
+                                    {
+                                      "rtx_disabled_option_upsell@general_section.rtx_disabled_option_upsell": {
+                                        "$rtx_disabled_option_upsell_visible": "#rtx_upscale_disabled_option_upsell_visible",
+                                        "$rtx_disabled_option_is_hovered_button_event": "button.rtx_upscale_disabled_option_is_hovered",
+                                        "$rtx_disabled_option_upsell_tooltip_visible": "#rtx_upscale_disabled_option_upsell_tooltip_visible"
+                                      }
+                                    },
+                                    { "option_generic_core@settings_common.option_generic_core": {} }
+                                  ]
+                                }
+                              },
+                              {
+                                "raytracing_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.raytracing",
+                                  "$option_binding_name": "#raytracing",
+                                  "$option_enabled_binding_name": "#raytracing_enabled",
+                                  "$toggle_name": "raytracing",
+                                  "controls": [
+                                    { "rtx_disabled_option_upsell@general_section.rtx_disabled_option_upsell": {} },
+                                    { "option_generic_core@settings_common.option_generic_core": {} }
+                                  ]
+                                }
+                              },
+                              {
+                                "raytracing_render_distance_slider@settings_common.option_slider": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "#raytracing_render_distance_slider_label",
+                                  "$slider_name": "raytracing_render_distance",
+                                  "$slider_value_binding_name": "#raytracing_render_distance",
+                                  "$slider_tts_text_value": "#raytracing_render_distance_text_value",
+                                  "$option_enabled_binding_name": "#raytracing_render_distance_enabled",
+                                  "$slider_steps_binding_name": "#raytracing_render_distance_steps",
+                                  "$label_bindings": [
+                                    {
+                                      "binding_name": "$option_label"
+                                    }
+                                  ],
+                                  "controls": [
+                                    { "rtx_render_distance_warning@general_section.rtx_render_distance_warning": {} },
+                                    { "option_generic_core@settings_common.option_generic_core": {} }
+                                  ],
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#show_raytracing_render_distance",
+                                      "binding_name_override": "#visible"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "gameplay_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "gameplay_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/controller_glyph_color",
+    "$glyph_color_texture": "textures/neko/glyph_icon/controller_glyph_color",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "Gameplay",
+    "$toggle_property_bag": {
+      "#panel_title": "Gameplay Settings"
+    }
+  },
+
+  "gameplay_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "gameplay_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "title_text@neko_c.title_text": {
+          "$neko_c.title.text": "settings.header.gameplay.text"
+        }
+      },
+      {
+        "perspective@neko_c.bg_r2": {
+          "color": [ 0.09, 0.13, 0.17 ],
+          "size": [ "100%", "90px" ],
+          "layer": 1,
+          "controls": [
+            {
+              "perspective": {
+                "type": "stack_panel",
+                "orientation": "vertical",
+                "size": [ "100%", "100%c" ],
+                "controls": [
+                  { "label_dengan_background@neko_c.label_dengan_background": { "$text_nya_apa": "neko.c.camera_perspective.text"}},
+                  { "spacer_02" :  {"type": "panel", "size": [ 2 , 2 ] }},
+                  {
+                    "perspective@anjim.perspective": {}
+                  },
+                  { "spacer_03" :  {"type": "panel", "size": [ 2 , 2 ] }}
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "spacer" :  {"type": "panel", "size": [ 5 , 5] }},
+      {
+        "hud_opacity_slider@settings_common.option_slider": {
+          "$option_label": "#interface_opacity_slider_label",
+          "$slider_name": "interface_opacity",
+          "$slider_value_binding_name": "#interface_opacity",
+          "$slider_tts_text_value": "#interface_opacity_text_value",
+          "$option_enabled_binding_name": "#interface_opacity_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "splitscreen_hud_opacity_slider@settings_common.option_slider": {
+          "ignored": "(not $can_splitscreen)",
+          "$option_label": "#splitscreen_interface_opacity_slider_label",
+          "$slider_name": "splitscreen_interface_opacity",
+          "$slider_value_binding_name": "#splitscreen_interface_opacity",
+          "$slider_tts_text_value": "#splitscreen_interface_opacity_text_value",
+          "$option_enabled_binding_name": "#splitscreen_interface_opacity_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      {
+        "fov_slider@settings_common.option_slider": {
+          "$ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+          "$option_label": "#field_of_view_slider_label",
+          "$slider_tts_text_value": "#field_of_view_text_value",
+          "$slider_name": "field_of_view",
+          "$slider_value_binding_name": "#field_of_view",
+          "$option_enabled_binding_name": "#field_of_view_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      },
+      { "spacer" :  {"type": "panel", "size": [ 5 , 5] }},
+      {
+        "toggle_panel": {
+          "type": "panel",
+          "size": "$neko_size",
+          "variables": [
+            {
+              "requires": "$desktop_screen",
+              "$neko_size": [ "100%", 120  ]
+            },
+            {
+              "requires": "$pocket_screen",
+              "$neko_size": [ "100%", 170  ]
+            }
+          ],
+          "controls": [
+            {
+              "toggle_stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "toggle_1@neko_c.bg_r2": {
+                      "color": [ 0.09, 0.13, 0.17 ],
+                      "layer": 1,
+                      
+                      //   "type": "panel",
+                      "size": [ "50%", "100%" ],
+                      "controls": [
+                        {
+                          "toggle_1_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c" ],
+                            "orientation": "vertical",
+                            "controls": [
+                              {
+                                "option_toggle_hidehand@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.hidehand",
+                                  "$option_binding_name": "#hide_hand",
+                                  "$option_enabled_binding_name": "#hide_hand_enabled",
+                                  "$toggle_name": "hide_hand"
+                                }
+                              },
+                              {
+                                "hide_paperdoll_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.hidepaperdoll",
+                                  "$option_binding_name": "#hide_paperdoll",
+                                  "$option_enabled_binding_name": "#hide_paperdoll_enabled",
+                                  "$toggle_name": "hide_paperdoll"
+                                }
+                              },
+                              {
+                                "option_toggle_hidehud@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.hidehud",
+                                  "$option_binding_name": "#hide_hud",
+                                  "$option_enabled_binding_name": "#hide_hud_enabled",
+                                  "$toggle_name": "hide_hud"
+                                }
+                              },
+                              {
+                                "split_screen_dropdown@settings_common.option_dropdown": {
+                                  "ignored": "(not $can_splitscreen)",
+                                  "$option_label": "options.splitscreen",
+                                  "$dropdown_content": "general_section.split_screen_dropdown_content",
+                                  "$dropdown_area": "content_area",
+                                  "$dropdown_name": "split_screen_dropdown",
+                                  "$option_enabled_binding_name": "#split_screen_dropdown_enabled",
+                                  "$options_dropdown_toggle_label_binding": "#split_screen_dropdown_toggle_label",
+                                  "$dropdown_scroll_content_size": [ "100%", "145%" ]
+                                }
+                              },
+                              {
+                                "auto_save_icon_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.showautosaveicon",
+                                  "$option_binding_name": "#show_auto_save_icon",
+                                  "$option_enabled_binding_name": "#show_auto_save_icon_enabled",
+                                  "$toggle_name": "show_auto_save_icon"
+                                }
+                              },
+                              {
+                                "outline_selection_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic)",
+                                  "$option_label": "options.classic_box_selection",
+                                  "$option_binding_name": "#classic_box_selection",
+                                  "$option_enabled_binding_name": "#classic_box_selection_enabled",
+                                  "$toggle_name": "classic_box_selection"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "spacer": {
+                      "type": "panel",
+                      "size": [ 5, 5 ]
+                    }
+                  },
+                  {
+                    "toggle_2@neko_c.bg_r2": {
+                      "color": [ 0.09, 0.13, 0.17 ],
+                      "layer": 1,
+                      //   "type": "panel",
+                      
+                      "size": [ "fill", "100%" ],
+                      "controls": [
+                        {
+                          "toggle_2_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c" ],
+                            "orientation": "vertical",
+                            "controls": [
+                              {
+                                "player_names_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.ingamePlayerNames",
+                                  "$option_binding_name": "#ingame_player_names",
+                                  "$option_enabled_binding_name": "#ingame_player_names_enabled",
+                                  "$toggle_name": "ingame_player_names"
+                                }
+                              },
+                              {
+                                "splitscreen_player_names_toggle@settings_common.option_toggle": {
+                                  "ignored": "(not $can_splitscreen)",
+                                  "$option_label": "options.splitscreenIngamePlayerNames",
+                                  "$option_binding_name": "#splitscreen_ingame_player_names",
+                                  "$option_enabled_binding_name": "#splitscreen_ingame_player_names_enabled",
+                                  "$toggle_name": "splitscreen_ingame_player_names"
+                                }
+                              },
+                              {
+                                "view_bobbing_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+                                  "$option_label": "options.viewBobbing",
+                                  "$option_binding_name": "#view_bobbing",
+                                  "$option_enabled_binding_name": "#view_bobbing_enabled",
+                                  "$toggle_name": "view_bobbing"
+                                }
+                              },
+                              {
+                                "camera_shake_toggle@settings_common.option_toggle": {
+                                  "ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+                                  "$option_label": "options.screenShake",
+                                  "$option_binding_name": "#camera_shake",
+                                  "$option_enabled_binding_name": "#camera_shake_enabled",
+                                  "$toggle_name": "camera_shake"
+                                }
+                              },
+                              {
+                                "field_of_view_toggle@settings_common.option_toggle": {
+                                  "$option_label": "options.fov.toggle",
+                                  "$option_binding_name": "#field_of_view_toggle",
+                                  "$option_enabled_binding_name": "#field_of_view_toggle_enabled",
+                                  "$toggle_name": "field_of_view_toggle"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "spacer": {
+          "type": "panel",
+          "size": [ 5, 5 ]
+        }
+      },
+      {
+        "super_fancy_panel@neko_c.bg_r2": {
+          "color": [ 0.09, 0.13, 0.17 ],
+          "layer": 1,
+          
+          "ignored": false,
+          "size": [ "100%", "100%c + 4px" ],
+
+          "controls": [
+            {
+              "super_fancy_contents": {
+                "type": "stack_panel",
+                "size": [ "100% - 6px", "100%c - 4px" ],
+                "controls": [
+                  {
+                    "atmospherics_toggle@settings_common.option_toggle": {
+                      "$option_label": "options.atmosphericsEnable",
+                      "$option_binding_name": "#atmospherics",
+                      "$option_enabled_binding_name": "#atmospherics_enabled",
+                      "$toggle_name": "atmospherics"
+                    }
+                  },
+                  {
+                    "edge_highlight_toggle@settings_common.option_toggle": {
+                      "$option_label": "options.edgeHighlightEnable",
+                      "$option_binding_name": "#edge_highlight",
+                      "$option_enabled_binding_name": "#edge_highlight_enabled",
+                      "$toggle_name": "edge_highlight"
+                    }
+                  },
+                  {
+                    "bloom_toggle@settings_common.option_toggle": {
+                      "$option_label": "options.bloomEnable",
+                      "$option_binding_name": "#bloom",
+                      "$option_enabled_binding_name": "#bloom_enabled",
+                      "$toggle_name": "bloom"
+                    }
+                  },
+                  {
+                    "terrain_shadows_toggle@settings_common.option_toggle": {
+                      "$option_label": "options.terrainShadowsEnable",
+                      "$option_binding_name": "#terrain_shadows",
+                      "$option_enabled_binding_name": "#terrain_shadows_enabled",
+                      "$toggle_name": "terrain_shadows"
+                    }
+                  },
+                  {
+                    "super_fancy_water_toggle@settings_common.option_toggle": {
+                      "$option_label": "options.superFancyWaterEnable",
+                      "$option_binding_name": "#super_fancy_water",
+                      "$option_enabled_binding_name": "#super_fancy_water_enabled",
+                      "$toggle_name": "super_fancy_water"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "texel_anti_aliasing_toggle@settings_common.option_toggle": {
+          "$option_label": "options.texelAA",
+          "$option_binding_name": "#texel_aa",
+          "$option_enabled_binding_name": "#texel_aa_enabled",
+          "$toggle_name": "texel_aa",
+          "bindings": [
+            {
+              "binding_name": "#show_texel_aa",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "fxn_label": {
+    "type": "label",
+    "size": [ "100% - 10px", "default" ],
+    "text_alignment": "left",
+    "shadow": true,
+    "color": [],
+    "offset": [ 15, 0 ]
+  },
+  
+  "about_button@settings_common.section_toggle_base": {
+    "$toggle_view_binding_name": "about_button_toggle",
+    "$glyph_texture": "textures/neko/glyph_icon/settings_about",
+    "$glyph_color_texture": "textures/neko/glyph_icon/settings_aboutColor",
+    "$glyph_size": [ 18, 18 ],
+    "$button_text": "About",
+    "$toggle_property_bag": {
+      "#panel_title": "About NekoUI"
+    }
+  },
+
+  "about_section": {
+    "type": "stack_panel",
+    "$jarak_1": [ 3, 3],
+    "$jarak_2": [ 2, 2],
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "about_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "panel_gambar@neko_c.bg_r2": {
+          "type": "panel",
+          "color": [ 0.0, 0.0, 0.0 ],
+          "alpha": 1,
+          "size": [ "100%", 100 ],
+          "controls": [
+            { "potato_item@neko_c.potato_item": {}}
+          ]
+        }
+      },
+      { "panel": { "type": "panel", "size": "$jarak_1"  }},
+      { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "Banana Pack Version:", "$neko_c.about_b": "0.1.0  | STABLE  | Based On ZxynUI"}},
+      { "panel": { "type": "panel", "size": "$jarak_1"  }},
+      { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "UI Version:", "$neko_c.about_b": "1.2.1_ZXA | STABLE"}},
+      { "panel": { "type": "panel", "size": "$jarak_1"  }},
+      { "about_text@neko_c.about_text": {"$neko_c.about_a": "ZxynUI Build:","$neko_c.about_b": "15"}},
+      { "panel": { "type": "panel", "size": "$jarak_1"  }},
+      { "about_text@neko_c.about_text": {"$neko_c.about_a": "Last Update:","$neko_c.about_b": "March, 22 2023"}},
+      { "panel": { "type": "panel", "size": "$jarak_1"  }},
+      { "about_text@neko_c.about_text": { "$neko_c.about_a": "Supported Minecraft Versions:","$neko_c.about_b": "1.19.70 / 1.19.71 / 1.19.81"}},
+
+      { "version@neko_c.about_label": { "text": "Original Created by Zxyn :"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "@zxyn404 ( Zxyn )"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Instagram:", "$neko_c.about_b": "@zxyn404"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Twitter: ", "$neko_c.about_b": "@zxyn404"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "Zxyn404#2753"}},
+
+      { "version@neko_c.about_label": { "text": "BANANA PACK, dibuat oleh FUSION :"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": " FUSION "}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "FSN_RS#2191"}},
+
+      { "version@neko_c.about_label": { "text": "NOTE :"}},
+      { "panel": { "type": "panel", "size": "$jarak_2" }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ 1 ] :", "$neko_c.about_b": "neko.c.rule_1"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ 2 ] :", "$neko_c.about_b": "neko.c.rule_2"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ 3 ] :", "$neko_c.about_b": "neko.c.rule_3"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ 4 ] :", "$neko_c.about_b": "neko.c.rule_4"}},
+      { "panel": { "type": "panel", "size": "$jarak_2"  }},
+      { "version@neko_c.about_text": { "$neko_c.about_a": "[ 5 ] :", "$neko_c.about_b": "neko.c.rule_5"}} 
+      ]
+    }
+  }
