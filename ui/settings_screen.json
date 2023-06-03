@@ -23,11 +23,6 @@
     ],
     "controls": [
       {
-        "world_selector_pane@world_section.selector_pane_content": {
-          "ignored": "(not $include_world_section)"
-        }
-      },
-      {
         "general_and_account@neko_c.bg_r2": {
           "ignored": "(not $include_controls_and_settings_sections or not $is_pregame)",
           "size": [ "100% - 3px", "100%c" ],
@@ -85,10 +80,9 @@
           ]
         }
       },
-      { "spacer0": { "type": "panel", "size": "$ukuran_jarak","ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"}},
+      { "spacer_a0": { "type": "panel", "size": "$ukuran_jarak","ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"}},
       {
-        "quick_panel": {
-          "type": "panel",
+        "quick_panel@neko_c.bg_r2": {
           "ignored": "(not $include_controls_and_settings_sections)",
           "size": [ "100% - 3px", "100%c" ],
           "color": [ 0.10, 0.10, 0.10 ],
@@ -115,6 +109,12 @@
             ]
           }
       },
+      {
+        "world_selector_pane@world_section.selector_pane_content": {
+          "ignored": "(not $include_world_section)"
+        }
+      },
+      { "spacer0": { "type": "panel", "size": "$ukuran_jarak","ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"}},
       {
         "graphics_panel": {
           "type": "panel",
