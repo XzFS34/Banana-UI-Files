@@ -300,7 +300,7 @@
       }
     ]
   },
-
+  
   "link_button_panel": {
     "type": "panel",
     "size": [ "100%" , 35 ]
@@ -360,7 +360,7 @@
 
   "more@neko_c.bg_r2": {
     "size": [ "100% - 3px", "100%c" ],
-    "color": [ 0.09, 0.13, 0.17 ],
+    "color": [ 0.10, 0.10, 0.10 ],
     "bindings": [
       {
         "binding_type": "view",
@@ -449,6 +449,12 @@
                 "ignored": "($is_publish or $test_infrastructure_disabled)",
                 "$toggle_group_forced_index": "$automation_forced_index",
                 "$tts_section_header": "$general_section_header"
+              }
+            },
+            {
+              "about_button@custom_settings_section.about_button": {
+                "$toggle_group_forced_index": 4000, 
+                "ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"
               }
             }
           ]
@@ -617,7 +623,7 @@
                 "controls": [
                   {
                     "toggle_1@neko_c.bg_r2": {
-                      "color": [ 0.09, 0.13, 0.17 ],
+                      "color": [ 0.10, 0.10, 0.10 ],
                       "layer": 1,
                       
                       //   "type": "panel",
@@ -676,7 +682,7 @@
                   },
                   {
                     "toggle_2@neko_c.bg_r2": {
-                      "color": [ 0.09, 0.13, 0.17 ],
+                      "color": [ 0.10, 0.10, 0.10 ],
                       "layer": 1,
                       //   "type": "panel",
                       
@@ -826,8 +832,8 @@
         }
       },
       {
-        "perspective@neko_c.bg_r2": {
-          "color": [ 0.09, 0.13, 0.17 ],
+        "perspective": {
+          "type": "panel",
           "size": [ "100%", "90px" ],
           "layer": 1,
           "controls": [
@@ -918,7 +924,7 @@
                 "controls": [
                   {
                     "toggle_1@neko_c.bg_r2": {
-                      "color": [ 0.09, 0.13, 0.17 ],
+                      "color": [ 0.10, 0.10, 0.10 ],
                       "layer": 1,
                       
                       //   "type": "panel",
@@ -999,7 +1005,7 @@
                   },
                   {
                     "toggle_2@neko_c.bg_r2": {
-                      "color": [ 0.09, 0.13, 0.17 ],
+                      "color": [ 0.10, 0.10, 0.10 ],
                       "layer": 1,
                       //   "type": "panel",
                       
@@ -1073,66 +1079,6 @@
         }
       },
       {
-        "super_fancy_panel@neko_c.bg_r2": {
-          "color": [ 0.09, 0.13, 0.17 ],
-          "layer": 1,
-          
-          "ignored": false,
-          "size": [ "100%", "100%c + 4px" ],
-
-          "controls": [
-            {
-              "super_fancy_contents": {
-                "type": "stack_panel",
-                "size": [ "100% - 6px", "100%c - 4px" ],
-                "controls": [
-                  {
-                    "atmospherics_toggle@settings_common.option_toggle": {
-                      "$option_label": "options.atmosphericsEnable",
-                      "$option_binding_name": "#atmospherics",
-                      "$option_enabled_binding_name": "#atmospherics_enabled",
-                      "$toggle_name": "atmospherics"
-                    }
-                  },
-                  {
-                    "edge_highlight_toggle@settings_common.option_toggle": {
-                      "$option_label": "options.edgeHighlightEnable",
-                      "$option_binding_name": "#edge_highlight",
-                      "$option_enabled_binding_name": "#edge_highlight_enabled",
-                      "$toggle_name": "edge_highlight"
-                    }
-                  },
-                  {
-                    "bloom_toggle@settings_common.option_toggle": {
-                      "$option_label": "options.bloomEnable",
-                      "$option_binding_name": "#bloom",
-                      "$option_enabled_binding_name": "#bloom_enabled",
-                      "$toggle_name": "bloom"
-                    }
-                  },
-                  {
-                    "terrain_shadows_toggle@settings_common.option_toggle": {
-                      "$option_label": "options.terrainShadowsEnable",
-                      "$option_binding_name": "#terrain_shadows",
-                      "$option_enabled_binding_name": "#terrain_shadows_enabled",
-                      "$toggle_name": "terrain_shadows"
-                    }
-                  },
-                  {
-                    "super_fancy_water_toggle@settings_common.option_toggle": {
-                      "$option_label": "options.superFancyWaterEnable",
-                      "$option_binding_name": "#super_fancy_water",
-                      "$option_enabled_binding_name": "#super_fancy_water_enabled",
-                      "$toggle_name": "super_fancy_water"
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
         "texel_anti_aliasing_toggle@settings_common.option_toggle": {
           "$option_label": "options.texelAA",
           "$option_binding_name": "#texel_aa",
@@ -1187,41 +1133,89 @@
     "controls": [
       {
         "panel_gambar@neko_c.bg_r2": {
-          "type": "panel",
-          "color": [ 0.0, 0.0, 0.0 ],
+          "color": [ 0.14, 0.14, 0.14 ],
           "alpha": 1,
           "size": [ "100%", 100 ],
           "controls": [
-            { "potato_item@neko_c.potato_item": {}}
+            { "zxyn_studios_logo@neko_c.zxyn_studios_logo": {}}
           ]
         }
       },
       { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "Banana Pack Version:", "$neko_c.about_b": "0.1.0  | STABLE  | Based On ZxynUI"}},
-      { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "UI Version:", "$neko_c.about_b": "1.2.1_ZXA | STABLE"}},
-      { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": {"$neko_c.about_a": "ZxynUI Build:","$neko_c.about_b": "16"}},
-      { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": {"$neko_c.about_a": "Last Update:","$neko_c.about_b": "June, 2 2023"}},
-      { "panel": { "type": "panel", "size": "$jarak_1"  }},
-      { "about_text@neko_c.about_text": { "$neko_c.about_a": "Supported Minecraft Versions:","$neko_c.about_b": "1.19.70 / 1.19.71 / 1.19.81"}},
 
-      { "version@neko_c.about_label": { "text": "Original Created by Zxyn :"}},
+      {
+        "about_and_social@neko_c.bg_r2": {
+          "color": [ 0.14, 0.14, 0.14 ],
+          "size": [ "100%", 100 ],
+          "controls": [
+            {
+              "stack": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "about": {
+                      "type": "panel",
+                      "size": [ "50%", "100%" ],
+                      "controls": [
+                        {
+                          "about_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c"],
+                            "controls": [
+                              { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "zxyn.ui.verison", "$neko_c.about_b": "1.2.2_ACUMALAKA | Stable"}},
+                              { "panel": { "type": "panel", "size": "$jarak_1"  }},
+                              { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.build","$neko_c.about_b": "100"}},
+                              { "panel": { "type": "panel", "size": "$jarak_1"  }},
+                              { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.latestupdate","$neko_c.about_b": "June, 3 2023"}}
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "sosis": {
+                      "type": "panel",
+                      "size": [ "50%", "100%" ],
+                      "controls": [
+                        {
+                          "sosis_stack": {
+                            "type": "stack_panel",
+                            "size": [ "100%", "100%c"],
+                            "controls": [
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "Zxyn ( @zxyn404 )"}},
+                              { "panel": { "type": "panel", "size": "$jarak_2"  }},
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Twitter: ", "$neko_c.about_b": "Zxyn404"}},
+                              { "panel": { "type": "panel", "size": "$jarak_2"  }},
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "Zxyn404#2753"}}
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "panel": { "type": "panel", "size": "$jarak_1"  }},
+      {
+        "panel_gambar@neko_c.bg_r2": {
+          "color": [ 0.14, 0.14, 0.14 ],
+          "size": [ "100%", "100%c" ],
+          "controls": [
+            { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.mcsupport","$neko_c.about_b": "1.19.81, 1.19.83, 1.20 ( Maybe )"}}
+          ]
+        }
+      },
       { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "@zxyn404 ( Zxyn )"}},
-      { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Twitter: ", "$neko_c.about_b": "ZxynStudios ( @zxyn404 )"}},
-      { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "Zxyn404#2753"}},
-
-      { "version@neko_c.about_label": { "text": "BANANA PACK, dibuat oleh FUSION :"}},
-      { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": " FUSION "}},
-      { "panel": { "type": "panel", "size": "$jarak_2"  }},
-      { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "FSN_RS#2191"}},
-
-      { "version@neko_c.about_label": { "text": "NOTE :"}},
+      { "version@neko_c.about_label": { "$about_header_text": "NOTE :"}},
       { "panel": { "type": "panel", "size": "$jarak_2" }},
       { "version@neko_c.about_text": { "$neko_c.about_a": "[ 1 ] :", "$neko_c.about_b": "neko.c.rule_1"}},
       { "panel": { "type": "panel", "size": "$jarak_2"  }},
