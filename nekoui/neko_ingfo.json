@@ -1,8 +1,6 @@
 {
   "namespace": "loli",
 
-  /// A ANJG a
-
   "button_panel": {
   "type": "panel",
   "layer": 5,
@@ -131,7 +129,7 @@
           "font_scale_factor": 1.1,
           "offset": [ 20 , -0.1 ],
 
-          "color": "black",
+          "color": "white",
           "text": "#playername",
           "bindings": [
             {
@@ -172,9 +170,20 @@
           },
           {
             "gamertag_label@loli.gamertag_label": {
+              "visible": "$player_name_text_1",
+              "$player_name_text_2|default": false,
               "font_scale_factor": 1.2,
               "color": "$warna_text_gamertag",
               "offset": [ 0 , 12 ]
+            }
+          },
+          {
+            "playername@loli.playername": {
+            "visible": "$player_name_text_2",
+            "$player_name_text_2|default": false,
+            "font_scale_factor": 1.2,
+            "color": "$warna_text_gamertag",
+            "offset": [ 0 , 12 ]
           }
         }
       ]
@@ -245,11 +254,10 @@
           "binding_name_override": "#texture_file_system"
         }
       ]
-    },
+    }, 
 
-    "nametag_panel_2@neko_c.bg_r2": {
-      "alpha": 1,
-      "color": [ 0.07, 0.11, 0.13 ],
+    "nametag_panel_2": {
+      "type": "panel",
       "size": [ "100%", 35 ],
       "controls": [
         {
@@ -268,7 +276,7 @@
                 }
               },
               {
-                "button_panel@loli.button_panel": { "controls": [ { "gamertag@loli.gamertag": { "$warna_text_gamertag": [ 1.0, 1.0, 1.0 ]}}]}
+                "button_panel@loli.button_panel": { "controls": [ { "gamertag@loli.gamertag": { "$player_name_text_1": true, "$player_name_text_2": false, "$warna_text_gamertag": [ 1.0, 1.0, 1.0 ]}}]}
               }
             ]
           }
@@ -276,20 +284,42 @@
       ]
     },
 
+    "nametag_panel_3": {
+      "type": "panel",
+      "size": [ 100, 35 ],
+      "anchor_from": "left_middle",
+      "anchor_to": "left_middle",
+      "controls": [
+        {
+          "nametag_stackpanel": {
+            "type": "stack_panel",
+            "size": [ "100%" , "100%" ],
+            "orientation": "horizontal", 
+            "controls": [
+              {
+                "panel_nama_pict@loli.panel_nama_pict": { "size": [ "35px", "100%" ], "controls": [ { "gamerpic@loli.gamerpic": { "size": [ 20, 20 ] }}]}
+              },
+              {
+                "spacer_2": {
+                  "type": "panel",
+                  "size": [ 1, 1]
+                }
+              },
+              {
+                "button_panel@loli.button_panel": { "controls": [ { "gamertag@loli.gamertag": {  "$player_name_text_1": false, "$player_name_text_2": true, "$warna_text_gamertag": [ 1.0, 1.0, 1.0 ]}}]}
+              }
+            ]
+          }
+        }
+      ]
+    },
 
-    /*
-    +-------------------------------------------------------------------+
-    +--                                                               --+
-    --+                 V E R S I M I N E C R A F T                   +--
-    +--                                                               --+
-    +-------------------------------------------------------------------+
-    */
+    // Versi Minecraft //
 
     "label": {
       "type": "label",
-      "font_scale_factor": 0.5,
+      "font_scale_factor": 0.6,
       "font_type": "bahnschrift_semi_bold",
-      "size": [ "100% - 5px ", "default" ],
       "anchor_from": "top_left",
       "anchor_to": "top_left",
       "text_alignment": "left",
@@ -297,33 +327,13 @@
       "layer": 5
     },
 
-    "copyright@loli.label": {
-    "layer": 5,
-    "text": "menu.copyright"
-    },
-   
-    "version@loli.label": {
-    "layer": 5,
-    "text": "#version",
-    "bindings": [
-        {
-          "binding_name": "#version"
-        }
-      ]
-    },
+    "core_stack_panel": { "type": "stack_panel","size": [ "100%", "100%c" ],"orientation": "horizontal", "anchor_from": "middle_left","anchor_to": "middle_left", "controls": "$isinya_ape"},
+    "copyright@label": { "layer": 5,"text": "menu.copyright"},
+    "version@label": { "layer": 5,"text": "#version","bindings": [{"binding_name": "#version"}]},
+    "zxyn_ui@label": { "layer": 5,"text": "ZxynUI 1.2.2 Beta"},
 
-    "neko_ui_ver@loli.label": {
-    "layer": 5,
-    "text": "ZxynUI Created By Zxyn"
-    },
-
-    "stack_panel_label": {
-      "type": "stack_panel",
-      "size": [ "100%", "100%c" ],
-      "orientation": "vertical",
-      "anchor_from": "middle_left",
-      "anchor_to": "middle_left",
-      "controls": [
+    "minecraft_and_zxynui_version@core_stack_panel": {
+      "$isinya_ape": [
         {
           "version@loli.version": {}
         },
@@ -331,41 +341,7 @@
           "copyright@loli.copyright": {}
         },
         {
-          "neko_ui_ver@loli.neko_ui_ver": {}
-        }
-      ]
-    },
-
-    "creeper_icon": {
-      "type": "image",
-      "texture": "textures/neko/main_icon/creeper",
-      "layer": 5,
-      "size": [ 15 , 15 ]
-    }, 
-
-    "minecraft_version": {
-      "type": "panel",
-      "anchor_from": "bottom_left",
-      "anchor_to": "bottom_left",
-      "size": [ "100%", "100%" ],
-      "controls": [
-        {
-          "stack_panel": {
-          "type": "stack_panel",
-          "size": [ "100%" , "100%" ],
-          "orientation": "horizontal", 
-          "controls": [
-              {
-                "spacer_2": {
-                  "type": "panel",
-                  "size": [ 2, 2]
-                }
-              },
-              {
-                "button_panel@loli.button_panel": { "size": [ 80, "100%" ], "controls": [ { "stack_panel_label@loli.stack_panel_label": {}}]}
-              }
-            ]
-          }
+          "zxyn_ui@loli.zxyn_ui": {}
         }
       ]
     }

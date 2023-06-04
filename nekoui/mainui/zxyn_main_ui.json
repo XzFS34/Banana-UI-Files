@@ -4,7 +4,7 @@
 
   "image_uv_animation": {
     "anim_type": "uv",
-    "duration": 5,
+    "duration": 10,
     "activated": false,
     "from": "$neko_a",
     "to": "$neko_a"
@@ -20,9 +20,10 @@
   },
 
   "first_animation@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 0] , "next": "@zxyn_main_ui.a_00" },
-    "a_00@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 400], "next": "@zxyn_main_ui.first_animation" },
- //   "a_01@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 400], "next": "@zxyn_main_ui.first_animation" },
-//   "a_02@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 600], "next": "@zxyn_main_ui.first_animation" },
+    "a_00@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 200], "next": "@zxyn_main_ui.a_01" },
+    "a_01@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 400], "next": "@zxyn_main_ui.a_02" },
+    "a_02@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 600], "next": "@zxyn_main_ui.a_03" },
+    "a_03@zxyn_main_ui.image_uv_animation": { "$neko_a": [ 0, 800], "next": "@zxyn_main_ui.first_animation" },
   
   "panel_event": {
       "type": "panel",
@@ -42,7 +43,7 @@
                   "size": [ "100%", 25 ],
                   "controls": [
                     {
-                      "anjim@zxyn_main_ui.anjim2": {}
+                      "anjim@zxyn_main_ui.anjim": {}
                     }
                   ]
                 }
@@ -54,7 +55,7 @@
   },
   
   "neko_panel_1": { "type": "panel","size": [ "100%", 25 ]},
-  "neko_panel_2": { "type": "panel","size": [ "100%", 23 ]},
+  "neko_panel_2": { "type": "panel","size": [ "100%", 20 ]},
 
 
   "core_panel": {
@@ -95,17 +96,6 @@
 
   "right_panel": {
     "type": "panel",
-    "offset": "$offset_a",
-    "variables": [
-      {
-        "requires": "$win10_edition",
-        "$offset_a": [ "0.3%", -2.7 ]
-      },
-      {
-        "requires": "$pocket_edition",
-        "$offset_a": [ "3%", -2.7 ]
-      }
-    ],
     "size": [ 90, "100%" ],
     "controls": [
       {
@@ -115,12 +105,14 @@
           "anchor_from": "bottom_left",
           "anchor_to": "bottom_left",
           "size": [ "100%", "100%"],
+          "$neko_uwu_from|default": [ "-50%", 0 ],
+          "$neko_uwu_to|default": [ 0, 0 ],
           "animation_reset_name": "screen_animation_reset",
           "anims": [
-            "@anim_test.screen_exit_animation_push_offset",
-            "@anim_test.screen_exit_animation_pop_offset",
-            "@anim_test.screen_entrance_animation_push_offset",
-            "@anim_test.screen_entrance_animation_pop_offset"
+            "@anim_test.neko_push_offset",
+            "@anim_test.neko_pop_offset",
+            "@anim_test.neko_entrance_push_offset",
+            "@anim_test.neko_entrance_pop_offset"
           ],
           "controls": [
             {
@@ -184,8 +176,8 @@
                       "anchor_to": "bottom_left",
                       "size": [ "100%", "100%c"],
                       "controls": [
-                        { "neko_panel_2@zxyn_main_ui.neko_panel_2": {"size": [ "100%", 20 ], "controls": [ { "minecraft_version@loli.minecraft_version": {}}]}},
-                        { "spacer": { "type": "panel", "size": [ 5,5 ]}},
+                        { "neko_panel_2@neko_c.bg_2": { "alpha": 0, "size": [ "100%", 20 ], "controls": [ { "minecraft_and_zxynui_version@loli.minecraft_and_zxynui_version_daasdfas": {}}]}},
+                        { "spacer": { "type": "panel", "size": [ 5, 5 ]}},
                         { "neko_panel_2@zxyn_main_ui.neko_panel_2": { "controls": [ { "start_button@zxyn.start_button": {}}]}}
                       ]
                     }
@@ -206,10 +198,9 @@
     "texture": "textures/ui/title"
   },
 
-  "top_middle_panel_2@neko_c.bg_3": {
+  "top_middle_panel_2@neko_c.bg_2": {
     "layer": 10,
-    "alpha": 1,
-    "color": [1.00, 1.00, 0.00],
+    "alpha": 0.7,
     "size": [ "100%" , 25 ],
     "anchor_from": "top_right",
     "anchor_to": "top_right",
@@ -219,6 +210,15 @@
           "type": "stack_panel",
           "orientation": "horizontal",
           "size": [ "100%", "100%" ],
+          "$neko_uwu_from|default": [ 0, "-50%" ],
+          "$neko_uwu_to|default": [ 0, 0 ],
+          "animation_reset_name": "screen_animation_reset",
+          "anims": [
+            "@anim_test.neko_push_offset",
+            "@anim_test.neko_pop_offset",
+            "@anim_test.neko_entrance_push_offset",
+            "@anim_test.neko_entrance_pop_offset"
+          ],
           "controls": [
             {
               "core_panel": {
@@ -270,7 +270,6 @@
 
   "top_middle_panel": {
     "type": "panel",
-  "color": "black",
     "layer": 10,
     "alpha": 1,
     "size": [ "fill" , "100%" ],
@@ -280,7 +279,16 @@
           "type": "panel",
           "anchor_from": "bottom_left",
           "anchor_to": "bottom_left",
-          "size": [ 115, 15 ],
+          "size": [ 130, 20 ],
+          "$neko_uwu_from|default": [ 0, "10%"],
+          "$neko_uwu_to|default": [ 0, 0 ],
+          "animation_reset_name": "screen_animation_reset",
+          "anims": [
+            "@anim_test.neko_push_offset",
+            "@anim_test.neko_pop_offset",
+            "@anim_test.neko_entrance_push_offset",
+            "@anim_test.neko_entrance_pop_offset"
+          ],
           "controls": [
             {
               "xbox_panel@zxyn_main_ui.xbox_panel": {}
@@ -291,7 +299,7 @@
       {
         "more_button": {
           "type": "panel",
-          "size": [ "100%", 20 ],
+          "size": [ "100%", 25 ],
           "anchor_from": "top_right",
           "anchor_to": "top_right",
           "controls": [
@@ -301,6 +309,15 @@
                 "orientation": "horizontal",
                 "anchor_from": "top_right",
                 "anchor_to": "top_right",
+                "$neko_uwu_from|default": [ "20%", 0],
+                "$neko_uwu_to|default": [ 0, 0 ],
+                "animation_reset_name": "screen_animation_reset",
+                "anims": [
+                  "@anim_test.neko_push_offset",
+                  "@anim_test.neko_pop_offset",
+                  "@anim_test.neko_entrance_push_offset",
+                  "@anim_test.neko_entrance_pop_offset"
+                ],
                 "controls": [
                   { 
                     "spacer": { "type": "panel", "size": [ 7, 7 ]}
@@ -318,7 +335,7 @@
                     "spacer": { "type": "panel", "size": [ 3, 3 ]}
                   },
                   {
-                    "quit_button@zxyn.quit_button": { "ignored": "$win10_edition" }
+                    "quit_button@zxyn.quit_button": {}
                   },
                   { 
                     "spacer": { "type": "panel", "size": [ 3, 3 ]}
@@ -336,9 +353,9 @@
   },
 
 
-  "xbox_panel": {
+  "xbox_panel@neko_c.bg_2": {
     "layer": 2,
-    "type": "panel",
+  //  "type": "panel",
     "size": [  "100% - 2px", "100%" ],
 
     "anchor_from": "center",
@@ -347,8 +364,8 @@
     "$ukuran_font": 0.75,
     "$gaya_font": "bahnschrift_bold",
 
-    "$panel_img_sign_size": [ 15 , 15 ],
-    "$panel_img_not_sign_size": [ 15 , 15 ],
+    "$panel_img_sign_size": [ 15 , "100%" ],
+    "$panel_img_not_sign_size": [ 15 , "100%" ],
 
     "$panel_text_sign_size": [ "fill" , "100%" ],
     "$panel_text__not_sign_size": [ "fill" , "100%" ],
@@ -429,8 +446,8 @@
                     "label": {
                       "type": "label",
                       "layer": 11,
-                      "size": [ "100%", 15 ],
-                      "alpha": "@zxyn_main_ui.alpha_0",
+                      "size": [ "100%", "default" ],
+                      "alpha": 1,  //"@zxyn_main_ui.alpha_0",
                       "font_scale_factor": "$ukuran_font",
                       "font_type": "$gaya_font",
                       "anchor_from": "left_middle",
@@ -449,7 +466,7 @@
                     "label": {
                       "type": "label",
                       "layer": 11,
-                      "size": [ "100%", 20],
+                      "size": [ "100%", "default" ],
                       "font_scale_factor": "$ukuran_font",
                       "font_type": "$gaya_font",
                       "anchor_from": "left_middle",
@@ -478,7 +495,7 @@
     "type": "panel",
     "anchor_to": "middle",
     "anchor_from": "middle",
-    "size": [ "50% + 10px" , "50% + 10px" ],
+    "size": [ "20% + 20px" , "50% + 20px" ],
     "offset": [ 0 , "-1%" ],
     "controls": [
       { "viewer_panel@start.skin_viewer_panel": {} }

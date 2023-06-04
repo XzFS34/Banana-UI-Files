@@ -30,7 +30,7 @@
     "$glyph_offset|default": [ 5 , 0 ],
     "$glyph_anchor_from|default": "left_middle",
     "$glyph_anchor_to|default": "left_middle",
-    "$button_label_offset|default": [ 40 , 0 ],
+    "$button_label_offset|default": [ 30 , 1.1 ],
     "layer": 2,
     "controls": [
       {
@@ -93,12 +93,11 @@
       {
         "title_button_text": {
           "type": "label",
-          "font_type": "MinecraftTen",
+          "font_type": "PoppinsMedium",
           "anchor_from": "left_middle",
           "anchor_to": "left_middle",
-          "font_scale_factor": 0.7,
-          "size": [ "100% - 38px", "default" ],
-          "max_size": [ "100% - 38px", "100% - 4px" ],
+          "font_scale_factor": 1.15,
+          "max_size": [ "100% - 20px", "100% - 10px" ],
           "text_alignment": "left",
           "offset": "$button_label_offset",
           "text": "$button_text",
@@ -206,7 +205,7 @@
   "anchor_to": "top_middle",
   "$border_visible": false,
   "size": [ "100%" ,  40 ],
-  "$glyph_size": [ 25, 25 ],
+  "$glyph_size": [ 20, 20 ],
 
 // Warna Teks
   "$default_text_color|default": "$warna_default",
@@ -238,8 +237,7 @@
       "$pressed_button_name": "button.menu_local_world_create"
     }
   ],
-  "$button_text": "Create New world",
-  "$desc_button_text": "Jelajahi dunia baru !",
+  "$button_text": "playscreen.create_new_world",
   "$button_focus_precedence": 10,
   "$create_new_row_focus_override_up|default": "close_button",
   "$focus_override_up": "$create_new_row_focus_override_up",
@@ -324,13 +322,13 @@
 
   //Warna
   
-  "$light_toggle_default_text_color": [ 0.0, 0.0, 0.0 ],
+  "$light_toggle_default_text_color": [ 1.0, 1.0, 1.0 ],
   "$light_toggle_hover_text_color": [ 0.15, 0.15, 0.15 ],
   "$light_toggle_checked_default_text_color": [ 0.15, 0.15, 0.15 ],
   "$light_toggle_checked_hover_text_color": [ 0.09, 0.13, 0.17 ],
 
   //Glyph
-  "$glyph_size": [ 30, 30 ],
+  "$glyph_size": [ 20, 20 ],
   "$button_type_panel": "play_ui.custom_button_template",
   
   "$light_glyph_toggle_default_color": [ 1.0, 1.0, 1.0 ],
@@ -558,8 +556,8 @@
                     "dialog_title_label@settings_common.core_label": {
                       "layer": 11,
                       "font_type": "MinecraftTen",
-                      "color": [ 0.0, 0.0, 0.0 ],
-                      "font_scale_factor": 1.2,
+                      "color": [ 1.0, 1.0, 1.0 ],
+                      "font_scale_factor": 1.4,
                       "offset": [ 0, 4 ],
                       "size": [ "default" , "100%" ],
                       "text_alignment": "center",
