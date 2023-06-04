@@ -288,7 +288,14 @@
         {
           "array_name": "controls",
           "operation": "insert_front",
-          "value": { "tombol_extra@crafting.tombol_extra": { "$enable_quick_loot": true,"$enable_quick_crafting": false,"$enable_quick_loot_furnace": false,"$enable_quick_loot_anvil": false }}
+          "value": { "tombol_extra@crafting.tombol_extra": { 
+            "$enable_quick_loot": true,
+            "$enable_quick_crafting": false,
+            "$enable_quick_loot_furnace": false,
+            "$enable_quick_loot_anvil": false,
+            "$enable_quick_loot_smithing": false
+            }
+          }
         },
         {
           "array_name": "controls", 
@@ -351,12 +358,19 @@
     }, 
 
     "large_chest_panel/root_panel/chest_panel": {
-          "modifications": [
-            {
-              "array_name": "controls",
-              "operation": "insert_front",
-              "value": { "tombol_extra@crafting.tombol_extra": { "$enable_quick_loot": true,"$enable_quick_crafting": false,"$enable_quick_loot_furnace": false,"$enable_quick_loot_anvil": false }}
-            },
+        "modifications": [
+        {
+          "array_name": "controls",
+          "operation": "insert_front",
+          "value": { "tombol_extra@crafting.tombol_extra": { 
+            "$enable_quick_loot": true,
+            "$enable_quick_crafting": false,
+            "$enable_quick_loot_furnace": false,
+            "$enable_quick_loot_anvil": false,
+            "$enable_quick_loot_smithing": false
+            }
+          }
+        },
         // Untuk Cell Chest
         {
           "array_name": "controls", 

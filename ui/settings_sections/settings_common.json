@@ -38,6 +38,45 @@
     "$control_name": "settings_common.option_dropdown_control"
   },
 
+  "option_toggle_on@settings_common.option_toggle_state_template": {
+    "texture": "textures/ui/toggle_on",
+    "color": "$toggle_on_default_color"
+  },
+
+  "option_toggle_on_hover@settings_common.option_toggle_state_template": {
+    "texture": "textures/ui/toggle_on_hover",
+    "color": "$toggle_on_hover_color"
+  },
+
+  "option_toggle_control@common.toggle": {
+    "layer": 2,
+    "$toggle_state_binding_name|default": "$option_binding_name",
+    "$toggle_enabled_binding_name|default": "$option_enabled_binding_name",
+    "$toggle_enabled_binding_type|default": "global",
+    "size": [ "100%", "100%c" ],
+    "$binding_type": "global",
+    "$binding_condition": "once",
+    "$unchecked_control": "settings_common.option_toggle_off",
+    "$checked_control": "settings_common.option_toggle_on",
+    "$unchecked_hover_control": "settings_common.option_toggle_off_hover",
+    "$checked_hover_control": "settings_common.option_toggle_on_hover",
+    "$unchecked_locked_control": "settings_common.option_toggle_off_locked",
+    "$unchecked_locked_hover_control": "settings_common.option_toggle_off_locked",
+    "$checked_locked_control": "settings_common.option_toggle_on_locked",
+    "$checked_locked_hover_control": "settings_common.option_toggle_on_locked",
+
+    "$enable_directional_toggling": false,
+
+    "enabled": "$enabled",
+    "variables": [
+      {
+        "requires": "(not $option_enabled_binding_name or not $enabled)",
+        "$toggle_enabled_binding_name": "#not_data_bound",
+        "$toggle_enabled_binding_type": "none"
+      }
+    ]
+  },
+
   "option_slider_control": {
     "type": "panel",
     "size": [ "100%- 5px", 20 ],
@@ -45,7 +84,7 @@
       {
         "slider@common.slider": {
           "size": [ "100%", 20 ],
-          "$slider_box_size": [ 10, 16 ],
+          "$slider_box_size": [ 0, 0 ],
           "offset": [ 1, 0 ],
 
           "$option_label|default": "",
@@ -173,7 +212,17 @@
 
                 "controls": [
                   {
-                    "header@settings_common.header": {}
+                    "header@settings_common.header": {
+                      "$neko_uwu_from|default": [ 0, "-25%"],
+                      "$neko_uwu_to|default": [ 0, 0 ],
+                      "animation_reset_name": "screen_animation_reset",
+                      "anims": [
+                        "@anim_test.neko_push_offset",
+                        "@anim_test.neko_pop_offset",
+                        "@anim_test.neko_entrance_push_offset",
+                        "@anim_test.neko_entrance_pop_offset"
+                      ]
+                    }
                   },
                   {
                     "container": {
@@ -261,7 +310,7 @@
       {
         "tab_button_text": {
           "type": "label",
-          "font_type": "bahnschrift_bold",
+          "font_type": "PoppinsMedium",
           "font_scale_factor": 0.8,
           "anchor_from": "left_middle",
           "anchor_to": "left_middle",
@@ -391,7 +440,7 @@
   "core_label": {
     "type": "label",
     "layer": 1000,
-    "color": [ 0.72, 0.90, 1.00 ],
+    "color": [ 1.0, 1.0, 1.0 ],
     "text_alignment": "center"
   },
 
@@ -418,7 +467,7 @@
       {
         "dialog_title_label@settings_common.core_label": {
           "font_type": "MinecraftTen",
-          "color": [ 0.0, 0.0, 0.0 ],
+          "color": [ 1.0, 1.0, 1.0 ],
           "font_scale_factor": 0.9,
           "offset": [ 0, 7 ],
           "size": [ "default" , "100%" ],
@@ -467,9 +516,8 @@
     ]
   },
 
-  "selector_group_label@neko_c.bg_r2": {
-    "color": [ 1.00, 1.00, 1.00 ],
-    "alpha": 0,
+  "selector_group_label@neko_c.bg_3": {
+    "color": [ 0.14, 0.14, 0.14 ],
     "size": [ "100%", "100%c + 2px" ],
     "offset": [ 0, -1 ],
     "anchor_from": "bottom_right",
@@ -488,8 +536,8 @@
               "selector_group_label_2": {
                 "type": "label",
                 "text_alignment": "center",
-                "font_type": "bahnschrift_bold",
-                "font_scale_factor": 0.8,
+                "font_type": "PoppinsMedium",
+                "font_scale_factor": 0.9,
                 "text": "$yuki",
                 "layer": 1,
                 "offset": [ 0, -1.1 ],
@@ -626,17 +674,9 @@
     "texture": "textures/ui/HowToPlayDivider"
   },
 
-  "background_gradient": {
-    "type": "custom",
-    "renderer": "gradient_renderer",
-    "color1": [ 1.00, 1.00, 0.00, 1 ],
-    "color2": [ 0.00, 0.00, 0.00, 0.4],
-    "ignored": "$is_holographic"
-  },
-
   "dynamic_dialog_screen@common.base_screen": {
     "type": "screen",
-    "$screen_bg_content": "settings_common.background_gradient",
+    "$screen_bg_content": "",
     "cache_screen": true,
     "button_mappings": [
       {

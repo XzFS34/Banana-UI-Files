@@ -28,7 +28,14 @@
       {
         "array_name": "controls",
         "operation": "insert_front",
-        "value": { "tombol_extra@crafting.tombol_extra": { "$enable_quick_loot": false,"$enable_quick_crafting": false,"$enable_quick_loot_furnace": false,"$enable_quick_loot_anvil": true }}
+        "value": { "tombol_extra@crafting.tombol_extra": { 
+          "$enable_quick_loot": false,
+          "$enable_quick_crafting": false,
+          "$enable_quick_loot_furnace": false,
+          "$enable_quick_loot_anvil": true,
+          "$enable_quick_loot_smithing": false
+          }
+        }
       }
     ]
   },

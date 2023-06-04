@@ -133,6 +133,12 @@
         }
       },
       {
+        "selector_group_label_2@settings_common.selector_group_label": {
+          "ignored": "(not $include_world_section)",
+          "$yuki": "world_settings.header.game_settings"
+        }
+      },
+      {
         "game_button@world_section.game_button": {
           "$toggle_group_forced_index": "$game_forced_index"
         }
@@ -182,8 +188,9 @@
         "switch_game_button@world_section.game_button": {
           "ignored": "(not $nx_os)",
           "$toggle_group_forced_index": "$game_forced_index",
-          "$glyph_texture": "textures/ui/controller_glyph_switch",
-          "$glyph_color_texture": "textures/ui/controller_glyph_color_switch"
+          "$glyph_texture": "textures/neko/glyph_icon/game_color.png",
+          "$glyph_size": [ 18, 18 ],
+          "$glyph_color_texture": "textures/neko/glyph_icon/game.png"
         }
       },
       {
@@ -316,8 +323,8 @@
       },
       { "spacer_08" :  {"type": "panel", "size": [ 3 , 3] }},
       {
-        "gamemode_type@neko_c.bg_3": {
-          "color": [ 0.09, 0.13, 0.17 ],
+        "gamemode_type": {
+          "type": "panel",
           "size": [ "100%", "90px" ],
           "layer": 4,
           "controls": [
@@ -341,8 +348,8 @@
       },
       { "spacer_09" :  {"type": "panel", "size": [ 3 , 3] }},
       {
-        "personal_gamemode_type@neko_c.bg_3": {
-          "color": [ 0.09, 0.13, 0.17 ],
+        "personal_gamemode_type": {
+          "type": "panel",
           "size": [ "100%", "90px" ],
           "ignored": "$is_pregame", 
           "layer": 4,
@@ -368,8 +375,8 @@
       { "spacer_01" :  {"type": "panel", "ignored": "$is_pregame", "size": [ 3 , 3] }},
       { "spacer_02" :  {"type": "panel", "size": [ 3 , 3] }},
       {
-        "world_type_background@neko_c.bg_3": {
-          "color": [ 0.09, 0.13, 0.17 ],
+        "world_type_background": {
+          "type": "panel",
           "size": [ "100%", "90px" ],
           "layer": 4,
           "bindings": [
@@ -399,8 +406,8 @@
       },
       { "spacer_03" :  {"type": "panel", "size": [ 3 , 3] }},
       {
-        "difficulty_type@neko_c.bg_3": {
-          "color": [ 0.09, 0.13, 0.17 ],
+        "difficulty_type": {
+          "type": "panel",
           "size": [ "100%", "90px" ],
           "layer": 4,
           "controls": [
@@ -642,8 +649,8 @@
 
   "experimental_button@settings_common.section_toggle_base": {
     "$toggle_view_binding_name": "experimental_toggle",
-    "$glyph_texture": "textures/neko/glyph_icon/cheats_color",
-    "$glyph_color_texture": "textures/neko/glyph_icon/cheats",
+    "$glyph_texture": "textures/neko/glyph_icon/experimental",
+    "$glyph_color_texture": "textures/neko/glyph_icon/experimental_color",
     "$glyph_size": [ 18, 18 ],
     "$button_text": "createWorldScreen.experimtalSettings",
     "$toggle_property_bag": {
@@ -1203,8 +1210,8 @@
 
   "opsi_dunia@settings_common.section_toggle_base": {
     "$toggle_view_binding_name": "button_opdunia_toggle",
-    "$glyph_texture": "textures/neko/glyph_icon/cheats_color",
-    "$glyph_color_texture": "textures/neko/glyph_icon/cheats",
+    "$glyph_texture": "textures/neko/glyph_icon/advanced",
+    "$glyph_color_texture": "textures/neko/glyph_icon/advanced_color",
     "$glyph_size": [ 18, 18 ],
     "$button_text": "toggle.game_rule.text",
     "$toggle_property_bag": {
@@ -1410,6 +1417,29 @@
           "$focus_override_right": "FOCUS_OVERRIDE_STOP",
           "$max_text_edit_length": 8,
           "$text_edit_box_text_type": "NumberChars"
+        }
+      }
+    ]
+  },
+
+  "addons_selector_panel": {
+    "type": "stack_panel",
+    "$tts_section_header": "options.category.addons",
+    "visible": "(not $education_edition_china)",
+    "controls": [
+      {
+        "selector_group_label_2@settings_common.selector_group_label": {
+          "$yuki": "$tts_section_header"
+        }
+      },
+      {
+        "level_texture_pack_button@world_section.level_texture_pack_button": {
+          "$toggle_group_forced_index": "$level_texture_pack_toggle_index"
+        }
+      },
+      {
+        "addon_button@world_section.addon_button": {
+          "$toggle_group_forced_index": "$addon_toggle_index"
         }
       }
     ]

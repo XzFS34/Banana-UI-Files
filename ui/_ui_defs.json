@@ -6,10 +6,11 @@
     // A CUSTOM
 
     "textures/nekoui/mainui/zxyn_main_ui.json",
+    "textures/nekoui/mainui/zxyn_ui_new.json",
 
     // C u $ T o M J s O ? 1.0
 
-    "textures/nekoui/neko_c.json",
+    "textures/nekoui/neko_common.json",
     "textures/nekoui/neko_bg.json",
     "textures/nekoui/neko_ingfo.json",
     "textures/nekoui/neko_anim.json",
@@ -19,10 +20,6 @@
     "textures/nekoui/settings/neko_settings_common.json",
     "textures/nekoui/settings/neko_settings_section.json",
     "textures/nekoui/settings/neko_custom_radio_settings.json",
-
-    // Menu Utama
-    "textures/nekoui/mainui/neko_main_ui.json",
-    "textures/nekoui/mainui/neko_main_screen.json",
 
     // Play_screen
     "textures/nekoui/anim_bg.json",

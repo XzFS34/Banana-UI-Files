@@ -3,7 +3,8 @@
 
   /// Main Buttons
 
-  "return_to_game_button@zxyn.pause_main_button": {
+  "return_to_game_button@x_button.pause_button_template": {
+    "$glyph_texture": "textures/neko/main_icon/pause_return",
     "$pressed_button_name": "button.menu_continue",
     "$button_text": "menu.returnToGame",
     "$button_focus_precedence": 1,
@@ -11,13 +12,16 @@
     "$focus_override_right": "change_skin_button"
   },
 
-  "settings_button@zxyn.pause_main_button": {
+  "settings_button@x_button.pause_button_template": {
+    "$glyph_texture": "textures/neko/main_icon/pause_settings",
     "$pressed_button_name": "button.menu_settings",
     "$button_text": "menu.settings",
     "$focus_override_right": "change_skin_button"
   },
 
-  "quit_button@zxyn.pause_main_button": {
+  "quit_button@x_button.pause_button_template": {
+    "$glyph_texture": "textures/neko/main_icon/pause_exit",
+
     "$pressed_button_name": "button.menu_quit",
     "$button_text": "pauseScreen.quit",
     "focus_change_down": "button.feedback",
@@ -30,338 +34,100 @@
     ]
   },
 
-  "feedback_icon_2": {
-    "type": "image",
-    "texture": "textures/neko/main_icon/feedback_a",
-    "size": [ 15, 15 ]
-  },
-
-  "feedback_button@common_buttons.hyperlink_content_button": {
-    "$default_button_texture|default": "",
-    "$hover_button_texture|default": "",
-    "$pressed_button_texture|default": "",
-    "$locked_button_texture|default": "",
-    "$default_state_border_visible": false,
-    "$hover_state_border_visible": true,
-    "$pressed_state_border_visible": true,
-    "$locked_state_border_visible": false,
-    "size": [ 23, "100%" ],
-    "property_bag": {
-      "#hyperlink": "https://aka.ms/minecraftfb"
-    },
-    "$button_content": "pause.feedback_icon_2"
-  },
-
-  "feedback_icon_button": {
-    "type": "panel",
-    "$button_tts_header": "accessibility.start.feedback",
-    "$pressed_button_name": "button.feedback",
-    "controls": [
-      { "feedback_button@pause.feedback_button": { "ignored": "$education_edition" } }
-    ]
-  },
-
-  "core_icon": {
-    "type": "image",
-    "size": [ 15, 15 ],
-    "color": "$warna_icon",
-    "variables": [
-      {
-        "requires": "$default_state",
-        "$warna_icon": [ 1.0, 1.0, 1.0 ]
-      },
-      {
-        "requires": "$hover_state",
-        "$warna_icon": [ 1.0, 1.0, 1.0 ]
-      },
-      {
-        "requires": "$pressed_state",
-        "$warna_icon": [ 1.0, 1.0, 1.0 ]
-      },
-      {
-        "requires": "$locked_state",
-        "$warna_icon": [ 1.00, 0.18, 0.17 ]
-      }
-    ]
-  },
-
-  "screenshot_icon@core_icon": {
-    "texture": "textures/ui/camera-yo"
-  },
-
-  "invite_icon@core_icon": {
-    "texture": "textures/neko/main_icon/invite_pause"
-  },
-
-  "achievments_icon@core_icon": {
-    "texture": "textures/neko/main_icon/achievements"
-  },
-
-  "marketplace_icon@core_icon": {
-    "texture": "textures/neko/main_icon/store_icon"
-  },
-
-  "profile_icon@core_icon": {
-    "texture": "textures/neko/main_icon/profile_icon"
-  },
-
-  "take_screenshot_button_2@zxyn.pause_content_button": {
-    "$pressed_button_name": "button.screenshot",
-    "$button_tts_header": "key.screenshot",
-    "$button_content": "pause.screenshot_icon",
-    "$default_glyph_color" : [ 1.0, 1.0, 1.0 ],
-    "sound_name": "random.screenshot",
-    "sound_volume": 1.0,
-    "sound_pitch": 1.0
-  },
-
-  "invite_player@zxyn.pause_content_button": {
-    "$pressed_button_name": "button.menu_invite_players",
-    "$button_content": "pause.invite_icon",
-    "bindings": [
-      {
-        "binding_name": "#invite_button_visible",
-        "binding_name_override": "#enabled",
-        "binding_type": "global"
-      },
-      {
-        "binding_name": "#invite_button_enabled",
-        "binding_name_override": "#enabled"
-      }
-    ]
-  },
-
-  "achievments@zxyn.pause_content_button": {
-    "$pressed_button_name": "button.menu_achievements",
-    "$button_content": "pause.achievments_icon"
-  },
-
-  "profile@zxyn.pause_content_button": {
-    "$pressed_button_name": "button.to_profile_or_skins_screen",
-    "$button_content": "pause.profile_icon"
-  },
-
-  "marketplace@zxyn.pause_content_button": {
-    "$pressed_button_name": "button.menu_store",
-    "$button_content": "pause.marketplace_icon"
-  },
-
-
-  "pause_screen@common.base_screen": {
-    "cache_screen": true,
-
-    "$screen_animations": [
-      "@common.screen_exit_animation_push_fade",
-      "@common.screen_exit_animation_pop_fade",
-      "@common.screen_entrance_animation_push_fade",
-      "@common.screen_entrance_animation_pop_fade"
-    ],
-
-    "button_mappings": [
-      {
-        "from_button_id": "button.menu_cancel",
-        "to_button_id": "button.menu_continue",
-        "mapping_type": "global"
-      },
-      {
-        "from_button_id": "button.controller_start",
-        "to_button_id": "button.menu_continue",
-        "mapping_type": "global"
-      },
-      {
-        "from_button_id": "button.menu_vr_realign",
-        "to_button_id": "button.menu_vr_realign",
-        "mapping_type": "global",
-        "scope": "controller"
-      },
-      {
-        "from_button_id": "button.controller_select",
-        "to_button_id": "button.to_profile_or_skins_screen",
-        "mapping_type": "global",
-        "scope": "controller"
-      },
-      {
-        "from_button_id": "button.menu_tab_left",
-        "to_button_id": "button.menu_tab_left",
-        "mapping_type": "global",
-        "scope": "view"
-      },
-      {
-        "from_button_id": "button.menu_tab_right",
-        "to_button_id": "button.menu_tab_right",
-        "mapping_type": "global",
-        "scope": "view"
-      }
-    ],
-
-    "variables": [
-      {
-        "requires": "$ignore_edu_pause",
-        "$screen_content": "pause.pause_screen_content",
-        "$screen_bg_content": "common.screen_background"
-      },
-      {
-        "requires": "(not $ignore_edu_pause)",
-        "$screen_content": "edu_pause.pause_screen_content"
-      }
-    ]
+  "how_to_play_button@x_button.pause_button_template": {
+    "$pressed_button_name": "button.menu_how_to_play",
+    "$button_text": "menu.howToPlay",
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "ignored": "(not $education_edition or $education_edition_china)",
+    "$focus_override_right": "change_skin_button"
   },
 
   "pause_screen_content": {
-    "type": "panel",
-    "size": [ "100%", "100%" ],
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "layer": 1,
-    "variables": [
+      "modifications": [
       {
-        "requires": "$education_edition",
-        "$achievements_ignored": true
+        "array_name": "controls",
+        "operation": "remove",
+        "where": { "gamepad_helpers@pause.gamepad_helpers": {}}
       },
       {
-        "requires": "$trial",
-        "$achievements_ignored": true
+        "array_name": "controls",
+        "operation": "remove",
+        "where": { "keyboard_helpers@pause.keyboard_helpers": {} }
+      },
+      {
+        "array_name": "controls",
+        "operation": "remove",
+        "where": { "pause_screen_main_panels@pause.pause_screen_main_panels": {}}
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [ { "stack_antara_panel@pause.stack_antara_panel": {}}]
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [ { "ganyu@pause.ganyu": {}}]
       }
-    ],
-    "controls": [
-      {
-        "core_panel@pause.core_panel": { }
-      },
-      { "gamepad_helpers@pause.gamepad_helpers": {} },
-      { "keyboard_helpers@pause.keyboard_helpers": {} }
     ]
   },
 
-  "panel_button": {
+  "panel_icon_2": {
     "type": "panel",
-    "size": [ "100%" , 35 ]
-  },
-
-  "panel_button_2": {
-    "type": "panel",
-    "size": [ "100%" , 27 ]
+    "size": [ "100%" , 32 ]
   },
 
   "checked": {
     "type": "image",
-    "size": [ 10, 7 ],
+    "size": [ 14, 14 ],
     "texture": "textures/neko/main_icon/menu_pause"
   },
 
-  "ganyu@test_toggle.yaemiko": {
-    "size": [ 32, "100%" ],
-    "$button_content": "pause.checked",
-    "$toggle_view_binding_name": "yaemiko"
-  },
-
-    "core_panel": {
-      "type": "stack_panel",
-      "orientation": "horizontal",
-      "size": [ "100%", "100%" ],
-      "controls": [
-        { "neko_menu_lain@pause.neko_menu_lain": {} },
-        { "menu_button_control@pause.menu_button_control": {} }
-      ]
-    },
-
-    "menu_button_control": { // Di Ubah gak ada background
+  "stack_antara_panel": {
     "type": "panel",
-    "size": [ "fill", "100%" ],
-    "anchor_from": "center",
-    "anchor_to": "center",
     "controls": [
       {
-        "title_panel_content@common_art.start_title_panel_content": {
-          "$splash_text_visible": false,
-          "layer": 3,
-          "size": [ "100%" , "20%" ],
-          "offset": [ 0, "8%" ],
-          "anchor_from": "top_middle",
-          "anchor_to": "top_middle"
-        }
-      },
-      {
-        "panel_bawah": {
-          "type": "panel",
-          "offset": [ 0, -3 ],
-          "$jarak": [ 3.5, 3.5 ],
-          "anchor_from": "bottom_middle",
-          "anchor_to": "bottom_middle",
-          "size": [ "100% - 3px", 23 ],
+        "stack_antara_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%" , "100%" ],
           "controls": [
             {
-              "stack_antara_panel": {
-                "type": "stack_panel",
-                "orientation": "horizontal",
-                "size": [ "100%" , "100%" ],
-                "controls": [
-                  {
-                    "ganyu@pause.ganyu": {}
-                  },
-                  { "jarak_0": { "type": "panel", "size": "$jarak"}},
-                  {
-                    "feedback_button@pause.feedback_button": {}
-                  },
-                  { "jarak_1": { "type": "panel", "size": "$jarak"}},
-                  {
-                    "invite_player@pause.invite_player": {}
-                  },
-                  { "jarak_2": { "type": "panel", "size": "$jarak"}},
-                  {
-                    "achievments@pause.achievments": {}
-                  },
-                  { "jarak_3": { "type": "panel", "size": "$jarak"}},
-                  {
-                    "profile@pause.profile": {}
-                  },
-                  { "jarak_4": { "type": "panel", "size": "$jarak"}},
-                  {
-                    "marketplace@pause.marketplace": {}
-                  },
-                  { "jarak_5": { "type": "panel", "size": "$jarak"}},
-                  {
-                    "take_screenshot_button_2@pause.take_screenshot_button_2": {}
-                  }
-                ]
-              }
+              "panel_kiri@pause.panel_kiri": {}
+            },
+            {
+              "a_batu_panel@pause.a_batu_panel": {}
             }
           ]
         }
-      },
+      }
+    ]
+  },
+
+  "a_batu_panel": {
+    "type": "panel",
+    "size": [ "fill", "100%" ],
+    "controls": [
       {
-        "button_stack_panel": {
+        "a_batu": {
           "type": "stack_panel",
-          "size": [ "100%", "100%c" ],
           "orientation": "vertical",
-          "anchor_from": "center",
-          "anchor_to": "center",
+          "size": [ "100%", "100%"],
           "controls": [
-            { "return_to_game_button@pause.panel_button_2": { "controls": [{ "return_to_game_button@pause.return_to_game_button": {}}]}},
-            { "settings_button@pause.panel_button_2": { "controls": [{ "settings_button@pause.settings_button": {}}]}},
-            { "quit_button@pause.panel_button_2": { "controls": [{ "quit_button@pause.quit_button": {}}]}}
+            { "menu_button_control@pause.menu_button_control": {}},
+            { "bottom_button_panel@pause.bottom_button_panel": {}}
           ]
         }
       }
     ]
   },
 
-  "players_label": {
-    "type": "label",
-    "font_scale_factor": 1.25,
-    "text": "#worldname",
-    "size": [ "100%", 10 ],
-    "layer": 2,
-    "bindings": [
-      {
-        "binding_name": "#worldname"
-      }
-    ]
-  },
-
-  "neko_menu_lain@neko_c.bg_2": {
-    "anchor_to": "center",
-    "anchor_from": "center",
-    "size": [ "25%" , "100%" ],
+  "panel_kiri@neko_c.bg_2": {
+      //  "type": "panel",
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "size": [ "20%" ,"100%" ],
     "bindings": [
       {
         "binding_type": "view",
@@ -376,87 +142,87 @@
         "button_stack_panel": {
           "type": "stack_panel",
           "size": [ "100%", "100%" ],
+          "orientation": "vertical",
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "controls": [
+            { "info_panel_content_list@pause.info_panel_content_list": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+
+  "button_panel": {
+    "type": "panel",
+    "size": [ "fill" , "100%" ]
+  },
+
+  "button_content_panel@button_panel": {
+    "size": [ 30 , "100%" ]
+  },
+
+  
+
+  "bottom_button_panel@neko_c.bg_2": {
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [ "100%", 30 ],
+    "controls": [
+      {
+        "button_content_panel_0@button_content_panel": {"size": [ 30, "100%"],"anchor_to": "left_middle", "anchor_from": "left_middle", "controls": [ {"ganyu@test_toggle.yaemiko": {"$default_border_visible": true,"$hover_border_visible": true, "size": [ "100% - 5px", "100% - 5px" ],"$button_content": "pause.checked","$toggle_view_binding_name": "yaemiko"}}]}
+      },
+      {
+        "buttom_stack_panel": {
+          "type": "stack_panel",
           "orientation": "horizontal",
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
           "controls": [
             {
-              "panel_player_list": {
-                "type": "panel",
-                "size": [ "100%", "100%" ],
-                "controls": [
-                  {
-                    "stack_uwu": {
-                      "type": "stack_panel",
-                      "anchor_from": "top_left",
-                      "anchor_to": "top_left",
-                      "orientation": "vertical",
-                      "size": [ "100%", "100% - 3px" ],
-                      "controls": [
-                        {
-                          "header": {
-                            "type": "panel",
-                            "size": [ "100%", 30 ],
-                            "controls": [
-                              {
-                                "kamu_puri": {
-                                  "type": "stack_panel",
-                                  "orientation": "horizontal",
-                                  "size": [ "100%", "100%" ],
-                                  "anchor_from": "left_middle",
-                                  "anchor_to": "left_middle",
-                                  "controls": [
-                                    {
-                                      "panel_img": {
-                                        "type": "image",
-                                        "size": [ "35px" , "100%" ],
-                                        "controls": [
-                                          {
-                                            "img_icon_world": {
-                                              "type": "image",
-                                              "anchor_from": "center",
-                                              "anchor_to": "center",
-                                              "texture": "textures/ui/worldsIcon",
-                                              "size": [ 25 , 25  ]
-                                            }
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    {
-                                      "panel_label": {
-                                        "type": "image",
-                                        "size": [ "fill" , "100%" ],
-                                        "controls": [
-                                          {
-                                            "players_label@pause.players_label": {
-                                              "color": "white",
-                                              "anchor_from": "center",
-                                              "anchor_to": "center"
-                                            }
-                                          }
-                                        ]
-                                      }
-                                    }
-                                  ]
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "panel_player_list": {
-                            "type": "panel",
-                            "size": [ "100%", "100%" ],
-                            "controls": [
-                               { "info_panel_content_list@pause.info_panel_content_list": {} } 
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
+              "button_content_panel_1@button_content_panel": { "controls": [ { "invite_button@x_button.invite_button": {}}]}
+            },
+            {
+              "button_content_panel_2@button_content_panel": { "controls": [ { "achievements_button@x_button.achievements_button": {}}]}
+            },
+            {
+              "button_content_panel_3@button_content_panel": { "controls": [ { "marketplace_button@x_button.marketplace_button": {}}]}
+            },
+            {
+              "button_content_panel_4@button_content_panel": { "controls": [ { "screenshot_button@x_button.screenshot_button": {}}]}
+            },
+            {
+              "button_content_panel_5@button_content_panel": { "controls": [ { "feedback_button@x_button.feedback_button": {}}]}
+            },
+            {
+              "button_content_panel_6@button_content_panel": { "controls": [ { "profile_button@x_button.profile_button": {}}]}
             }
+          ]
+        }
+      }
+    ]
+  },
+
+  "menu_button_control": { // Di Ubah gak ada background
+    "type": "panel",
+    "size": [ "100%", "fill" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "button_stack_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "orientation": "horizontal",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "controls": [
+            { "spacer_left": { "type": "panel", "size": [ "15%", "100%" ]}},
+            { "settings_button@pause.button_panel": { "controls": [{ "settings_button@pause.settings_button": {}}]}},
+            { "return_to_game_button@pause.button_panel": { "controls": [{ "return_to_game_button@pause.return_to_game_button": {}}]}},
+            { "quit_button@pause.button_panel": { "controls": [{ "quit_button@pause.quit_button": {}}]}},
+            { "spacer_right": { "type": "panel", "size": [ "15%", "100%" ]}}
           ]
         }
       }
@@ -465,7 +231,7 @@
 
   "info_panel_content_list": {
     "type": "panel",
-    "size": [ "100%", "100% -  2px" ],
+    "size": [ "100%", "100% - 30px" ],
     "controls": [
       {
         "uwu": {
@@ -480,96 +246,6 @@
               "vertical_padding@pause.vertical_padding": {
                 "size": [ 0, 8 ]
               }
-            }
-          ]
-        }
-      }
-    ]
-  },
-
-  "player_permission_button@common_buttons.dark_content_button": {
-    "size": [ 35, "100%" ],
-    "$button_content": "pause.player_permission_button_content",
-    "$button_tts_header": "accessibility.pause.permissions",
-    "button_mappings": [
-      {
-        "from_button_id": "button.menu_select",
-        "to_button_id": "button.menu_permission",
-        "mapping_type": "pressed"
-      },
-      {
-        "from_button_id": "button.menu_ok",
-        "to_button_id": "button.menu_permission",
-        "mapping_type": "focused"
-      }
-    ],
-    "bindings": [
-      {
-        "binding_type": "collection_details",
-        "binding_collection_name": "players_collection"
-      }
-    ]
-  },
-
-  "player_grid_item": {
-    "type": "panel",
-    "size": [ "100%", 35 ],
-    "controls": [
-      { "player_grid_item_content@pause.player_grid_item_content": {} }
-    ]
-  },
-
-  "player_grid_item_content": {
-    "type": "panel",
-
-    "controls": [
-      {
-        "player_button_panel": {
-          "type": "stack_panel",
-          "orientation": "horizontal",
-          "anchor_from": "top_middle",
-          "anchor_to": "top_middle",
-          "size": [ "100%", "100% + 1px" ],
-          "controls": [
-            {
-              "player_button_banner": {
-                "type": "panel",
-                "size": [ "fill", "100%" ],
-                "controls": [
-                  { "player_button@pause.player_button": {} },
-                  { "player_banner@pause.player_banner": {} }
-                ]
-              }
-            },
-            {
-              "player_permission_button_padding": {
-                "type": "panel",
-                "size": [ 36, "100%" ],
-                "bindings": [
-                  {
-                    "binding_name": "#permissions_button_visible",
-                    "binding_name_override": "#visible"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "player_permission_button_panel": {
-          "type": "panel",
-          "anchor_to": "top_right",
-          "anchor_from": "top_right",
-          "offset": [ "-1px", 0 ],
-          "size": [ "100%c", "100% + 1px" ],
-          "controls": [
-            { "player_permission_button@pause.player_permission_button": {} }
-          ],
-          "bindings": [
-            {
-              "binding_name": "#permissions_button_visible",
-              "binding_name_override": "#visible"
             }
           ]
         }
@@ -598,6 +274,16 @@
     "focus_nagivation_mode_right": "contained",
     "controls": [
       {
+        "vertical_padding_0@pause.vertical_padding": {
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "players_label@pause.players_label": {
+          "ignored": "$education_edition"
+        }
+      },
+      {
         "vertical_padding_2@pause.vertical_padding": {
           "size": [ 0, 3 ],
           "ignored": "$education_edition"
@@ -623,68 +309,6 @@
     ]
   },
 
-  "scoreboard_player_list": {
-    "type": "stack_panel",
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "size": [ "100%", "100%c" ],
-    "focus_container": true,
-    "use_last_focus": true,
-    "focus_navigation_mode_right": "contained",
-    "controls": [
-      {
-        "vertical_padding_0@pause.vertical_padding": {
-          "size": [ "100%", 3 ]
-        }
-      },
-      {
-        "permissions_button@common_buttons.dark_text_button": {
-          "ignored": "$education_edition",
-          "size": [ "100%", 24 ],
-          "$button_text": "permissions.title",
-          "$pressed_button_name": "button.menu_permission"
-        }
-      },
-      {
-        "vertical_padding_1@pause.vertical_padding": {
-          "ignored": "$education_edition",
-          "size": [ "100%", 4 ]
-        }
-      },
-      { "players_label@scoreboard.list_objective_label": {} },
-      {
-        "vertical_padding_2@pause.vertical_padding": {
-          "size": [ "100%", 4 ]
-        }
-      },
-      { "scored_players_grid_panel@scoreboard.players_scored_grid_list": {} },
-      {
-        "vertical_padding_3@pause.vertical_padding": {
-          "size": [ "100%", 5 ],
-          "bindings": [
-            {
-              "binding_name": "#list_scores_not_empty",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
-      },
-      { "unscored_players_grid_panel@scoreboard.players_unscored_grid_list": {} },
-      {
-        "vertical_padding_5@pause.vertical_padding": {
-          "size": [ "100%", 4 ]
-        }
-      },
-      { "disconnected_from_multiplayer_label_panel@pause.disconnected_from_multiplayer_label_panel": {} },
-      {
-        "vertical_padding_6@pause.vertical_padding": {
-          "size": [ "100%", 4 ]
-        }
-      }
-    ]
-  },
-
-
   "player_lists": {
     "type": "panel",
     "size": [ "100%", "100%c" ],
@@ -700,7 +324,7 @@
         }
       },
       {
-        "scoreboard_list@pause.scoreboard_player_list": {
+        "scoreboard_list@scoreboard.scoreboard_player_list": {
           "bindings": [
             {
               "binding_name": "#list_has_display_objective",
