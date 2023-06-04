@@ -258,7 +258,6 @@
   "neko_header": {
     "type":  "image",
     "texture": "textures/neko/bg/bg_header",
-    "color": "$header_color",
     "size": [ "100%" , "100%" ]
   },
 
