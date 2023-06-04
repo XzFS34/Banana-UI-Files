@@ -1146,7 +1146,7 @@
       {
         "about_and_social@neko_c.bg_r2": {
           "color": [ 0.14, 0.14, 0.14 ],
-          "size": [ "100%", 100 ],
+          "size": [ "100%", 150 ],
           "controls": [
             {
               "stack": {
@@ -1166,9 +1166,9 @@
                             "type": "stack_panel",
                             "size": [ "100%", "100%c"],
                             "controls": [
-                              { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "zxyn.ui.verison", "$neko_c.about_b": "1.2.2_ACUMALAKA | Stable"}},
+                              { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "Banana UI Version", "$neko_c.about_b": "0.1.0 | Beta | Latest Update: dd/mm/yyyy"}},
                               { "panel": { "type": "panel", "size": "$jarak_1"  }},
-                              { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.build","$neko_c.about_b": "100"}},
+                              { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.verison","$neko_c.about_b": "1.2.2_ACUMALAKA | Beta"}},
                               { "panel": { "type": "panel", "size": "$jarak_1"  }},
                               { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.latestupdate","$neko_c.about_b": "June, 3 2023"}}
                             ]
@@ -1187,6 +1187,28 @@
                             "type": "stack_panel",
                             "size": [ "100%", "100%c"],
                             "controls": [
+                              {
+                                "header": {
+                                  "type": "label",
+                                  "font_scale_factor": 0.5,
+                                  "font_type": "bahnschrift_bold",
+                                  "text": "kontol",
+                                  "color": [ 0.54, 0.80, 1.00 ]
+                                }
+                              },
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "Zxyn ( @zxyn404 )"}},
+                              { "panel": { "type": "panel", "size": "$jarak_2"  }},
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "Zxyn404"}},
+                              { "panel": { "type": "panel", "size": "$jarak_2"  }},
+                              {
+                                "header": {
+                                  "type": "label",
+                                  "font_scale_factor": 0.5,
+                                  "font_type": "bahnschrift_bold",
+                                  "text": "ZxynStudios",
+                                  "color": [ 0.54, 0.80, 1.00 ]
+                                }
+                              },
                               { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "Zxyn ( @zxyn404 )"}},
                               { "panel": { "type": "panel", "size": "$jarak_2"  }},
                               { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Twitter: ", "$neko_c.about_b": "Zxyn404"}},
