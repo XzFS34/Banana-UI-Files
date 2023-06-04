@@ -106,7 +106,8 @@
   },
 
   "start_screen@common.base_screen": {
-    "$screen_bg_content": "bg_animations.nomoreanim",
+    "$screen_bg_content": "bg_animations.bg_anim",
+    "$fill_alpha": 0.5,
    
   //  "alpha": 0.0,
 
@@ -195,12 +196,16 @@
       }
     ],
     "controls": [
+      /* 
       {
         "zxyn_core_main_ui@zxyn_main_ui.zxyn_core_main_ui":{} //"semua_panel@uwu.semua_panel":{}
+      },
+      {
+        "top_panel@z_main.top_panel": {}
+      }  */
+     {
+        "zxyn_core_main_ui@zxyn_main_ui.zxyn_core_main_ui":{} //"semua_panel@uwu.semua_panel":{}
       }
-   /*   {
-        "neko_main_ui@neko_main.neko_main_ui":{} //"semua_panel@uwu.semua_panel":{}
-      } */
     ]
   }
 }

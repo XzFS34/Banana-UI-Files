@@ -2056,7 +2056,7 @@
 
 
   "play_screen@common.base_screen": {
-    "$screen_bg_content": "play.background_gradient",
+    "$screen_bg_content": "bg_animations.bg_anim",
     "button_mappings": [
       {
         "from_button_id": "button.menu_cancel",
@@ -2123,17 +2123,25 @@
                 "controls": [
                   {
                     "common_b_panel@neko_c.bg_3": {
-                    //  "type": "panel",
                     "layer": 2,
-                    "color": [ 0.07, 0.11, 0.13 ],
-                "offset": [ 0, 8],
-                      "size": [ 120, "100% - 23px" ],
-                      "controls": [
+                    "color": [ 0.02, 0.02, 0.02 ],
+                    "offset": [ 0, 8],
+                    "size": [ 120, "100% - 23px" ],
+                    "controls": [
                         {
                           "create_uwu": {
                             "type": "stack_panel",
                             "orientation": "vertical",
                             "size": [ "100%", "100%" ],
+                            "$neko_uwu_from|default": [ "-50%", 0],
+                            "$neko_uwu_to|default": [ 0, 0 ],
+                            "animation_reset_name": "screen_animation_reset",
+                            "anims": [
+                              "@anim_test.neko_push_offset",
+                              "@anim_test.neko_pop_offset",
+                              "@anim_test.neko_entrance_push_offset",
+                              "@anim_test.neko_entrance_pop_offset"
+                            ],
                             "controls": [
                               {
                                 "scrolling_panel@play_ui.scrolling_panel": {}
@@ -2151,12 +2159,12 @@
             {
               "common_c_panel": {
                 "type": "panel",
-                "size": [ "fill", "100%" ], 
+                "size": [ "fill", "100%" ],
                 "controls": [
                    {
                     "panel_lagi_anj@neko_c.bg_3": {
                       "layer": 2,
-                      "color": [ 0.07, 0.11, 0.13],
+                      "color": [ 0.02, 0.02, 0.02 ],
                       "size": [ "100%", "100% - 23px" ], 
                       "offset": [ 0, -3 ],
                       "anchor_from": "bottom_right",
@@ -2167,11 +2175,20 @@
                             "type": "stack_panel",
                             "orientation": "vertical",
                             "size": [ "100%", "100%" ],
+                            "$neko_uwu_from|default": [ "50%", 0],
+                            "$neko_uwu_to|default": [ 0, 0 ],
+                            "animation_reset_name": "screen_animation_reset",
+                            "anims": [
+                              "@anim_test.neko_push_offset",
+                              "@anim_test.neko_pop_offset",
+                              "@anim_test.neko_entrance_push_offset",
+                              "@anim_test.neko_entrance_pop_offset"
+                            ],
                             "controls": [
                               {
                                 "test@neko_c.bg_3": {
                                   "layer": 2,
-                                  "color": [ 0.21, 0.33, 0.40 ],
+                                  "color": [ 0.16, 0.16, 0.16 ],
                                   "size": [ "100%", 25 ],
                                   "controls": [
                                     {
@@ -2184,6 +2201,8 @@
                                 "main_panel": {
                                   "type": "panel",
                                   "size": [ "100%", "fill" ],
+                                  "$neko_uwu_from|default": [ "50%", 0],
+                                  "$neko_uwu_to|default": [ 0, 0 ],
                                   "controls": [
                                       { "main_control@$main_panel": { "size": [ "100%", "100% + 15px"]}}
                                   ]
@@ -2216,7 +2235,18 @@
     ],
     "controls": [
       { "common_panel@play.common_panel": {}},
-      { "tap_panel_and_back@play_ui.tap_panel_and_back": {}},
+      { "tap_panel_and_back@play_ui.tap_panel_and_back": {
+        "$neko_uwu_from|default": [ 0, "-25%"],
+        "$neko_uwu_to|default": [ 0, 0 ],
+        "animation_reset_name": "screen_animation_reset",
+          "anims": [
+            "@anim_test.neko_push_offset",
+            "@anim_test.neko_pop_offset",
+            "@anim_test.neko_entrance_push_offset",
+            "@anim_test.neko_entrance_pop_offset"
+          ]
+        }
+      },
       {
         "popup_dialog_factory": {
           "type": "factory",

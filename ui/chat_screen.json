@@ -19,7 +19,7 @@
           "font_type": "MinecraftTen",
           "text": "#text",
           "offset": [ 0, 5.5 ],
-          "color": [ 0.09, 0.13, 0.17 ],
+          "color": [ 1.0, 1.0, 1.0 ],
           "layer": 10,
           "bindings": [
             {
@@ -31,6 +31,7 @@
       }
     ]
   },
+
   "back_content_panel": {
     "type": "panel",
     "size": [ "100%c", "100%" ],
@@ -85,31 +86,6 @@
     "anchor_to": "top_left",
     "anchor_from": "top_left",
     "controls": [
-      {
-        "panel_a": {
-          "type": "panel",
-          "size": [ 100, "100% - 10px" ],
-          "anchor_to": "right_middle",
-          "anchor_from": "right_middle",
-          "controls": [
-            {
-              "panel_a_stack": {
-                "type": "stack_panel",
-                "orientation": "horizontal",
-                "anchor_to": "top_right",
-                "anchor_from": "top_right",
-                "controls": [
-                  {"down@chat.down": {}},
-                  {"spacer4": {"type": "panel","size": "$jarak"}},
-                  {"up@chat.up": {}},
-                  {"spacer5": {"type": "panel","size": "$jarak"}},
-                  {"skip@chat.skip": {}}
-                ]
-              }
-            }
-          ]
-        }
-      },
       {
         "title_panel": {
           "type": "panel",
@@ -252,14 +228,6 @@
   },
 
   "loli_uwu@common_buttons.light_content_button": {
-    "$default_state_border_visible|default": false,
-    "$hover_state_border_visible|default": false,
-    "$pressed_state_border_visible|default": false,
-    "$locked_state_border_visible|default": false,
-
-    "$default_button_texture": "",
-    "$locked_button_texture": "",
-
     "size": [ 25, "100%" ],
     "$pressed_button_name": "button.send",
     "anchor_from": "bottom_right",
@@ -287,20 +255,20 @@
     "orientation": "horizontal",
     "anchor_from": "bottom_middle",
     "anchor_to": "bottom_middle",
-    "$jarak": [ 5, 5 ],
     "size": [ "100%", 27 ],
     "min_size": [ "100%", 27 ],
     "controls": [
       { "keyboard_button@chat.keyboard_button": {} },
-      {"spacer1": {"type": "panel","size": "$jarak"}},
       {
         "host_main_button@host_options.host_main_button": {
           "ignored": "$is_pregame",
           "$focus_override_up": "coordinate_dropdown_focus_id"
         }
       },
-      {"spacer2": {"type": "panel","size": "$jarak"}},
       { "chat_settings@chat.chat_settings_button": {} },
+      {"down@chat.down": {}},
+      {"up@chat.up": {}},
+      {"skip@chat.skip": {}},
       { "text_box@chat.text_edit_box": {} },
       { "send_button@chat.send_button": { "offset": [ -20, 0 ] } }
     ]

@@ -14,19 +14,21 @@
     "$ukuran_jarak": [ 5, 5 ],
     "$default_selector_toggle_index": 5555,
     "ttsSectionContainer": true,
+    "$neko_uwu_from|default": [ "-50%", 0],
+    "$neko_uwu_to|default": [ 0, 0 ],
     "animation_reset_name": "screen_animation_reset",
     "anims": [
-      "@anim_test.screen_exit_animation_push_offset_2",
-      "@anim_test.screen_exit_animation_pop_offset_2",
-      "@anim_test.screen_entrance_animation_push_offset_2",
-      "@anim_test.screen_entrance_animation_pop_offset_2"
+      "@anim_test.neko_push_offset",
+      "@anim_test.neko_pop_offset",
+      "@anim_test.neko_entrance_push_offset",
+      "@anim_test.neko_entrance_pop_offset"
     ],
     "controls": [
       {
         "general_and_account@neko_c.bg_r2": {
           "ignored": "(not $include_controls_and_settings_sections or not $is_pregame)",
           "size": [ "100% - 3px", "100%c" ],
-          "color": [ 0.09, 0.13, 0.17 ],
+          "color": [ 0.14, 0.14, 0.14 ],
           "controls": [
             {
               "general_and_account_stack": {
@@ -34,6 +36,11 @@
                 "size": [ "100%", "100%c" ],
                 "orientation": "vertical",
                 "controls": [
+                  {
+                    "selector_group_label_2@settings_common.selector_group_label": {
+                      "$yuki": "settings.header.account"
+                    }
+                  },
                   { 
                     "nametag_panel_2@loli.nametag_panel_2": {
                       "bindings": [
@@ -80,7 +87,7 @@
           ]
         }
       },
-      { "spacer_a0": { "type": "panel", "size": "$ukuran_jarak","ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"}},
+      { "spacer_banana": { "type": "panel", "size": "$ukuran_jarak","ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"}},
       {
         "quick_panel@neko_c.bg_r2": {
           "ignored": "(not $include_controls_and_settings_sections)",
@@ -116,8 +123,7 @@
       },
       { "spacer0": { "type": "panel", "size": "$ukuran_jarak","ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"}},
       {
-        "graphics_panel": {
-          "type": "panel",
+        "graphics_panel@neko_c.bg_r2": {
           "ignored": "(not $include_controls_and_settings_sections)",
           "size": [ "100% - 3px", "100%c" ],
           "color": [ 0.10, 0.10, 0.10 ],
@@ -159,8 +165,7 @@
       { "spacer01": { "type": "panel", "size": "$ukuran_jarak", "ignored": "(not $include_controls_and_settings_sections )" }},
         //////////// CONTROLS SETTINGS
       {
-          "controls_panel":{
-            "type": "panel",
+          "controls_panel@neko_c.bg_r2": {
             "ignored": "(not $include_controls_and_settings_sections)",
             "size": [ "100% - 3px", "100%c" ],
             "color": [ 0.10, 0.10, 0.10 ],
@@ -215,13 +220,6 @@
             }
           }, 
           { "spacer1": { "type": "panel", "size": "$ukuran_jarak", "ignored": "(not $include_controls_and_settings_sections)" }},
-          {
-            "about_button@custom_settings_section.about_button": {
-            "size": [ "100% - 3px", 27 ],
-              "$toggle_group_forced_index": 4000, 
-              "ignored": "(not $include_controls_and_settings_sections or not $is_pregame)"
-            }
-          },
         //////////// MORE SETTINGS 
         {
           "more_settings_button@custom_settings_section.more_settings_button": {
@@ -230,7 +228,6 @@
             "ignored": "(not $include_controls_and_settings_sections)"
           }
         },
-        { "spacer2": { "type": "panel", "size": "$ukuran_jarak", "ignored": "(not $include_controls_and_settings_sections)" }},
         { "more@custom_settings_section.more": { "visible": false }},
         { "spacer3": { "type": "panel", "size": "$ukuran_jarak", "ignored": "(not $include_controls_and_settings_sections)" }},
         // the list of selection toggle buttons, add yours here...
@@ -285,12 +282,14 @@
   },
 
   "section_content_panels": {
+    "$neko_uwu_from|default": [ "50%", 0],
+    "$neko_uwu_to|default": [ 0, 0 ],
     "animation_reset_name": "screen_animation_reset",
     "anims": [
-      "@anim_test.screen_exit_animation_push_offset",
-      "@anim_test.screen_exit_animation_pop_offset",
-      "@anim_test.screen_entrance_animation_push_offset",
-      "@anim_test.screen_entrance_animation_pop_offset"
+      "@anim_test.neko_push_offset",
+      "@anim_test.neko_pop_offset",
+      "@anim_test.neko_entrance_push_offset",
+      "@anim_test.neko_entrance_pop_offset"
     ]
   },
 
