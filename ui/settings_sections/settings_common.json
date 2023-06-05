@@ -536,7 +536,7 @@
               "selector_group_label_2": {
                 "type": "label",
                 "text_alignment": "center",
-                "font_type": "PoppinsMedium",
+                "font_type": "bahnschrift_bold",
                 "font_scale_factor": 0.9,
                 "text": "$yuki",
                 "layer": 1,
