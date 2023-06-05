@@ -10,5 +10,143 @@
     "font_type": "MinecraftTen",
     "font_scale_factor": 1.4,
     "offset": [ 0 , -1.1 ] //  X , Y
+  },
+
+  ///////////////////////////////////////////////////
+  // Custom Pause Button
+  ///////////////////////////////////////////////////
+
+  "pause_content_button@common_buttons.light_content_button": {
+    "$default_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_light",
+    "$hover_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_lightpressed",
+    "$locked_button_texture|default": "textures/neko/borderless/main_ui/button_borderless_lightpressednohover",
+    "size": [ "100% - 5px", "100% - 5px"  ],
+    "$locked_state_border_visible": false
+  },
+
+  //// ICON
+
+  "core_image": {
+    "type": "image",
+    "size": [ 17, 17 ],
+    "color": "$banana",
+    "variables": [
+      {
+        "requires": "$default_state",
+        "$banana": [ 1.0, 1.0, 1.0 ]
+      },
+      {
+        "requires": "$hover_state",
+        "$banana": [ 0.54, 0.80, 1.00 ]
+      },
+      {
+        "requires": "$pressed_state",
+        "$banana": [ 0.54, 0.80, 1.00 ]
+      }
+    ]
+  },
+
+  "feedback_ico@core_image": { "texture": "textures/neko/main_icon/pause_screen_icon/feedback_icon" },
+  "achievement_ico@core_image": { "texture": "textures/neko/main_icon/pause_screen_icon/achievements_icon" },
+  "marketplace_ico@core_image": { "texture": "textures/neko/main_icon/pause_screen_icon/marketplace_icon" },
+  "dressingroom_ico@core_image": { "texture": "textures/neko/main_icon/pause_screen_icon/dressing_room_icon" },
+  "invite_ico@core_image": { "texture": "textures/neko/main_icon/pause_screen_icon/invite_icon" },
+  "screenshot_ico@core_image": { "texture": "textures/neko/main_icon/pause_screen_icon/screenshot_icon" },
+
+  "invite_button@x_button.pause_content_button": {
+    "$button_content": "x_button.invite_ico",
+    "$pressed_button_name": "button.menu_invite_players",
+    "bindings": [ { "binding_name": "#invite_button_visible","binding_name_override": "#enabled","binding_type": "global"},{"binding_name": "#invite_button_enabled","binding_name_override": "#enabled"}]
+  },
+
+  "achievements_button@x_button.pause_content_button": {
+    "$banana": [ 1.0, 1.0, 1.0 ],
+    "$button_content": "x_button.achievement_ico",
+    "$pressed_button_name": "button.menu_achievements"
+  },
+
+  "marketplace_button@x_button.pause_content_button": {
+    "$button_content": "x_button.marketplace_ico",
+    "$pressed_button_name": "button.menu_store"
+  },
+
+  "screenshot_button@x_button.pause_content_button": {
+    "$button_content": "x_button.screenshot_ico",
+    "$pressed_button_name": "button.screenshot"
+  },
+
+  "feedback_button@x_button.pause_content_button": {
+    "$button_content": "x_button.feedback_ico",
+    "$pressed_button_name": "button.feedback_button_pressed"
+  },
+
+  "profile_button@x_button.pause_content_button": {
+    "$button_content": "x_button.dressingroom_ico",
+    "$pressed_button_name": "button.to_profile_or_skins_screen"
+  },
+
+  "custom_pause_button@common_buttons.light_text_button": {
+    "size": [ "100%", "100%" ],
+    "$default_button_texture|default": "textures/neko/borderless/core/button_borderless_dark",
+    "$hover_button_texture|default": "textures/neko/borderless/core/button_borderless_lighthover",
+    "$pressed_button_texture|default": "textures/neko/borderless/core/button_borderless_lightpressed",
+    "$locked_button_texture|default": "",
+    "$button_type_panel": "x_button_panel.pause_screen_panel",
+    "$border_visible": false,
+    "$warna_icon_default": [ 1.0, 1.0, 1.0 ],
+    "$warna_icon_saatdihover": [ 1.0, 1.0, 1.0 ],
+    "$warna_icon_saatditekan": [ 1.0, 1.0, 1.0  ],
+    "$warna_icon_saatdikunci": [ 1.00, 0.11, 0.11 ],
+    
+    "$default_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$hover_text_color|default": [ 0.53, 0.84, 1.00 ],
+    "$pressed_text_color|default": [ 0.72, 0.90, 1.00 ],
+    "$locked_text_color|default": [ 1.00, 0.11, 0.11 ]
+  },  
+
+  "achievements_button_pause@x_button.custom_pause_button": {
+    "$glyph_size": [ 15, 15 ],
+    "$glyph_texture": "textures/neko/main_icon/achievements",
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_text": "menu.achievements"
+  },
+
+  "store_button_pause@x_button.custom_pause_button": {
+    "$glyph_size": [ 15, 15 ],
+    "$glyph_texture": "textures/neko/main_icon/store_icon",
+    "$pressed_button_name": "button.menu_store",
+    "$button_text": "Belanja"
+  },
+
+  "profile_button_pause@x_button.custom_pause_button": {
+    "$glyph_size": [ 15, 15 ],
+    "$glyph_texture": "textures/neko/main_icon/profile_icon",
+    "$pressed_button_name": "button.to_profile_or_skins_screen",
+    "$button_text": "profileScreen.header"
+  },
+
+  "screenshot_pause@x_button.custom_pause_button": {
+    "$glyph_size": [ 15, 15 ],
+    "$glyph_texture": "textures/ui/camera-yo",
+    "$pressed_button_name": "button.screenshot",
+    "$button_text": "Screenshot"
+  },
+  
+  "pause_button_template@common_buttons.light_text_button": {
+    "size": [ "100% - 5px", "50%" ],
+    "anchor_to": "center",
+    "anchor_from": "center",
+    "$glyph_size": [ 50, 50 ],
+    "$border_visible": false,
+    "$button_type_panel": "x_button_panel.pause_button_panel",
+    "$default_text_color|default": [ 1.0, 1.0, 1.0 ],
+    "$hover_text_color|default": [ 0.81, 0.98, 1.00 ],
+    "$pressed_text_color|default": [ 0.00, 0.82, 0.92 ],
+    "$locked_text_color|default": [ 1.00, 0.11, 0.11 ],
+    "$default_button_texture|default": "",
+    "$hover_button_texture|default": "textures/neko/borderless/pause/button_borderless_dark_hover",
+    "$pressed_button_texture|default": "textures/neko/borderless/pause/button_borderless_dark_pressed",
+    "$locked_button_texture|default": "textures/neko/borderless/pause/button_borderless_dark"
   }
 }
