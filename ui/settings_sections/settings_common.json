@@ -467,7 +467,7 @@
       {
         "dialog_title_label@settings_common.core_label": {
           "font_type": "MinecraftTen",
-          "color": [ 1.0, 1.0, 1.0 ],
+          "color": [ 0.0, 0.0, 0.0 ],
           "font_scale_factor": 0.9,
           "offset": [ 0, 7 ],
           "size": [ "default" , "100%" ],

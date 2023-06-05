@@ -14,7 +14,7 @@
     "variables": [
       {
         "requires": "$default_state",
-        "$warna": [ 1.0, 1.0, 1.0 ]
+        "$warna": [ 0.0, 0.0, 0.0 ]
       },
       {
         "requires": "$hover_state",
