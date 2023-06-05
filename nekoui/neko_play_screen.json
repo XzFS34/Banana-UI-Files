@@ -93,7 +93,7 @@
       {
         "title_button_text": {
           "type": "label",
-          "font_type": "PoppinsMedium",
+          "font_type": "bahnschrift_bold",
           "anchor_from": "left_middle",
           "anchor_to": "left_middle",
           "font_scale_factor": 1.15,
