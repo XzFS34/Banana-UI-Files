@@ -14,7 +14,7 @@
     "variables": [
       {
         "requires": "$default_state",
-        "$warna": [ 1.0, 1.0, 1.0 ]
+        "$warna": [ 0.0, 0.0, 0.0 ]
       },
       {
         "requires": "$hover_state",
@@ -288,7 +288,7 @@
               "color": [ 0.40, 0.88, 1.00 ],
               "size": [ "100% - 5px" , "default" ],
               "text_alignment": "left",
-              "font_type": "PoppinsMedium",
+              "font_type": "bahnschrift_bold",
               "font_scale_factor": 0.6,
       
               "text": "$neko_c.about_a"
@@ -306,7 +306,7 @@
               "text_alignment": "left",
 
               "font_type": "$gaya_font",
-              "$gaya_font|default": "PoppinsMedium",
+              "$gaya_font|default": "bahnschrift_bold",
 
               "font_scale_factor": "$ukuran_font",
               "$ukuran_font|default": 1.1,

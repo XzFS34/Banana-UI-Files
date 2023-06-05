@@ -1146,7 +1146,7 @@
       {
         "about_and_social@neko_c.bg_r2": {
           "color": [ 0.14, 0.14, 0.14 ],
-          "size": [ "100%", 150 ],
+          "size": [ "100%", 200 ],
           "controls": [
             {
               "stack": {
@@ -1190,20 +1190,20 @@
                               {
                                 "header": {
                                   "type": "label",
-                                  "font_scale_factor": 0.5,
+                                  "font_scale_factor": 0.95,
                                   "font_type": "bahnschrift_bold",
-                                  "text": "kontol",
+                                  "text": "Keinz",
                                   "color": [ 0.54, 0.80, 1.00 ]
                                 }
                               },
-                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "Zxyn ( @zxyn404 )"}},
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Youtube:", "$neko_c.about_b": "Banana Client"}},
                               { "panel": { "type": "panel", "size": "$jarak_2"  }},
-                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "Zxyn404"}},
+                              { "version@neko_c.about_text": { "$neko_c.about_a": "[ + ] Discord: ", "$neko_c.about_b": "FSN_RS#2191"}},
                               { "panel": { "type": "panel", "size": "$jarak_2"  }},
                               {
                                 "header": {
                                   "type": "label",
-                                  "font_scale_factor": 0.5,
+                                  "font_scale_factor": 0.95,
                                   "font_type": "bahnschrift_bold",
                                   "text": "ZxynStudios",
                                   "color": [ 0.54, 0.80, 1.00 ]
