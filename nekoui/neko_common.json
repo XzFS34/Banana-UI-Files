@@ -78,7 +78,7 @@
         "type": "label",
         "anchor_from": "top_left",
         "anchor_to": "top_left",
-        "font_type": "PoppinsMedium",
+        "font_type": "bahnschrift_bold",
         "font_scale_factor": 3,
         "text": "$neko_c.title.text"
         }
@@ -195,7 +195,7 @@
           "anchor_to": "center",
           "shadow": false,
           "font_type": "$gaya_font",
-          "$gaya_font|default": "PoppinsMedium",
+          "$gaya_font|default": "bahnschrift_bold",
           "font_scale_factor": 1.3,
           "color": [ 1.0, 1.0, 1.0 ],
           "text_alignment": "center",
@@ -288,7 +288,7 @@
               "color": [ 0.40, 0.88, 1.00 ],
               "size": [ "100% - 5px" , "default" ],
               "text_alignment": "left",
-              "font_type": "PoppinsMedium",
+              "font_type": "bahnschrift_bold",
               "font_scale_factor": 0.6,
       
               "text": "$neko_c.about_a"
@@ -306,7 +306,7 @@
               "text_alignment": "left",
 
               "font_type": "$gaya_font",
-              "$gaya_font|default": "PoppinsMedium",
+              "$gaya_font|default": "bahnschrift_bold",
 
               "font_scale_factor": "$ukuran_font",
               "$ukuran_font|default": 1.1,
