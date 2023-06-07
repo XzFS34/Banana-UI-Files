@@ -5,6 +5,23 @@
 {
   "namespace": "neko_c",
 
+  "core_image": {
+    "type": "image",
+    "layer": "$layer_image",
+    "alpha": "$alpha_image",
+    "size": "$size_image",
+    "$size_image|default": [ "100%", "100%" ],
+    "$layer_image|default": 1,
+    "$alpha_image|default": 1,
+    "texture": "('textures/neko/common_background/' + $image_texture )"
+  },
+
+  "bg_line@core_image": {"$image_texture": "bg_line"},
+  "bg_r@core_image": { "$image_texture": "bg_round"},
+  "bg_r2@core_image": { "$image_texture": "bg_white_r"},
+  "bg_2@core_image": { "$image_texture": "bg"},
+  "bg_3@core_image": { "$image_texture": "bg_white"},
+  "neko_header@core_image": {"$image_texture": "bg_header", "color": "$header_color"},
 
   "ikon_exit": {
     "type": "image",
@@ -14,7 +31,7 @@
     "variables": [
       {
         "requires": "$default_state",
-        "$warna": [ 0.0, 0.0, 0.0 ]
+        "$warna": [ 1.0, 1.0, 1.0 ]
       },
       {
         "requires": "$hover_state",
@@ -215,50 +232,6 @@
     "type": "image",
     "texture": "textures/ui/StoreTopBar",
     "size": [ "100%", 27 ]
-  },
-  
-  "bg_line": {
-    "type":  "image",
-    "alpha": 1,
-    "texture": "textures/neko/bg/bg_line",
-    "size": [ "100%" , "100%" ]
-  },
-
-  "bg_r": {
-    "type":  "image",
-    "layer": 999,
-    "alpha": 0.75,
-    "texture": "textures/neko/bg/bg_round",
-    "size": [ "100%" , "100%" ]
-  },
-
-  "bg_r2": {
-    "type":  "image",
-    "alpha": 1,
-    "texture": "textures/neko/bg/bg_white_r",
-    "size": [ "100%" , "100%" ]
-  },
-
-  "bg_2": {
-    "type":  "image",
-    "layer": 999,
-    "alpha": 0.75,
-    "texture": "textures/neko/bg/bg",
-    "size": [ "100%" , "100%" ]
-  },
-
-  "bg_3": {
-    "type":  "image",
-    "layer": 999,
-    "alpha": 0.75,
-    "texture": "textures/neko/bg/bg_white",
-    "size": [ "100%" , "100%" ]
-  },
-
-  "neko_header": {
-    "type":  "image",
-    "texture": "textures/neko/bg/bg_header",
-    "size": [ "100%" , "100%" ]
   },
 
   ///////////////////////////////////////
