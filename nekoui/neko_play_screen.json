@@ -39,7 +39,7 @@
           "anchor_from": "$glyph_anchor_from",
           "anchor_to": "$glyph_anchor_to",
           "offset": "$glyph_offset",
-          "texture": "$glyph_texture",
+          "texture": "('textures/neko/button_icon/play_screen_icon/' + $icon_texture )",
           "size": "$glyph_size",
           "layer": 3,
           "color": "$glyph_color",
@@ -55,7 +55,7 @@
           "anchor_from": "$glyph_anchor_from",
           "anchor_to": "$glyph_anchor_to",
           "offset": "$glyph_offset",
-          "texture": "$icon_color_texture",
+          "texture": "('textures/neko/button_icon/play_screen_icon/' + $icon_line_texture )",
           "size": "$glyph_size",
           "layer": 4,
           "color": "$icon_color",
@@ -93,7 +93,7 @@
       {
         "title_button_text": {
           "type": "label",
-          "font_type": "bahnschrift_bold",
+          "font_type": "PoppinsMedium",
           "anchor_from": "left_middle",
           "anchor_to": "left_middle",
           "font_scale_factor": 1.15,
@@ -215,8 +215,8 @@
 }, 
 
 "quick_play_button@play_ui.custom_button": {
-  "$glyph_texture": "textures/neko/main_icon/quick_play",
-  "$icon_color_texture": "textures/neko/main_icon/quick_play_color_line",
+  "$icon_texture": "quick_play",
+  "$icon_line_texture": "quick_play_color_line",
   "$pressed_button_name": "button.menu_quick_play",
   "$button_text": "menu.quickplay",
   "focus_identifier": "",
@@ -225,8 +225,8 @@
 
 "create_new_world_button@play_ui.custom_button": {
   "$enable_button_anim": true,
-  "$glyph_texture": "textures/neko/main_icon/worldsIcon",
-  "$icon_color_texture": "textures/neko/main_icon/worldsIcon_color_line",
+  "$icon_texture": "worldsIcon",
+  "$icon_line_texture": "worldsIcon_color_line",
   "variables": [
     {
       "requires": "($local_world_upload)",
@@ -245,8 +245,8 @@
 },
 
 "import_world_button@play_ui.custom_button": {
-  "$glyph_texture": "textures/neko/main_icon/import_world",
-  "$icon_color_texture": "textures/neko/main_icon/import_world_color_line",
+  "$icon_texture": "import_world",
+  "$icon_line_texture": "import_world_color_line",
   "$button_text": "Import World",
   "variables": [
     {
@@ -262,8 +262,8 @@
 
 "tambah_temen@play_ui.custom_button": {
   "ignored": "((not $supports_add_friend) or $nx_os or $is_ps4)",
-  "$glyph_texture": "textures/neko/main_icon/add_friends",
-  "$icon_color_texture": "textures/neko/main_icon/add_friends_line",
+  "$icon_texture": "add_friends",
+  "$icon_line_texture": "add_friends_line",
   "$pressed_button_name": "button.menu_network_add_friend",
   "$button_text": "networkWorld.add_friend",
   "bindings": [
@@ -281,8 +281,8 @@
 
 "join_dengan_code@play_ui.custom_button": {
   "ignored": "((not $supports_add_friend) or $nx_os or $is_ps4)",
-  "$glyph_texture": "textures/neko/main_icon/join_by_code",
-  "$icon_color_texture": "textures/neko/main_icon/join_by_code_line",
+  "$icon_texture": "join_by_code",
+  "$icon_line_texture": "join_by_code_line",
   "$button_text": "networkWorld.joinByCode",
   "$pressed_button_name": "button.menu_network_join_by_code",
   "button_mappings": [
@@ -315,8 +315,8 @@
   "size": [ "100%" , 36 ],
   "anchor_from": "center",
   "anchor_to": "center",
-  "$glyph_texture": "textures/neko/main_icon/add_server",
-  "$icon_color_texture": "textures/neko/main_icon/add_server_color_line",
+  "$icon_texture": "add_server",
+  "$icon_line_texture": "add_server_color_line",
   "$button_text": "networkWorld.add_server",
   "$desc_button_text": "Tambah server dari pihak ke-tiga",
 
