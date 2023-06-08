@@ -1166,7 +1166,7 @@
                             "type": "stack_panel",
                             "size": [ "100%", "100%c"],
                             "controls": [
-                              { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "Banana UI Version", "$neko_c.about_b": "0.1.0 | Beta | Latest Update: dd/mm/yyyy"}},
+                              { "about_text@neko_c.about_text": { "$warna": [ 0.14, 0.17, 0.20 ], "$neko_c.about_a": "Banana UI Version", "$neko_c.about_b": "0.1.0 | Beta | Latest Update: 7/6/2023"}},
                               { "panel": { "type": "panel", "size": "$jarak_1"  }},
                               { "about_text@neko_c.about_text": {"$neko_c.about_a": "zxyn.ui.verison","$neko_c.about_b": "1.2.2_ACUMALAKA | Beta"}},
                               { "panel": { "type": "panel", "size": "$jarak_1"  }},

@@ -322,7 +322,7 @@
 
   //Warna
   
-  "$light_toggle_default_text_color": [ 1.0, 1.0, 1.0 ],
+  "$light_toggle_default_text_color": [ 0.0, 0.0, 0.0 ],
   "$light_toggle_hover_text_color": [ 0.15, 0.15, 0.15 ],
   "$light_toggle_checked_default_text_color": [ 0.15, 0.15, 0.15 ],
   "$light_toggle_checked_hover_text_color": [ 0.09, 0.13, 0.17 ],
@@ -556,7 +556,7 @@
                     "dialog_title_label@settings_common.core_label": {
                       "layer": 11,
                       "font_type": "MinecraftTen",
-                      "color": [ 1.0, 1.0, 1.0 ],
+                      "color": [ 0.0, 0.0, 0.0 ],
                       "font_scale_factor": 1.4,
                       "offset": [ 0, 4 ],
                       "size": [ "default" , "100%" ],
